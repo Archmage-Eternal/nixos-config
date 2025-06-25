@@ -8,5 +8,4 @@
     pulse.enable = true;
   };
   hardware.alsa.enablePersistence = true;
-  environment.systemPackages = with pkgs; [ pulseaudioFull ];
 }

@@ -20,7 +20,6 @@
     ./retroarch.nix  
     ./rofi.nix                        # launcher
     ./ssh.nix                         # ssh config
-    ./swaync/swaync.nix               # notification deamon
     ./waybar                          # status bar
     ./xdg-mimes.nix                   # xdg config
     # Starship prompt
