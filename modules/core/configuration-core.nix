@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }:
+
 {
-  # imports = [ inputs.nix-gaming.nixosModules.default ];
+  ### ---- Nix System Configuration ---- ###
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -22,10 +23,13 @@
       ];
     };
   };
+
   nixpkgs = {
     overlays = [ inputs.nur.overlays.default ];
+    config.allowUnfree = true;
   };
 
+  ### ---- System Environment ---- ###
   environment.systemPackages = with pkgs; [
     wget
     git
@@ -33,6 +37,40 @@
 
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
+
+  ### ---- Programs ---- ###
+  programs = {
+    dconf.enable = true;
+    zsh.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [ ];
+    };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
+
+  ### ---- Services ---- ###
+  services = {
+    gvfs.enable = true;
+    dbus = {
+      enable = true;
+      packages = with pkgs; [
+        gcr
+        gnome-settings-daemon
+      ];
+    };
+    gnome = {
+      tinysparql.enable = true;
+      gnome-keyring.enable = true;
+    };
+    fstrim.enable = true;
+    logind.extraConfig = ''
+      HandlePowerKey=ignore
+    '';
+  };
 }
+
