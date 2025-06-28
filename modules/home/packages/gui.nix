@@ -12,5 +12,7 @@
     soundwireserver
     vlc
     zenity
+    calibre
+
   ];
 }
