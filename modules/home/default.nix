@@ -51,6 +51,9 @@
     # Application launcher interface
     ./rofi.nix
 
+    # Notification manager
+    ./swaync/swaync.nix
+
     # GTK theme and icon configuration
     ./gtk.nix
 
