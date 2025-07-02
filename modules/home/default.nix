@@ -1,28 +1,96 @@
-{ ... }:
+{...}:
 {
   imports = [
-    ./bat.nix                         # better cat command
-    ./browser.nix                     # firefox based browser
-    ./btop.nix                        # resouces monitor 
-    ./cava.nix                        # audio visualizer
-    ./discord.nix                     # discord
-    ./fastfetch.nix                   # fetch tool
-    ./fzf.nix                         # fuzzy finder
-    ./gaming.nix                      # packages related to gaming
-    ./ghostty.nix                     # terminal
-    ./git.nix                         # version control
-    ./gtk.nix                         # gtk theme
-    ./hyprland                        # window manager
-    ./lazygit.nix
-    ./micro.nix                       # nano replacement
-    ./nvim.nix                        # neovim editor
-    ./packages                        # other packages
-    ./retroarch.nix  
-    ./rofi.nix                        # launcher
-    ./ssh.nix                         # ssh config
-    ./waybar                          # status bar
-    ./xdg-mimes.nix                   # xdg config
-    # Starship prompt
+
+    # ──────────────── CLI ENHANCEMENTS ────────────────
+
+    # Improved 'cat' command with syntax highlighting and paging
+    ./bat.nix
+
+    # Interactive fuzzy finder for terminal usage
+    ./fzf.nix
+
+    # System resource monitor with a TUI interface
+    ./btop.nix
+
+    # Terminal fetch tool for displaying system info
+    ./fastfetch.nix
+
+    # Minimal terminal-based text editor (nano alternative)
+    ./micro.nix
+
+    # Feature-rich modal text editor configuration (Neovim)
+    ./nvim.nix
+
+    # CLI customization using Starship prompt
     ./starship.nix
+
+    # Developer tools and language-specific utilities
+    ./dev.nix
+
+    # Core command-line applications and utilities
+    ./cli.nix
+
+    # ──────────────── VERSION CONTROL ────────────────
+
+    # Git configuration and related utilities
+    ./git.nix
+
+    # Fuzzy terminal-based Git UI
+    ./lazygit.nix
+
+
+    # ──────────────── WINDOWING & DESKTOP ────────────────
+
+    # Wayland-based dynamic tiling window manager
+    ./hyprland
+
+    # Status bar configuration for Wayland (typically with Hyprland)
+    ./waybar
+
+    # Application launcher interface
+    ./rofi.nix
+
+    # GTK theme and icon configuration
+    ./gtk.nix
+
+    # Terminal emulator configuration
+    ./ghostty.nix
+
+    # XDG MIME-type and default app settings
+    ./xdg-mimes.nix
+
+    # ──────────────── MULTIMEDIA ────────────────
+
+    # Audio visualizer for terminal
+    ./cava.nix
+
+    # Retro gaming platform and emulator frontend
+    ./retroarch.nix
+
+    # Applications and utilities related to gaming
+    ./gaming.nix
+
+    # ──────────────── COMMUNICATION ────────────────
+
+    # Discord client integration
+    ./discord.nix
+
+    # ──────────────── NETWORKING & REMOTE ACCESS ────────────────
+
+    # SSH configuration and key management
+    ./ssh.nix
+
+    # ──────────────── WEB ────────────────
+
+    # Firefox-based web browser configuration
+    ./browser.nix
+
+    # ──────────────── GUI APPLICATIONS ────────────────
+
+    # Graphical applications and utilities
+    ./gui.nix
+
   ];
 }
+
