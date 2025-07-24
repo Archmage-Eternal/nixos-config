@@ -2,6 +2,7 @@
 {
   imports = [
 
+    ./nixCats.nix
     # ──────────────── CLI ENHANCEMENTS ────────────────
 
     # Improved 'cat' command with syntax highlighting and paging
@@ -18,9 +19,6 @@
 
     # Minimal terminal-based text editor (nano alternative)
     ./micro.nix
-
-    # Feature-rich modal text editor configuration (Neovim)
-    ./nvim.nix
 
     # CLI customization using Starship prompt
     ./starship.nix

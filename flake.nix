@@ -45,6 +45,7 @@
     	url = "github:Mic92/sops-nix";
 	inputs.nixpkgs.follows = "nixpkgs";
 	};
+    nixCats.url = "github:Archmage-Eternal/nixCats-config";
   };
 
   outputs =
