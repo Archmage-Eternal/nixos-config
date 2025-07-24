@@ -11,6 +11,7 @@
     ./nvidia.nix
     ./pipewire.nix
     ./security.nix
+    ./sops-nix.nix
     ./steam.nix
     ./flatpak.nix
     ./user.nix

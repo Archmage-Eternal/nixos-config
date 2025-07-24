@@ -79,6 +79,9 @@
     # Open files/URLs using desktop defaults
     xdg-utils
 
+    # Terminal file manager
+    yazi
+
     # ──────────────── DEVELOPMENT & DIAGNOSTIC TOOLS ────────────────
 
     # Show binary and hex output
@@ -154,9 +157,6 @@
 
     # CLI note-taking and knowledge management system
     nb
-
-    # Zettelkasten-style note-taking tool
-    zk
 
     # CLI tool for Advent of Code
     aoc-cli
