@@ -42,35 +42,10 @@
   ### ---- Programs ---- ###
   programs = {
     dconf.enable = true;
-    zsh.enable = true;
     nix-ld = {
       enable = true;
       libraries = with pkgs; [ ];
     };
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-  };
-
-  ### ---- Services ---- ###
-  services = {
-    gvfs.enable = true;
-    dbus = {
-      enable = true;
-      packages = with pkgs; [
-        gcr
-        gnome-settings-daemon
-      ];
-    };
-    gnome = {
-      tinysparql.enable = true;
-      gnome-keyring.enable = true;
-    };
-    fstrim.enable = true;
-    logind.extraConfig = ''
-      HandlePowerKey=ignore
-    '';
   };
 }
 
