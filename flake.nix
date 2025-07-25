@@ -42,33 +42,36 @@
     ghostty.url = "github:ghostty-org/ghostty";
 
     sops-nix = {
-    	url = "github:Mic92/sops-nix";
-	inputs.nixpkgs.follows = "nixpkgs";
-	};
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixCats.url = "github:Archmage-Eternal/nixCats-config";
+
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs =
-    { nixpkgs, self, ... }@inputs:
-    let
-      username = "david";
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
+  outputs = {
+    nixpkgs,
+    self,
+    ...
+  } @ inputs: let
+    username = "david";
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    lib = nixpkgs.lib;
+  in {
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        config.allowUnfree = true;
-      };
-      lib = nixpkgs.lib;
-    in
-    {
-      nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/laptop ];
-          specialArgs = {
-            host = "laptop";
-            inherit self inputs username;
-          };
+        modules = [./hosts/laptop];
+        specialArgs = {
+          host = "laptop";
+          inherit self inputs username;
         };
       };
     };
+  };
 }
