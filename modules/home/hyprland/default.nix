@@ -4,7 +4,10 @@
     ./hyprland.nix
     ./config.nix
     ./hyprlock.nix
-    ./variables.nix
+    ./aesthetics.nix
+    ./animations.nix
+    ./keybinds.nix
+    ./windowrules.nix
     inputs.hyprland.homeManagerModules.default
   ];
 }
