@@ -52,8 +52,7 @@
     # Notification manager
     ./swaync/swaync.nix
 
-    # GTK theme and icon configuration
-    ./gtk.nix
+    # ./stylix.nix
 
     # Terminal emulator configuration
     ./ghostty.nix

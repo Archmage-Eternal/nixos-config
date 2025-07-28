@@ -1,210 +1,61 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
-
-    # ──────────────── CLI REPLACEMENTS ────────────────
-
-    # Enhanced ls with icons and colors
-    eza
-
-    # Faster alternative to find with simpler syntax
-    fd
-
-    # Fast grep alternative with regex and glob support
-    ripgrep
-
-    # Tree view generator for directories
-    treefmt
-
-    # Enhanced man pages with simplified command explanations
-    tldr
-
-    # Extra man pages 
-    man-pages
-
-    # JSON processor for command-line filters and transformations
-    jq
-
-    # ──────────────── GENERAL CLI UTILITIES ────────────────
-
-    # System monitor with interactive UI
-    htop
-
-    # Kill processes by name
-    killall
-
-    # Watch files and run commands on change
-    entr
-
-    # File identification based on content, not extension
-    file
-
-    # Disk usage viewer in the terminal
-    ncdu
-
-    # CLI disk information utility
-    dysk
-    
-    # Archive extraction utility for .zip files
-    unzip
-
-    # Command-line interface to OpenSSL utilities
-    openssl
-
-    # Clipboard copy/paste tool for Wayland
-    wl-clipboard
-
-    # Wget-based download utility
-    wget
-
-    # Displays system info in terminal
-    nitch
-
-    # Git repository summary viewer with language stats
-    onefetch
-
-    # Clipboard and notification utility
-    libnotify
-
-    # Remove files by sending them to the trash
-    gtrash
-
-    # Clipboard manager and GUI
-    lowfi
-
-    # Bash formatter
-    shfmt
-
-    # Open files/URLs using desktop defaults
-    xdg-utils
-
-    # Terminal file manager
-    yazi
-
-    # ──────────────── DEVELOPMENT & DIAGNOSTIC TOOLS ────────────────
-
-    # Show binary and hex output
-    hexdump
-
-    # Lightweight hex viewer for the terminal
-    hevi
-
-    # Visual interactive bit calculator
-    bitwise
-
-    # PulseAudio volume control from CLI
-    pamixer
-
-    # Media key control for MPRIS-compatible players
-    playerctl
-
-    # Programmer calculator for quick base conversions
-    programmer-calculator
-
-    # CLI hex inspection, patching, and reverse engineering
-    xxd
-
-    # Binary analysis utility
-    binsider
-
-    # FFmpeg CLI for media conversion and processing
-    ffmpeg
-
-    # Copy/paste URL and open with default handler
-    mimeo
-
-    # ──────────────── MEDIA & VISUAL TOOLS ────────────────
-
-    # Image viewer for X/Wayland
-    imv
-
-    # Video/audio player for the terminal
-    mpv
-
-    # PDF viewer for terminal (lightweight)
-    tdf
-
-    # Stream and search anime from terminal
-    ani-cli
-
-    # YouTube downloader with clipboard support
-    yt-dlp-light
-
-    # CLI PDF/image annotation utility
-    swappy
-
-    # ──────────────── SCREENCAST RECORDING ────────────────
-
-    # Terminal session recorder
-    asciinema
-
-    # Convert asciinema recordings to SVG animations
-    asciinema-agg
-
-    # ──────────────── TYPING PRACTICE ────────────────
-
-    # Fast, minimal typing test in terminal
-    smassh
-
-    # Simple typing speed tracker
-    toipe
-
-    # Typing test with word stats and UI
-    ttyper
-
-    # ──────────────── PERSONAL PRODUCTIVITY ────────────────
-
-    # CLI note-taking and knowledge management system
-    nb
-
-    # CLI tool for Advent of Code
-    aoc-cli
-
-    # Translate text from terminal using Google Translate
-    gtt
-
-    # ──────────────── CLI SCREENSAVERS & VISUAL TOYS ────────────────
-
-    # ASCII bonsai tree animation
-    cbonsai
-
-    # Matrix-style rain animation
-    cmatrix
-
-    # Animated pipe drawings
-    pipes
-
-    # Steam locomotive animation (for mistyped 'sl')
-    sl
-
-    # ASCII digital clock for the terminal
-    tty-clock
-
-    # ──────────────── SYSTEM ALERTING / POWER ────────────────
-
-    # Warn on power loss or battery drop
-    poweralertd
-
-    # Show Wi-Fi signal strength and stats in terminal
-    wavemon
-
-    # TUI disk imager for raw device copying
-    caligula
-
-    # ──────────────── APP LAUNCHING / FUZZY SEARCH ────────────────
-
-    # Minimal fuzzy launcher for terminal commands
-    woomer
-
-    # ──────────────── WINDOWS COMPATIBILITY ────────────────
-
-    # Scriptable wrapper for Wine configuration
-    winetricks
-
-    # Wine build with Wayland support
-    wineWowPackages.wayland
-
+    # CLI Replacements
+    eza # Enhanced ls with icons and colors
+    fd # Faster alternative to find with simpler syntax
+    ripgrep # Fast grep alternative with regex and glob support
+    tldr # Enhanced man pages with simplified command explanations
+    jq # JSON processor for command-line filters and transformations
+
+    # General CLI Utilities
+    htop # System monitor with interactive UI
+    killall # Kill processes by name
+    file # File identification based on content, not extension
+    ncdu # Disk usage viewer in the terminal
+    dysk # CLI disk information utility
+    wl-clipboard # Clipboard copy/paste tool for Wayland
+    wget # Wget-based download utility
+    nitch # Displays system info in terminal
+    onefetch # Git repository summary viewer with language stats
+    libnotify # Clipboard and notification utility
+    shfmt # Bash formatter
+    xdg-utils # Open files/URLs using desktop defaults
+    yazi # Terminal file manager
+
+    # Development & Diagnostic Tools
+    bitwise # Visual interactive bit calculator
+    playerctl # Media key control for MPRIS-compatible players
+    ffmpeg # FFmpeg CLI for media conversion and processing
+    mimeo # Copy/paste URL and open with default handler
+
+    # Media & Visual Tools
+    imv # Image viewer for X/Wayland
+    mpv # Video/audio player for the terminal
+    tdf # PDF viewer for terminal (lightweight)
+    ani-cli # Stream and search anime from terminal
+    yt-dlp-light # YouTube downloader with clipboard support
+    swappy # CLI PDF/image annotation utility
+
+    # Personal Productivity
+    nb # CLI note-taking and knowledge management system
+
+    # CLI Screensavers & Visual Toys
+    cbonsai # ASCII bonsai tree animation
+    cmatrix # Matrix-style rain animation
+    pipes # Animated pipe drawings
+    sl # Steam locomotive animation (for mistyped 'sl')
+    tty-clock # ASCII digital clock for the terminal
+
+    # System Alerting / Power
+    poweralertd # Warn on power loss or battery drop
+    wavemon # Show Wi-Fi signal strength and stats in terminal
+    caligula # TUI disk imager for raw device copying
+    libratbag # Manage configuration for gaming mice (daemon interface)
+    dualsensectl # Control and configure DualSense controller features
+    asusctl # Control ASUS laptop-specific hardware and RGB via CLI
+
+    # Windows Compatibility
+    winetricks # Scriptable wrapper for Wine configuration
+    wineWowPackages.wayland # Wine build with Wayland support
   ];
 }
-
