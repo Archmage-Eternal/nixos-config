@@ -9,14 +9,8 @@
 
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      hyprland.default = [
-        "hyprland"
-        "gtk"
-      ];
-    };
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    configPackages = [ pkgs.hyprland ];
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

@@ -5,6 +5,7 @@ let
 in
 {
   hardware = {
+  enableRedistributableFirmware = true;
     graphics = {
       enable = true;
       package = hyprland-pkgs.mesa;
@@ -13,6 +14,14 @@ in
         libvdpau-va-gl
       ];
     };
+    bluetooth = {
+    enable = true;
+    powerOnBoot = true;
   };
-  hardware.enableRedistributableFirmware = true;
+  logitech.wireless = {
+  enable = true;
+  enableGraphical = true;
+  };
+  keyboard.qmk.enable = true;
+  };
 }

@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./bootloader.nix
+    ./boot.nix
     ./bluetooth.nix
     ./configuration-core.nix
     ./hardware.nix
@@ -9,7 +9,7 @@
     ./network.nix
     ./nh.nix
     ./nvidia.nix
-    ./pipewire.nix
+    ./audio.nix
     ./security.nix
     ./sops-nix.nix
     ./steam.nix
@@ -17,6 +17,7 @@
     ./user.nix
     ./wayland.nix
     ./virtualization.nix
+    ./quickshell.nix
     # ./stylix.nix
   ];
 }

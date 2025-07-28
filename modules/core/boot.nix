@@ -1,8 +1,12 @@
-{ pkgs, ... }:
-{
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.supportedFilesystems = [ "ntfs" ];
+{pkgs, ...}: {
+  boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 10;
+    };
+    supportedFilesystems = ["ntfs"];
+    kernel.sysctl = { "vm.max_map_count" = 2147483642; };
+  };
 }

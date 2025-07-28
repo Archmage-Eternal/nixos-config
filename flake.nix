@@ -48,6 +48,11 @@
     nixCats.url = "github:Archmage-Eternal/nixCats-config";
 
     stylix.url = "github:danth/stylix";
+
+    quickshell = {
+      url ="github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -55,8 +60,8 @@
     self,
     ...
   } @ inputs: let
-    username = "david";
     system = "x86_64-linux";
+    username = "david";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
