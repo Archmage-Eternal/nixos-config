@@ -52,8 +52,6 @@
     # Notification manager
     ./swaync/swaync.nix
 
-    # ./stylix.nix
-
     # Terminal emulator configuration
     ./ghostty.nix
 
