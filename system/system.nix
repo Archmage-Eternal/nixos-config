@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }:
 
 {
-  ### ---- Nix System Configuration ---- ###
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -29,17 +28,15 @@
     config.allowUnfree = true;
   };
 
-  ### ---- System Environment ---- ###
   environment.systemPackages = with pkgs; [
     wget
     git
-  ];
+    vim ];
 
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
   system.stateVersion = "24.05";
 
-  ### ---- Programs ---- ###
   programs = {
     dconf.enable = true;
     nix-ld = {

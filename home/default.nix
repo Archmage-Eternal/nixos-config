@@ -3,6 +3,7 @@
   imports = [
 
     ./nixCats.nix
+    # ./stylix.nix
     # ──────────────── CLI ENHANCEMENTS ────────────────
 
     # Improved 'cat' command with syntax highlighting and paging

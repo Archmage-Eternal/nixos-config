@@ -7,7 +7,7 @@
     age.keyFile = "/home/david/.config/sops/age/keys.txt"; # path to private key
     age.generateKey = false;
 
-    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFile = ../secrets/secrets.yaml;
 
     secrets = {
       "git/personal" = {

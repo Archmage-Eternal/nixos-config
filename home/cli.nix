@@ -4,7 +4,6 @@
     eza # Enhanced ls with icons and colors
     fd # Faster alternative to find with simpler syntax
     ripgrep # Fast grep alternative with regex and glob support
-    tldr # Enhanced man pages with simplified command explanations
     jq # JSON processor for command-line filters and transformations
 
     # General CLI Utilities
