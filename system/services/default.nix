@@ -1,6 +1,7 @@
 {...}: {
-  services = {
-    dbus.enable = true;
-    fstrim.enable = true;
-  };
+  imports = [
+    ./network.nix
+    ./pipewire.nix
+    ./services.nix
+  ];
 }

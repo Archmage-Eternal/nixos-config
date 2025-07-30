@@ -25,7 +25,6 @@
           offset = "0 2";
           range = 20;
           render_power = 3;
-          color = "rgba(00000055)";
         };
       };
     };

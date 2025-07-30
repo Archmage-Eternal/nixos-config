@@ -1,5 +1,4 @@
-{ pkgs, inputs, ... }:
-
+{inputs, ... }:
 {
   nix = {
     settings = {
@@ -26,23 +25,6 @@
   nixpkgs = {
     overlays = [ inputs.nur.overlays.default ];
     config.allowUnfree = true;
-  };
-
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    vim ];
-
-  time.timeZone = "Asia/Kolkata";
-  i18n.defaultLocale = "en_US.UTF-8";
-  system.stateVersion = "24.05";
-
-  programs = {
-    dconf.enable = true;
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [ ];
-    };
   };
 }
 
