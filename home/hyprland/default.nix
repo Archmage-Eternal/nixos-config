@@ -3,6 +3,7 @@
   imports = [
     ./hyprland.nix
     ./config.nix
+    ./env.nix
     ./hyprlock.nix
     ./aesthetics.nix
     ./animations.nix

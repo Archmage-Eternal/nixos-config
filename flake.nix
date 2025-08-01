@@ -33,7 +33,6 @@
     };
 
     nur.url = "github:nix-community/NUR";
-    nix-gaming.url = "github:fufexan/nix-gaming";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
@@ -50,9 +49,11 @@
     stylix.url = "github:danth/stylix";
 
     quickshell = {
-      url ="github:quickshell-mirror/quickshell";
+      url ="github:quickshell-mirror/quickshell" ;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs = {

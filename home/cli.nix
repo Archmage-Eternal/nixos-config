@@ -50,7 +50,7 @@
     wavemon # Show Wi-Fi signal strength and stats in terminal
     caligula # TUI disk imager for raw device copying
     libratbag # Manage configuration for gaming mice (daemon interface)
-    dualsensectl # Control and configure DualSense controller features
+    dualsensectl # Control and configure DualSense controller features (Candidate for removal since Steam Input provides majority of functionality.)
     asusctl # Control ASUS laptop-specific hardware and RGB via CLI
 
     # Windows Compatibility

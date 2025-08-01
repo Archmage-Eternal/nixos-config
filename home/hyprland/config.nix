@@ -18,8 +18,9 @@
 
         "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
 
-        "hyprlock"
       ];
+
+      debug.disable_logs = false;
 
       input = {
         kb_layout = "us";
@@ -67,14 +68,6 @@
         new_status = "master";
         special_scale_factor = 1;
       };
-
-
-      # # No gaps when only
-      # workspace = [
-      #   "w[t1], gapsout:0, gapsin:0"
-      #   "w[tg1], gapsout:0, gapsin:0"
-      #   "f[1], gapsout:0, gapsin:0"
-      # ];
     };
 
     extraConfig = "
