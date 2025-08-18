@@ -3,6 +3,7 @@
     # Media Creation & Editing
     gimp # Image editor for photo retouching and graphic design
     obs-studio # Screen recording and livestreaming software
+    krita # Free and open source painting application
 
     # Media Playback & Management
     vlc # Versatile media player supporting most audio and video formats

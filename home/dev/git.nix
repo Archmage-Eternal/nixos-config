@@ -4,7 +4,7 @@
     enable = true;
 
     userName = "Archmage-Eternal";
-    userEmail = builtins.readFile ./secrets/git-email.txt;
+    userEmail = "davidlobo.dev@gmail.com";
 
     extraConfig = {
       init.defaultBranch = "main";
