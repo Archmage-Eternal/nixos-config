@@ -1,7 +1,10 @@
-{ pkgs, username, ... }:
 {
+  pkgs,
+  username,
+  ...
+}: {
   # Add user to libvirtd group
-  users.users.${username}.extraGroups = [ "libvirtd" ];
+  users.users.${username}.extraGroups = ["libvirtd"];
 
   # Install necessary packages
   environment.systemPackages = with pkgs; [
@@ -22,10 +25,16 @@
       qemu = {
         swtpm.enable = true;
         ovmf.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull.fd ];
+        ovmf.packages = [pkgs.OVMFFull.fd];
       };
     };
     spiceUSBRedirection.enable = true;
+
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
+
   services.spice-vdagentd.enable = true;
 }

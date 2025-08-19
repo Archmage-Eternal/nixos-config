@@ -16,6 +16,7 @@
     nitch # Displays system info in terminal
     onefetch # Git repository summary viewer with language stats
     shfmt # Bash formatter
+    trash-cli
     w3m
     wget # Wget-based download utility
     wl-clipboard # Clipboard copy/paste tool for Wayland

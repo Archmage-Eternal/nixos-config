@@ -15,5 +15,7 @@
     # System Utilities
     pwvucontrol # Pulseaudio volume and device control GUI
     openrgb # Control periphral lighting
+
+    bottles
   ];
 }
