@@ -4,7 +4,7 @@
     ./hyprland.nix
     ./config.nix
     ./env.nix
-    ./hyprlock.nix
+    # ./hyprlock.nix
     ./aesthetics.nix
     ./animations.nix
     ./keybinds.nix

@@ -12,7 +12,6 @@ imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       keyboardShortcut
-      powerBar
       savePlaylists
       shuffle 
     ];

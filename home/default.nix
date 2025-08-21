@@ -4,6 +4,7 @@
     ./dev
     ./gaming
     ./programs
+    ./scripts
     ./shell
   ];
 }
