@@ -9,8 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     nur.url = "github:nix-community/NUR";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";

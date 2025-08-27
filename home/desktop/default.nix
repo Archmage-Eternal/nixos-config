@@ -1,7 +1,6 @@
 {...}: {
   imports = [
-  ./hyprland
-  ./rofi.nix
+  ./hypr
   ./stylix.nix
   ./xdg-mimes.nix
   ];

@@ -17,5 +17,6 @@
     openrgb # Control periphral lighting
 
     bottles
+    qbittorrent-enhanced
   ];
 }

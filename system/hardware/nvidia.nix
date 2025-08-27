@@ -1,18 +1,23 @@
 {
+  inputs,
+  pkgs,
   config,
   ...
 }: {
-  services.xserver.videoDrivers = ["nvidia" "modesetting"];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
     nvidia = {
       modesetting.enable = true;
 
       powerManagement = {
-        enable = false;
-        finegrained = false;
+        enable = true;
+        finegrained = true;
       };
 
       open = true;

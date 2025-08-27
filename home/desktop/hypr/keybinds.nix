@@ -10,10 +10,8 @@
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, ghostty --gtk-single-instance=true"
-        "ALT, Return, exec, [float; size 1111 700] ghostty"
-        "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen-beta'"
+        "$mainMod, Return, exec, ghostty"
+        "$mainMod, B, exec, hyprctl dispatch exec zen-beta"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
