@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [inputs.home-manager.nixosModules.home-manager];
+
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
@@ -17,5 +18,8 @@
       home.stateVersion = "24.05";
       programs.home-manager.enable = true;
     };
+    sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
+    ];
   };
 }

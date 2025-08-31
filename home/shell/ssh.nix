@@ -1,12 +1,11 @@
-{ ... }:
-{
+{config, ...}: {
   programs.ssh = {
     enable = true;
 
     addKeysToAgent = "1h";
 
     controlMaster = "auto";
-    controlPath = "~/.ssh/control-%r@%h:%p";
+    controlPath = "${config.home.homeDirectory}/.ssh/control-%r@%h:%p";
     controlPersist = "10m";
 
     matchBlocks = {
@@ -15,7 +14,7 @@
         hostname = "ssh.github.com";
         user = "git";
         port = 443;
-        identityFile = "~/.ssh/id_github";
+        identityFile = "${config.sops.secrets."git/Archmage-Eternal".path}";
         identitiesOnly = true;
       };
     };

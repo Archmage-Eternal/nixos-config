@@ -5,6 +5,7 @@
     ./gaming
     ./programs
     ./scripts
+    ./security
     ./shell
   ];
 }
