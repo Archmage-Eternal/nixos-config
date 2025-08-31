@@ -19,7 +19,7 @@
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.iosevka-term;
-        name = "Caskaydia Cove NF";
+        name = "Iosevka Term NF";
       };
       sansSerif = {
         package = pkgs.noto-fonts;
@@ -31,7 +31,7 @@
       };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
-        name = "NotoColorEmoji ";
+        name = "Noto Color Emoji";
       };
     };
   };
