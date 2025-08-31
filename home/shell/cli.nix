@@ -9,11 +9,12 @@
     # General CLI Utilities
     dysk # CLI disk information utility
     file # File identification based on content, not extension
-    htop # System monitor with interactive UI
+    glow
     killall # Kill processes by name
     libnotify # Clipboard and notification utility
     ncdu # Disk usage viewer in the terminal
     nitch # Displays system info in terminal
+    nvtopPackages.full
     onefetch # Git repository summary viewer with language stats
     shfmt # Bash formatter
     tealdeer
@@ -50,10 +51,8 @@
     tty-clock # ASCII digital clock for the terminal
 
     # System Alerting / Power
-    asusctl # Control ASUS laptop-specific hardware and RGB via CLI
     caligula # TUI disk imager for raw device copying
     dualsensectl # Control and configure DualSense controller features (Candidate for removal since Steam Input provides majority of functionality.)
-    libratbag # Manage configuration for gaming mice (daemon interface)
     poweralertd # Warn on power loss or battery drop
     wavemon # Show Wi-Fi signal strength and stats in terminal
   ];

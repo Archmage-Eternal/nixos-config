@@ -14,9 +14,8 @@
 
     # System Utilities
     pwvucontrol # Pulseaudio volume and device control GUI
-    openrgb # Control periphral lighting
+    openrgb-with-all-plugins
 
-    bottles
     qbittorrent-enhanced
   ];
 }

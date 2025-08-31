@@ -18,16 +18,20 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.caskaydia-cove;
-        name = "Caskaydia Cove";
+        package = pkgs.nerd-fonts.iosevka-term;
+        name = "Caskaydia Cove NF";
       };
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
       };
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
+      };
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "NotoColorEmoji ";
       };
     };
   };

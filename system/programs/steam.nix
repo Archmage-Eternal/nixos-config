@@ -4,6 +4,7 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = false;
+      protontricks.enable = true;
       gamescopeSession.enable = true;
       extraCompatPackages = [pkgs.proton-ge-bin];
     };
@@ -16,5 +17,7 @@
         "--expose-wayland"
       ];
     };
+
+    gamemode.enable = true;
   };
 }

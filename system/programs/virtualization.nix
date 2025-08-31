@@ -34,6 +34,8 @@
       enable = true;
       dockerCompat = true;
     };
+
+    waydroid.enable = true;
   };
 
   services.spice-vdagentd.enable = true;
