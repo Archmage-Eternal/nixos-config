@@ -22,6 +22,7 @@
 - [ ] Check ligature functionality in terminal and/or vi
 - [ ] Configure Ghostty 
     - [ ] Add shaders to Ghostty
+    - [x] Fix font config
 - [ ] Declaratively configure Zen browser's plugins (and theme???)
 - [ ] Refine starship config
     - [ ] Modify starship to show current shell in use
@@ -33,3 +34,5 @@
     - [ ] keybind for checklist toggling (to-do/done)
 - [ ] Add UWSM support for hyprland
 - [ ] Configure mangohud
+- [ ] Automate nvidia-libs setup
+- [ ] Automate zotero-connector and Better BibTeX setup

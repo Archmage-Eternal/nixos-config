@@ -17,6 +17,12 @@
       size = 24;
     };
     fonts = {
+      sizes = {
+        desktop = 12;
+        applications = 15;
+        terminal = 17;
+        popups = 17;
+      };
       monospace = {
         package = pkgs.nerd-fonts.iosevka-term;
         name = "Iosevka Term NF";
