@@ -4,6 +4,7 @@
 - [ ] Remove Noto font for Stylix in main
 ## Installation
 - [ ] Install Niri 
+- [ ] Install terminal dictionary
 - [ ] Enable protontricks and winetricks
 - [ ] Install Waydroid ??? 
 - [ ] Install lilypond
@@ -17,6 +18,7 @@
     - [ ] rustaceanvim
 - [ ] Install ReShade or vkBasalt
 ## Configuration
+- [ ] Update flake.lock to add home-manager support to Zen browser
 - [ ] Refine bashrc
     - [ ] Add auto-completion to Bash
 - [ ] Check ligature functionality in terminal and/or vi
@@ -32,7 +34,7 @@
     - [ ] spell checker
     - [ ] markdown-oxide
     - [ ] keybind for checklist toggling (to-do/done)
-- [ ] Add UWSM support for hyprland
+- [x] Add UWSM support for hyprland
 - [ ] Configure mangohud
 - [ ] Automate nvidia-libs setup
 - [ ] Automate zotero-connector and Better BibTeX setup

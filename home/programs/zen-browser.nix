@@ -4,4 +4,8 @@
   ...
 }: {
   home.packages = with pkgs; [inputs.zen-browser.packages."${system}".default];
+
+  # programs.zen-browser = {
+  #   enable = true;
+  # };
 }
