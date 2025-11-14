@@ -12,10 +12,10 @@
       # themeLinks = [        # or use an online theme
       #   "https://raw.githubusercontent.com/link/to/some/theme.css"
       # ];
-      frameless = true;                   # Set some Vencord options
+      frameless = true;
       plugins = {
-        hideAttachments.enable = true;    # Enable a Vencord plugin
-        ignoreActivities = {              # Enable a plugin and set some options
+        hideMedia.enable = true;
+        ignoreActivities = {
           enable = true;
           ignorePlaying = true;
           ignoreWatching = true;
