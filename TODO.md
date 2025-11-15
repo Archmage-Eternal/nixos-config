@@ -1,21 +1,14 @@
 # To-do
 ## Cleanup
-- [ ] Fix bottles installation
-- [ ] Remove Noto font for Stylix in main
 ## Installation
-- [ ] Install Niri 
-- [ ] Install terminal dictionary
+- [ ] Install Niri ? (May have some issues working with UWSM)
 - [ ] Enable protontricks and winetricks
 - [ ] Install Waydroid ??? 
 - [ ] Install lilypond
 - [ ] Install pokeget-rs
-- [ ] Install zotero and integrate it with editor and browser
+- [ ] Integrate Zotero with editor
 - [ ] Make install script
 - [ ] Setup VMs
-- [ ] neoVim plugins to checkout
-    - [ ] fugitive.vim
-    - [ ] nvim-nu
-    - [ ] rustaceanvim
 - [ ] Install ReShade or vkBasalt
 ## Configuration
 - [ ] Update flake.lock to add home-manager support to Zen browser
@@ -30,10 +23,6 @@
     - [ ] Modify starship to show current shell in use
 - [ ] Configure Yazi and add relavent plugins if needed
 - [ ] Configure fastfetch and add Pokemon sprites
-- [ ] nixCats
-    - [ ] spell checker
-    - [ ] markdown-oxide
-    - [ ] keybind for checklist toggling (to-do/done)
 - [x] Add UWSM support for hyprland
 - [ ] Configure mangohud
 - [ ] Automate nvidia-libs setup
