@@ -21,7 +21,6 @@
     trash-cli
     w3m
     wget # Wget-based download utility
-    wl-clipboard # Clipboard copy/paste tool for Wayland
     xdg-utils # Open files/URLs using desktop defaults
     yazi # Terminal file manager
 
@@ -40,14 +39,14 @@
     tdf # PDF viewer for terminal (lightweight)
     yt-dlp # YouTube downloader with clipboard support
 
-    # Personal Productivity
+    # Productivity
     nb # CLI note-taking and knowledge management system
 
     # CLI Screensavers & Visual Toys
     cbonsai # ASCII bonsai tree animation
     cmatrix # Matrix-style rain animation
     pipes # Animated pipe drawings
-    sl # Steam locomotive animation (for mistyped 'sl')
+    sl # Steam locomotive animation (for mistyped 'ls')
     tty-clock # ASCII digital clock for the terminal
 
     # System Alerting / Power
