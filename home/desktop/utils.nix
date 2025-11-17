@@ -11,4 +11,6 @@ with pkgs;
   # Clipboard helpers / managers
   wl-clipboard
 
+  # Utilities often useful for desktop workflows
+  grimblast
 ]

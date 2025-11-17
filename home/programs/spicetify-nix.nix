@@ -16,7 +16,6 @@ imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
       shuffle 
     ];
     theme = spicePkgs.themes.text; 
-    # theme = spicePkgs.themes.catppuccin; 
     # colorScheme = "mocha";
   };
 }

@@ -9,7 +9,6 @@
       #"io.github.flattool.Warehouse"   # Manage flatpaks, clean data, remove flatpaks and deps
       #"it.mijorus.gearlever"           # Manage and support AppImages
       #"io.github.dvlv.boxbuddyrs"      #  Manage distroboxes
-      # "io.github.everestapi.Olympus" # Mod manager for Celeste
     ];
     update.onActivation = true;
   };
