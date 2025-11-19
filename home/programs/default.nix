@@ -1,9 +1,30 @@
 {...}: {
   imports = [
+    ./atuin.nix
+    ./bat.nix
+    ./btop.nix
+    ./cava.nix
+    ./cli.nix
+    ./eza.nix
+    ./fastfetch.nix
+    ./fd.nix
+    ./fzf.nix
+    ./gallery-dl.nix
+    ./ghostty.nix
     ./gui.nix
+    ./imv.nix
+    ./jq.nix
+    ./micro.nix
+    ./mpv.nix
     ./nixcord.nix
+    ./ripgrep.nix
     ./spicetify-nix.nix
+    ./tealdeer.nix
+    ./yazi.nix
+    ./yt-dlp.nix
     ./zathura.nix
+    ./zellij.nix
     ./zen-browser.nix
+    ./zoxide.nix
   ];
 }

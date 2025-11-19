@@ -1,11 +1,10 @@
 {...}: {
   programs = {
     ripgrep = {
-        enable = true;
-        settings = {};
+      enable = true;
     };
     ripgrep-all = {
-        enable = true;
+      enable = true;
     };
-    };
+  };
 }
