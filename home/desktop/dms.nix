@@ -1,11 +1,11 @@
 {inputs, ...}: {
   imports = [
-    # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    inputs.dankMaterialShell.homeModules.dankMaterialShell.default
     inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
   programs.dankMaterialShell = {
-    enable = true;
+    enable = false;
 
     systemd = { 
       enable = false;
@@ -27,7 +27,7 @@
     };
 
     niri = {
-      enableKeybinds = true;
+      enableKeybinds = false;
       enableSpawn = false;
     };
   };
