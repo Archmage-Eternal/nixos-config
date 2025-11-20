@@ -1,20 +1,19 @@
 # To-do
 ## Cleanup
 ## Installation
-- [ ] Install Niri ? (May have some issues working with UWSM)
+- [x] Install Niri ? (May have some issues working with UWSM)
 - [ ] Enable protontricks and winetricks
-- [ ] Install Waydroid ??? 
+- [x] Install Waydroid ??? 
 - [ ] Install lilypond
 - [ ] Install pokeget-rs
-- [ ] Integrate Zotero with editor
 - [ ] Make install script
 - [ ] Setup VMs
 - [ ] Install ReShade or vkBasalt
 ## Configuration
 - [ ] Update flake.lock to add home-manager support to Zen browser
-- [ ] Refine bashrc
-    - [ ] Add auto-completion to Bash
-- [ ] Check ligature functionality in terminal and/or vi
+- [x] Refine bashrc
+    - [x] Add auto-completion to Bash
+- [x] Check ligature functionality in terminal and/or vi
 - [ ] Configure Ghostty 
     - [ ] Add shaders to Ghostty
     - [x] Fix font config

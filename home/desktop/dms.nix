@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [
-    inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
     inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
@@ -8,8 +8,8 @@
     enable = true;
 
     systemd = { 
-      enable = true;
-      restartIfChanged = true;
+      enable = false;
+      restartIfChanged = false;
     };
 
     enableSystemMonitoring = true;
@@ -28,7 +28,7 @@
 
     niri = {
       enableKeybinds = true;
-      enableSpawn = true;
+      enableSpawn = false;
     };
   };
 }

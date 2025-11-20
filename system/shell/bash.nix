@@ -1,7 +1,7 @@
 {...}: {
   programs.bash = {
     enable = true;
-    enableCompletion = true;
+    completion.enable = true;
     blesh.enable = true;
     interactiveShellInit = "set -o vi";
     shellAliases = {

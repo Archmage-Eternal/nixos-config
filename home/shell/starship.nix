@@ -1,10 +1,12 @@
 {...}: {
   programs.starship = {
     enable = true;
+
     enableFishIntegration = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
+
     settings = {
       format = "$all";
       right_format = "";
@@ -869,7 +871,7 @@
         cmd_indicator = "cmd";
         unknown_indicator = "";
         style = "white bold";
-        disabled = true;
+        disabled = false;
       };
       shlvl = {
         threshold = 2;
