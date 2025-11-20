@@ -7,10 +7,8 @@
 			input = { "mod-key" = "Super"; "mod-key-nested" = "Alt"; };
 
 			# Keybinds: use the helper functions from config.lib.niri.actions
-			binds = with config.lib.niri.actions; let
-				# helper to run shell commands (preserves quoting and allows full shell expressions)
-				sh = spawn "sh" "-c";
-			in {
+			# Use `spawn-sh` to run full shell commands (pipes, multiple commands, etc.)
+			binds = with config.lib.niri.actions; {
 				# Navigation (focus) - Vim-like hjkl
 				"Mod+H".action = focus-window-or-monitor-left;
 				"Mod+J".action = focus-window-or-monitor-down;
@@ -53,13 +51,18 @@
 				"Mod+Q".action = close-window;
 
 				# Fullscreen and layout cycling
-				"Mod+F11".action = toggle-windowed-fullscreen;
+				"Mod+F11".action = toggle-windowed-fullscreen
 				"Mod+Space".action = switch-layout "next";
 
-				# Screenshot examples (use slurp + grim + wl-copy). These spawn a shell so you can use shell pipelines.
-				"Print".action = sh ''grim - | wl-copy'';
-                                # Check path and replace Pictues with $XDG_HOME:PICTURES
-				"Mod+Shift+S".action = sh ''grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +%s).png && notify-send "Saved screenshot"'';
+				# Screenshot actions - use native niri actions instead of external tools
+				"Print".action = screenshot;
+				"Ctrl+Print".action = screenshot-screen;
+				"Alt+Print".action = screenshot-window;
+
+				# Example of using spawn-sh: useful when you need shell features
+				# spawn-sh takes a single string argument passed verbatim to `sh -c`.
+				# Toggle screen reader (example):
+				# "Mod+Alt+R".action = spawn-sh "orca --toggle";
 
 				# Recording example (wf-recorder). Use spawn directly for simple commands.
 				"Mod+Shift+R".action = spawn "wf-recorder -f ~/Videos/recording-$(date +%s).mkv";
