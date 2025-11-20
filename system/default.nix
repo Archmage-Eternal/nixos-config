@@ -9,6 +9,7 @@
     ./programs
     ./security
     ./services
+    ./shell
     ./users
   ];
 }
