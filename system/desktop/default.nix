@@ -4,7 +4,6 @@
   ./dbus.nix
   ./dconf.nix
   ./fonts.nix
-  ./gnome.nix
   ./greetd.nix
   ./niri.nix
   ./quickshell.nix
