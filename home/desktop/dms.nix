@@ -5,11 +5,11 @@
   ];
 
   programs.dankMaterialShell = {
-    enable = false;
+    enable = true;
 
     systemd = { 
-      enable = false;
-      restartIfChanged = false;
+      enable = true;
+      restartIfChanged = true;
     };
 
     enableSystemMonitoring = true;
