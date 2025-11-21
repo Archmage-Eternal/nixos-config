@@ -2,7 +2,7 @@
   imports = [
   ./dms.nix
   ./hypr
-  ./niri.nix
+  ./niri
   ./playerctl.nix
   ./poweralertd.nix
   ./stylix.nix
