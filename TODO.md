@@ -1,36 +1,45 @@
 # To-do
 ## Cleanup
+---
 ## Installation
-- [x] Install Niri ? (May have some issues working with UWSM)
-- [ ] Enable protontricks and winetricks
-- [x] Install Waydroid ??? 
-- [ ] Install lilypond
+- [x] Install Niri *(May have some issues working with UWSM)*
+- [ ] Enable Protontricks and Winetricks
+- [x] Install Waydroid *(???)*
+- [ ] Install LilyPond
 - [ ] Install pokeget-rs
-- [ ] Make install script
-- [ ] Setup VMs
+- [ ] Create installation script
+- [ ] Setup virtual machines
 - [ ] Install ReShade or vkBasalt
+---
 ## Configuration
-- [ ] Update flake to add home-manager support to Zen browser
-- [x] Refine bashrc
-    - [x] Add auto-completion to Bash
-- [x] Check ligature functionality in terminal and/or vi
-- [ ] Configure Ghostty 
-    - [ ] Add shaders to Ghostty
-    - [x] Fix font config
-- [ ] Declaratively configure Zen browser's plugins (and theme???)
-- [ ] Refine starship config
-    - [ ] Modify starship to show current shell in use
-- [ ] Configure Yazi and add relavent plugins if needed
-- [ ] Configure fastfetch and add Pokemon sprites
-- [x] Add UWSM support for hyprland
-- [ ] Configure mangohud
-- [ ] Automate nvidia-libs setup
-- [ ] Automate zotero-connector and Better BibTeX setup
-- [ ] Add keybinds to niri
-    - Lock
-    - Clipboard history
-    - Power Menu
-    - Calendar/Main menu
-    - Media keys (volume roller might be a challenge)
-- [ ] niri configure screenshot dir xdg_home/pictures
-- [ ] Powerprofiles not working
+### Shell & Terminal
+- [x] Refine `.bashrc`
+  - [x] Add auto-completion to Bash
+- [x] Check ligature functionality in terminal and/or Vim/Neovim
+- [ ] Configure Ghostty
+  - [ ] Add shaders to Ghostty
+  - [x] Fix font configuration
+- [ ] Refine Starship prompt
+  - [ ] Show current shell in use
+### Applications
+- [ ] Declaratively configure Zen browser's plugins *(and theme??)*
+- [ ] Configure Yazi and add relevant plugins if needed
+- [ ] Configure Fastfetch and add Pokémon sprites
+- [x] Add UWSM support for Hyprland
+- [ ] Configure MangoHud
+- [ ] Automate NVIDIA libraries setup
+- [ ] Automate Zotero Connector and Better BibTeX setup
+### Niri
+- [ ] Add keybinds to Niri
+  - Lock
+  - Clipboard history
+  - Power menu
+  - Calendar / Main menu
+  - Media keys *(volume roller might be tricky)*
+- [ ] Configure screenshot directory (`$XDG_PICTURES_HOME`)
+### File & Media Management
+- [ ] Configure window rules for height and width of Imv and MPV
+- [ ] Configure dsearch's indexed directories
+---
+## Flakes & Home Manager
+- [ ] Update flake to add Home Manager support for Zen browser
