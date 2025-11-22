@@ -45,6 +45,11 @@
       inputs.dgop.follows = "dgop";
     };
 
+    dsearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixcord.url = "github:kaylorben/nixcord";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

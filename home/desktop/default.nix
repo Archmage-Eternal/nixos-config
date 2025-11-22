@@ -1,6 +1,7 @@
 {...}: {
   imports = [
   ./dms.nix
+  ./dsearch.nix
   ./hypr
   ./niri
   ./playerctl.nix

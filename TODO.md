@@ -10,7 +10,7 @@
 - [ ] Setup VMs
 - [ ] Install ReShade or vkBasalt
 ## Configuration
-- [ ] Update flake.lock to add home-manager support to Zen browser
+- [ ] Update flake to add home-manager support to Zen browser
 - [x] Refine bashrc
     - [x] Add auto-completion to Bash
 - [x] Check ligature functionality in terminal and/or vi
@@ -26,3 +26,11 @@
 - [ ] Configure mangohud
 - [ ] Automate nvidia-libs setup
 - [ ] Automate zotero-connector and Better BibTeX setup
+- [ ] Add keybinds to niri
+    - Lock
+    - Clipboard history
+    - Power Menu
+    - Calendar/Main menu
+    - Media keys (volume roller might be a challenge)
+- [ ] niri configure screenshot dir xdg_home/pictures
+- [ ] Powerprofiles not working
