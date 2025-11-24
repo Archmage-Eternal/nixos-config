@@ -15,5 +15,8 @@
     scanmem
     med
 
+    # Steam achievement manager
+    samrewritten
+
   ];
 }
