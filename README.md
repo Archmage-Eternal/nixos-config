@@ -1,3 +1,4 @@
+> [!todo] Finish writing proper README
 # Installation
 # Post Installation Steps
 ## WayDroid
