@@ -1,11 +1,16 @@
 {inputs, ...}: {
-  imports = [ inputs.nixcord.homeModules.nixcord ];
+  imports = [inputs.nixcord.homeModules.nixcord];
 
   programs.nixcord = {
-    enable = true;          # Enable Nixcord (It also installs Discord)
-    discord.enable = false;  # Discord
-    vesktop.enable = true;  # Vesktop
-    dorion.enable = false;   # Dorion
+    enable = true; # Enable Nixcord (It also installs Discord)
+    discord = {
+      enable = false;
+      vencord.enable = false;
+      equicord.enable = false;
+    };
+    vesktop.enable = true; # Vesktop
+    equibop.enable = true;
+    dorion.enable = false; # Dorion
     # quickCss = "some CSS";  # quickCSS file
     config = {
       # useQuickCss = true;   # use out quickCSS
