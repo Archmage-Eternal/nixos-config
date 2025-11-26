@@ -1,14 +1,16 @@
 {config, ...}: {
   programs.ssh = {
     enable = true;
-
-    addKeysToAgent = "1h";
-
-    controlMaster = "auto";
-    controlPath = "${config.home.homeDirectory}/.ssh/control-%r@%h:%p";
-    controlPersist = "10m";
+    enableDefaultConfig = false;
 
     matchBlocks = {
+      "*" = {
+        addKeysToAgent = "1h";
+        controlMaster = "auto";
+        controlPath = "${config.home.homeDirectory}/.ssh/control-%r@%h:%p";
+        controlPersist = "10m";
+      };
+
       github = {
         host = "github.com";
         hostname = "ssh.github.com";
