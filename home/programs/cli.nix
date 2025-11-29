@@ -3,6 +3,7 @@
   # CLI Replacements moved to individual program files
 
     # General CLI Utilities
+    aria2
     dysk # CLI disk information utility
     file # File identification based on content, not extension
     glow
