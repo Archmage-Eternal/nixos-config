@@ -27,7 +27,10 @@
 
     nixCats.url = "github:Archmage-Eternal/nixCats-config";
 
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     quickshell = {
       url = "github:quickshell-mirror/quickshell";
