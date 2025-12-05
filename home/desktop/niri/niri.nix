@@ -1,9 +1,13 @@
-{lib, pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.niri = {
     settings = {
       xwayland-satellite = {
-      enable = true;
-      path = lib.getExe pkgs.xwayland-satellite-unstable;
+        enable = true;
+        path = lib.getExe pkgs.xwayland-satellite-unstable;
       };
 
       input = {
@@ -12,6 +16,8 @@
       };
 
       screenshot-path = "~/Pictures/Screenshots/";
+      hotkey-overlay.skip-at-startup = true;
+      prefer-no-csd = false;
     };
   };
 }

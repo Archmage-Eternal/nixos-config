@@ -46,6 +46,16 @@
     "Mod+Space".action = fullscreen-window;
     "Mod+Alt+Space".action = toggle-windowed-fullscreen;
 
+    # Volume keys
+    "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"];
+    "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
+    "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+
+    # Media playback keys
+    "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
+    "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
+    "XF86AudioNext".action.spawn = ["playerctl" "next"];
+
     # Screenshot actions - use native niri actions instead of external tools
     "Print".action.screenshot.show-pointer = false;
     "Ctrl+Print".action.screenshot-window.write-to-disk = true;
@@ -63,5 +73,6 @@
 
     # Example: scratchpad toggle (you may want to script this to spawn and hide a terminal)
     # "Mod+S".action = spawn "~/.local/bin/toggle-scratchpad";
+
   };
 }
