@@ -16,7 +16,7 @@
                 sort_reverse = false;
                 show_symlink = true;
                 linemode = "none";
-                title_format = {cwd};
+                # title_format = {cwd};
             };
             preview = {
                 wrap = "yes";

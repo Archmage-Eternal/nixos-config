@@ -13,6 +13,12 @@
       input = {
         "mod-key" = "Super";
         "mod-key-nested" = "Alt";
+
+        touchpad = {
+          enable = true;
+          disabled-on-external-mouse = true;
+          dwt = true;
+        };
       };
 
       screenshot-path = "~/Pictures/Screenshots/";

@@ -14,10 +14,6 @@
         default = ["gnome" "gtk"];
         "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
       };
-      hyprland.default = [
-        "gtk"
-        "hyprland"
-      ];
     };
   };
 }

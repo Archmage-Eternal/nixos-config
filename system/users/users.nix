@@ -1,9 +1,5 @@
-{
-  username,
-  ...
-}:
-{
-    users.users.${username} = {
+{username, ...}: {
+  users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
     extraGroups = [
@@ -11,5 +7,5 @@
       "wheel"
     ];
   };
-  nix.settings.allowed-users = [ "${username}" ];
+  nix.settings.allowed-users = ["${username}"];
 }
