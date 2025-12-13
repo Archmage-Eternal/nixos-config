@@ -1,18 +1,28 @@
 # To-do
+
 ## Cleanup
+
+- [x] Remove Hyprland
+
 ---
+
 ## Installation
-- [x] Install Niri *(May have some issues working with UWSM)*
+
+- [x] Install Niri
 - [ ] Enable Protontricks and Winetricks
-- [x] Install Waydroid *(???)*
+- [x] Install Waydroid _(???)_
 - [ ] Install LilyPond
 - [ ] Install pokeget-rs
 - [ ] Create installation script
 - [ ] Setup virtual machines
 - [ ] Install ReShade or vkBasalt
+
 ---
+
 ## Configuration
+
 ### Shell & Terminal
+
 - [ ] Set vi as $EDITOR
 - [x] Refine `.bashrc`
   - [x] Add auto-completion to Bash
@@ -20,31 +30,43 @@
 - [ ] Configure Ghostty
   - [ ] Add shaders to Ghostty
   - [x] Fix font configuration
-- [ ] Refine Starship prompt
-  - [ ] Show current shell in use
+- [x] Refine Starship prompt
+  - [x] Show current shell in use
 - [ ] Get protonhax working on nix
+- [ ] Move all dev tools into devshells and remove them from system/home configuration
+  - Devshells may also alow for nixCats overrides to be used for more target versions of the editor
+
 ### Applications
-- [ ] Declaratively configure Zen browser's plugins *(and theme??)*
-    - [ ] Figure out how stylix and zen-hm module profile declaration interacts
+
+- [ ] Declaratively configure Zen browser's plugins _(and theme??)_
+  - [ ] Figure out how stylix and zen-hm module profile declaration interacts
 - [ ] Configure Yazi and add relevant plugins if needed
 - [ ] Configure Fastfetch (or make custom fetch script) and add Pokémon sprites
-- [x] Add UWSM support for Hyprland
 - [ ] Configure MangoHud
 - [ ] Automate NVIDIA libraries setup
 - [ ] Automate Zotero Connector and Better BibTeX setup
+
 ### Niri
+
 - [ ] Add keybinds to Niri
   - Lock
   - Clipboard history
   - Power menu
   - Calendar / Main menu
-  - Media keys *(volume roller might be tricky)*
+  - Media keys _(volume roller might be tricky)_
 - [ ] Configure screenshot directory (`$XDG_PICTURES_HOME`)
+
 ### Desktop
+
 - [ ] Configure home folders via XDG_HOME
+
 ### File & Media Management
+
 - [ ] Configure window rules for height and width of Imv and MPV
 - [ ] Configure dsearch's indexed directories
+
 ---
+
 ## Flakes & Home Manager
-- [ ] Update flake to add Home Manager support for Zen browser
+
+- [x] Update flake to add Home Manager support for Zen browser
