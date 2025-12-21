@@ -5,7 +5,7 @@
     disk = {
       disk0 = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = "/dev/disk/by-id/nvme-HFM001TD3JX013N_CJ0CT00211380CH41";
         content = {
           type = "gpt";
           partitions = {
@@ -70,7 +70,7 @@
 
       disk1 = {
         type = "disk";
-        device = "/dev/nvme1n1";
+        device = "/dev/disk/by-id/nvme-ADATA_SX6000LNP_2L082L46GSL";
         content = {
           type = "gpt";
           partitions = {
