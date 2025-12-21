@@ -27,6 +27,11 @@
 
     nixCats.url = "github:Archmage-Eternal/nixCats-config";
 
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
