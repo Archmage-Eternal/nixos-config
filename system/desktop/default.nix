@@ -4,7 +4,7 @@
   ./dbus.nix
   ./dconf.nix
   ./greetd.nix
-  # ./niri.nix  # Temporarily disabled for initial install
+  ./niri.nix
   ./quickshell.nix
   ./stylix.nix
   ./xdg-portal.nix
