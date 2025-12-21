@@ -1,6 +1,7 @@
 {...}: {
   imports = [
-    ./niri.nix
-    ./keybinds.nix
+    # Temporarily disabled for initial install - enable after first boot
+    # ./niri.nix
+    # ./keybinds.nix
   ];
 }
