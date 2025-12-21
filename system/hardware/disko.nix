@@ -70,7 +70,7 @@
 
       disk1 = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-ADATA_SX6000LNP_2L082L46GSL";
+        device = "/dev/disk/by-id/nvme-ADATA_SX6000LNP_2L082L46GSLH";
         content = {
           type = "gpt";
           partitions = {
@@ -83,7 +83,6 @@
                 settings = {
                   allowDiscards = true;
                 };
-                additionalKeyFiles = ["/tmp/additionalSecret.key"];
                 content = {
                   type = "btrfs";
                   extraArgs = ["-f"];
