@@ -8,7 +8,7 @@
       vencord.enable = false;
       equicord.enable = false;
     };
-    vesktop.enable = true; # Vesktop
+    vesktop.enable = false;
     equibop.enable = true;
     dorion.enable = false; # Dorion
     # quickCss = "some CSS";  # quickCSS file
