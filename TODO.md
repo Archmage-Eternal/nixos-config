@@ -45,6 +45,7 @@
 - [ ] Configure MangoHud
 - [ ] Automate NVIDIA libraries setup
 - [ ] Automate Zotero Connector and Better BibTeX setup
+- [ ] Make `nb` configuration declaritive
 
 ### Niri
 

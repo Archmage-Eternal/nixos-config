@@ -11,7 +11,6 @@
     nixfmt-rfc-style
     python3
     python312Packages.ipython
-    quickshell
     valgrind
   ];
 }
