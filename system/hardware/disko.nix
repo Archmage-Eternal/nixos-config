@@ -88,14 +88,14 @@
                   extraArgs = ["-f"];
                   subvolumes = {
                     "/games" = {
-                      mountpoint = "/mnt/games";
+                      mountpoint = "/games";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"
                       ];
                     };
                     "/data" = {
-                      mountpoint = "/mnt/data";
+                      mountpoint = "/data";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"
