@@ -4,6 +4,6 @@
   imports = [inputs.niri-flake.nixosModules.niri];
 
   programs.niri = {
-    enable = false;  # Enable after first boot
+    enable = true;
   };
 }
