@@ -16,6 +16,7 @@
 - [ ] Create installation script
 - [ ] Setup virtual machines
 - [ ] Install ReShade or vkBasalt
+- [ ] Install shadps4 (Bloodborne baby)
 
 ---
 
