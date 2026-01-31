@@ -13,6 +13,8 @@
     nitch # Displays system info in terminal
     nvtopPackages.full
     onefetch # Git repository summary viewer with language stats
+    p7zip
+    unrar
     shfmt # Bash formatter
     trash-cli
     w3m

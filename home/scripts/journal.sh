@@ -42,7 +42,7 @@ cmd_start() {
     local current_time=$(get_current_time)
     
     # Check if this is the first entry (file only has heading)
-    local content=$(nb show "$NOTEBOOK:$filename" --print)
+    local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
     local line_count=$(echo "$content" | wc -l)
     
     if [[ $line_count -eq 1 ]]; then
@@ -64,7 +64,7 @@ cmd_end() {
     local current_time=$(get_current_time)
     
     # Get the content of today's note
-    local content=$(nb show "$NOTEBOOK:$filename" --print)
+    local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
     
     # Check if there's an [ongoing] marker
     if ! echo "$content" | grep -q "\[ongoing\]"; then
@@ -94,7 +94,7 @@ cmd_log() {
     local current_time=$(get_current_time)
     
     # Check if this is the first entry (file only has heading)
-    local content=$(nb show "$NOTEBOOK:$filename" --print)
+    local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
     local line_count=$(echo "$content" | wc -l)
     
     if [[ $line_count -eq 1 ]]; then
@@ -129,15 +129,9 @@ cmd_sub() {
 
 # Open today's note in editor
 cmd_add() {
+    ensure_note_exists
     local filename=$(get_today_filename)
-    local today=$(date +%F)
-    
-    if nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
-        nb edit "$NOTEBOOK:$filename"
-    else
-        nb new "$NOTEBOOK:$filename" --content "$(echo -e "# $today\n")"
-        nb edit "$NOTEBOOK:$filename"
-    fi
+    nb edit "$NOTEBOOK:$filename"
 }
 
 # Show a specific date's entry
