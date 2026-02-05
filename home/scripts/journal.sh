@@ -28,56 +28,67 @@ ensure_note_exists() {
     fi
 }
 
-# Start a tracked activity
+# Start a tracked activity (record start time only)
 cmd_start() {
-    local description="$*"
-    if [[ -z "$description" ]]; then
-        echo "Error: Activity description required"
-        echo "Usage: j start \"Activity description\""
-        return 1
-    fi
-    
     ensure_note_exists
     local filename=$(get_today_filename)
     local current_time=$(get_current_time)
-    
+
     # Check if this is the first entry (file only has heading)
     local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
     local line_count=$(echo "$content" | wc -l)
-    
+
     if [[ $line_count -eq 1 ]]; then
         # First entry, add blank line before it
-        local entry="\n- $current_time - [ongoing] : $description"
+        local entry="\n- $current_time - [ongoing]"
         echo -e "$entry" | nb edit "$NOTEBOOK:$filename"
     else
         # Not first entry, no blank line
-        local entry="- $current_time - [ongoing] : $description"
+        local entry="- $current_time - [ongoing]"
         echo "$entry" | nb edit "$NOTEBOOK:$filename"
     fi
-    echo "Started: $description"
+    echo "Started at $current_time"
 }
 
-# End the ongoing activity
+# End the ongoing activity and add description (optional)
 cmd_end() {
     ensure_note_exists
     local filename=$(get_today_filename)
-    local current_time=$(get_current_time)
-    
+    local end_time=$(get_current_time)
+    local description="$*"
+
     # Get the content of today's note
     local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
-    
-    # Check if there's an [ongoing] marker
-    if ! echo "$content" | grep -q "\[ongoing\]"; then
+
+    # Find last line number with [ongoing]
+    local lineno=$(echo "$content" | awk '/\[ongoing\]/{n=NR} END{print n}')
+    if [[ -z "$lineno" || "$lineno" == "0" ]]; then
         echo "Error: No ongoing activity found"
         return 1
     fi
-    
-    # Replace [ongoing] with current time
-    local updated_content=$(echo "$content" | sed "s/\[ongoing\]/$current_time/")
-    
-    # Write back the updated content
+
+    # Extract start time from that line (expects format: - HH:MM - [ongoing])
+    local start_time=$(echo "$content" | sed -n "${lineno}p" | sed -E 's/^- ([0-9]{2}:[0-9]{2}) - .*$/\1/')
+
+    if [[ -z "$start_time" ]]; then
+        start_time="?"
+    fi
+
+    # Build replacement line
+    local new_line
+    if [[ -n "$description" ]]; then
+        new_line="- $start_time - $end_time : $description"
+    else
+        new_line="- $start_time - $end_time"
+    fi
+
+    # Replace only that specific line and write back
+    local updated_content=$(echo "$content" | awk -v ln="$lineno" -v nl="$new_line" 'NR==ln{print nl; next} {print}')
     echo "$updated_content" | nb edit "$NOTEBOOK:$filename" --overwrite
-    echo "Ended activity at $current_time"
+    echo "Ended activity at $end_time"
+    if [[ -n "$description" ]]; then
+        echo "Description added: $description"
+    fi
 }
 
 # Log a one-off event
@@ -153,24 +164,7 @@ cmd_show() {
     fi
 }
 
-# Show recent entries
-cmd_recent() {
-    local days="${1:-7}"
-    
-    echo "Recent journal entries (last $days days):"
-    echo "========================================="
-    
-    for i in $(seq $((days - 1)) -1 0); do
-        local filename=$(get_offset_filename -$i)
-        local date=$(date -d "-$i days" +%F)
-        
-        if nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
-            echo -e "\n[$date]"
-            nb show "$NOTEBOOK:$filename" --print | head -10
-            echo "..."
-        fi
-    done
-}
+# (removed) recent command
 
 # Search journal entries
 cmd_search() {
@@ -195,18 +189,54 @@ cmd_yesterday() {
     fi
 }
 
-# Handle relative day navigation (e.g., -1, +2)
+# Handle relative day navigation — only view past entries (N days ago)
+# Accepts: N, -N, +N — all treated as N days ago (no future creation)
 cmd_relative() {
-    local offset=$1
-    local filename=$(get_offset_filename "$offset")
-    local target_date=$(date -d "$offset days" +%F)
-    
+    local raw=$1
+    if [[ -z "$raw" ]]; then
+        echo "Error: relative requires an offset, e.g. 1 or -1"
+        return 1
+    fi
+
+    # Normalize: convert +N or N to -N (we only view past entries)
+    if [[ "$raw" =~ ^\+[0-9]+$ ]]; then
+        raw="-${raw#+}"
+    elif [[ "$raw" =~ ^[0-9]+$ ]]; then
+        raw="-$raw"
+    fi
+
+    # ensure we have a negative offset
+    if [[ ! "$raw" =~ ^-[0-9]+$ ]]; then
+        echo "Error: relative only supports past offsets (e.g. 1 or -1)." 
+        return 1
+    fi
+
+    local filename=$(get_offset_filename "$raw")
+    local target_date=$(date -d "$raw days" +%F)
+
+    # Only open existing past entries; do not create new files for past or future
     if nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
         nb edit "$NOTEBOOK:$filename"
     else
-        nb new "$NOTEBOOK:$filename" --content "$(echo -e "# $target_date\n")"
-        nb edit "$NOTEBOOK:$filename"
+        echo "No entry found for $target_date (offset $raw)"
+        return 1
     fi
+}
+
+# Show usage/help
+cmd_help() {
+    echo "Usage: j {start|end|log|sub|add|show|search|yesterday|relative ±N}"
+    echo ""
+    echo "Commands (shorthands):"
+    echo "  start (s)                     Start a tracked activity (description added on end)"
+    echo "  end (e) \"description\"         End the ongoing activity and optionally add description"
+    echo "  log (l) \"description\"         Log a one-off event"
+    echo "  sub (b) \"description\"         Add subpoint to last entry"
+    echo "  add (a)                       Open today's note in editor"
+    echo "  show (o) [date]               Show entry for date (YYYY-MM-DD)"
+    echo "  search (f) \"query\"            Search all journal entries"
+    echo "  yesterday (y)                 Open yesterday's entry"
+    echo "  relative (r) ±N|N             Open entry N days from today (use - for past, + for future)"
 }
 
 # Main command dispatcher
@@ -214,49 +244,43 @@ cmd=$1
 shift || true
 
 case "$cmd" in
-    start)
+    start|s)
         cmd_start "$@"
         ;;
-    end)
-        cmd_end
+    end|e)
+        cmd_end "$@"
         ;;
-    log)
+    log|l)
         cmd_log "$@"
         ;;
-    sub)
+    sub|b)
         cmd_sub "$@"
         ;;
-    add|"")
+    add|a|"")
         cmd_add
         ;;
-    show)
+    show|o)
         cmd_show "$@"
         ;;
-    recent)
-        cmd_recent "$@"
-        ;;
-    search)
+    search|f)
         cmd_search "$@"
         ;;
-    yesterday)
+    yesterday|y)
         cmd_yesterday
         ;;
-    -[0-9]*|+[0-9]*)
+    relative|r)
+        # accept a numeric offset as next arg
+        cmd_relative "$1"
+        ;;
+    -[0-9]*|+[0-9]*|[0-9]*)
+        # direct signed offset (e.g. -1, +2) or unsigned number
         cmd_relative "$cmd"
         ;;
+    help|h)
+        cmd_help
+        ;;
     *)
-        echo "Usage: j {start|end|log|sub|add|show|recent|search|yesterday|±N}"
-        echo ""
-        echo "Commands:"
-        echo "  start \"description\"   Start a tracked activity"
-        echo "  end                   End the ongoing activity"
-        echo "  log \"description\"     Log a one-off event"
-        echo "  sub \"description\"     Add subpoint to last entry"
-        echo "  add | (no args)       Open today's note in editor"
-        echo "  show [date]           Show entry for date (YYYY-MM-DD)"
-        echo "  recent [n]            Show last n days (default: 7)"
-        echo "  search <query>        Search all journal entries"
-        echo "  yesterday             Open yesterday's entry"
-        echo "  -N | +N               Open entry N days ago/from now"
+        # default to help for unknown commands
+        cmd_help
         ;;
 esac
