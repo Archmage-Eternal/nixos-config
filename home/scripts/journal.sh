@@ -236,7 +236,7 @@ cmd_help() {
     echo "  show (o) [date]               Show entry for date (YYYY-MM-DD)"
     echo "  search (f) \"query\"            Search all journal entries"
     echo "  yesterday (y)                 Open yesterday's entry"
-    echo "  relative (r) ±N|N             Open entry N days from today (use - for past, + for future)"
+    echo "  relative (r) ±N|N             Open entry from N days ago"
 }
 
 # Main command dispatcher
