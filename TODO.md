@@ -2,15 +2,11 @@
 
 ## Cleanup
 
-- [x] Remove Hyprland
-
 ---
 
 ## Installation
 
-- [x] Install Niri
 - [ ] Enable Protontricks and Winetricks
-- [x] Install Waydroid _(???)_
 - [ ] Install LilyPond
 - [ ] Install pokeget-rs
 - [ ] Create installation script
@@ -21,6 +17,8 @@
 ---
 
 ## Configuration
+
+- [ ] Fix all evaluation warnings highlighted in [[eval_warnings]]
 
 ### Shell & Terminal
 
@@ -35,7 +33,7 @@
   - [x] Show current shell in use
 - [ ] Get protonhax working on nix
 - [ ] Move all dev tools into devshells and remove them from system/home configuration
-  - Devshells may also alow for nixCats overrides to be used for more target versions of the editor
+  - Devshells may also allow for nixCats overrides to be used for more target versions of the editor
 
 ### Applications
 
@@ -57,6 +55,7 @@
   - Calendar / Main menu
   - Media keys _(volume roller might be tricky)_
 - [ ] Configure screenshot directory (`$XDG_PICTURES_HOME`)
+- [ ] Change window border thickness and window gap size
 
 ### Desktop
 
@@ -65,7 +64,7 @@
 ### File & Media Management
 
 - [ ] Configure window rules for height and width of Imv and MPV
-- [ ] Configure dsearch's indexed directories
+- [ ] Configure `dsearch`'s indexed directories
 
 ---
 
