@@ -58,30 +58,47 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = {
-    nixpkgs,
-    self,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    username = "david";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    lib = nixpkgs.lib;
-  in {
-    nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [./hosts/laptop];
-        specialArgs = {
-          host = "laptop";
-          inherit self inputs username;
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
+
+      flake = let
+        username = "david";
+      in {
+        nixosConfigurations = {
+          laptop = inputs.nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [./hosts/laptop];
+            specialArgs = {
+              host = "laptop";
+              inherit (inputs) self;
+              inherit inputs username;
+            };
+          };
         };
       };
+
+      perSystem = {
+        config,
+        self',
+        inputs',
+        pkgs,
+        system,
+        ...
+      }: {
+        # pkgs is automatically instantiated per-system with allowUnfree
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
+        # Add custom packages, devShells, or formatter here in the future
+        # packages.default = ...;
+        # devShells.default = ...;
+      };
     };
-  };
 }
