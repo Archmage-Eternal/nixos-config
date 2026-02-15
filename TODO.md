@@ -13,6 +13,7 @@
 - [ ] Setup virtual machines
 - [ ] Install ReShade or vkBasalt
 - [ ] Install shadps4 (Bloodborne baby)
+- [ ] Add NUR usage
 
 ---
 
