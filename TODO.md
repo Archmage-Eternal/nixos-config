@@ -2,6 +2,8 @@
 
 ## Cleanup
 
+- When deleting files that are referenced in `imports` lists, both the file deletion **and** the removal of the import reference must be staged together with `git add -A` before running `nix flake check`. Nix evaluates from the git index in flake mode, so unstaged edits to `default.nix` files are invisible — causing "path does not exist in Git repository" errors even when the disk is already correct. Fix: after deleting files, always `sed -i` or edit the parent `default.nix` to drop the reference, then `git add -A` before checking.
+
 ---
 
 ## Installation

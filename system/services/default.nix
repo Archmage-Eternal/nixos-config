@@ -5,6 +5,5 @@
     ./openRGB.nix
     ./pipewire.nix
     ./services.nix
-    ./udev.nix
   ];
 }

@@ -60,10 +60,16 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    import-tree.url = "github:vic/import-tree";
   };
 
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        inputs.home-manager.flakeModules.home-manager
+        (inputs.import-tree ./modules)
+      ];
       systems = ["x86_64-linux"];
 
       flake = let
@@ -72,7 +78,11 @@
         nixosConfigurations = {
           laptop = inputs.nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            modules = [./hosts/laptop];
+            modules = [
+              ./hosts/laptop
+              inputs.self.nixosModules.security
+              inputs.self.nixosModules.gaming
+            ];
             specialArgs = {
               host = "laptop";
               inherit (inputs) self;
