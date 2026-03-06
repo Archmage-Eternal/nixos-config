@@ -18,12 +18,71 @@ get_current_time() {
     date +%H:%M
 }
 
+# Check if a note exists in the notebook (suppress all output)
+_nb_exists() {
+    nb show "$NOTEBOOK:$1" > /dev/null 2>&1
+}
+
+# Append a line to today's entry.
+# Adds a leading blank line if this is the first entry after the heading.
+_append_to_today() {
+    local text="$1"
+    local filename
+    filename=$(get_today_filename)
+    local line_count
+    line_count=$(nb show "$NOTEBOOK:$filename" --print --no-color | wc -l)
+    if [[ $line_count -le 1 ]]; then
+        printf '\n%s\n' "$text" | nb edit "$NOTEBOOK:$filename"
+    else
+        echo "$text" | nb edit "$NOTEBOOK:$filename"
+    fi
+}
+
+# fzf picker over all journal entries (or pre-filtered by query if args given).
+# Preview pane shows the full entry content via bat.
+# Returns a normalised notebook:id selector on stdout.
+_fzf_journal_pick() {
+    local prompt="journal"
+    local raw
+
+    if [[ $# -gt 0 ]]; then
+        prompt="$*"
+        raw=$(nb search "$NOTEBOOK:" "$*" --list --no-color 2>/dev/null)
+    else
+        raw=$(nb list "$NOTEBOOK:" --no-color 2>/dev/null)
+    fi
+
+    local candidates
+    candidates=$(echo "$raw" | grep -E '^\[[^]]+\]')
+
+    if [[ -z "$candidates" ]]; then
+        echo "No journal entries found${1:+ for \"$*\"}." >&2
+        return 1
+    fi
+
+    local selected
+    selected=$(echo "$candidates" \
+        | fzf --ansi \
+              --prompt="$prompt > " \
+              --preview="nb show \"journal:\$(echo {} | grep -oP '(?<=\[)[^]]+(?=\])' | grep -oP '[0-9]+$')\" --print --no-color 2>/dev/null | bat --language=md --style=plain --color=always" \
+              --preview-window=right:60%:wrap \
+              --height=80%)
+
+    [[ -z "$selected" ]] && return 1
+
+    local raw_id
+    raw_id=$(echo "$selected" | grep -oP '(?<=\[)[^]]+(?=\])')
+    [[ "$raw_id" != *:* ]] && raw_id="$NOTEBOOK:$raw_id"
+    echo "$raw_id"
+}
+
 # Helper function to ensure today's note exists
 ensure_note_exists() {
-    local filename=$(get_today_filename)
-    local today=$(date +%F)
-    
-    if ! nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
+    local filename
+    filename=$(get_today_filename)
+    local today
+    today=$(date +%F)
+    if ! _nb_exists "$filename"; then
         nb new "$NOTEBOOK:$filename" --content "$(echo -e "# $today\n")" > /dev/null 2>&1
     fi
 }
@@ -31,22 +90,9 @@ ensure_note_exists() {
 # Start a tracked activity (record start time only)
 cmd_start() {
     ensure_note_exists
-    local filename=$(get_today_filename)
-    local current_time=$(get_current_time)
-
-    # Check if this is the first entry (file only has heading)
-    local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
-    local line_count=$(echo "$content" | wc -l)
-
-    if [[ $line_count -eq 1 ]]; then
-        # First entry, add blank line before it
-        local entry="\n- $current_time - [ongoing]"
-        echo -e "$entry" | nb edit "$NOTEBOOK:$filename"
-    else
-        # Not first entry, no blank line
-        local entry="- $current_time - [ongoing]"
-        echo "$entry" | nb edit "$NOTEBOOK:$filename"
-    fi
+    local current_time
+    current_time=$(get_current_time)
+    _append_to_today "- $current_time - [ongoing]"
     echo "Started at $current_time"
 }
 
@@ -99,24 +145,10 @@ cmd_log() {
         echo "Usage: j log \"Event description\""
         return 1
     fi
-    
     ensure_note_exists
-    local filename=$(get_today_filename)
-    local current_time=$(get_current_time)
-    
-    # Check if this is the first entry (file only has heading)
-    local content=$(nb show "$NOTEBOOK:$filename" --print --no-color)
-    local line_count=$(echo "$content" | wc -l)
-    
-    if [[ $line_count -eq 1 ]]; then
-        # First entry, add blank line before it
-        local entry="\n- $current_time : $description"
-        echo -e "$entry" | nb edit "$NOTEBOOK:$filename"
-    else
-        # Not first entry, no blank line
-        local entry="- $current_time : $description"
-        echo "$entry" | nb edit "$NOTEBOOK:$filename"
-    fi
+    local current_time
+    current_time=$(get_current_time)
+    _append_to_today "- $current_time : $description"
     echo "Logged: $description"
 }
 
@@ -128,13 +160,8 @@ cmd_sub() {
         echo "Usage: j sub \"Additional details\""
         return 1
     fi
-    
     ensure_note_exists
-    local filename=$(get_today_filename)
-    local entry="    - $description"
-    
-    # Append to the note
-    echo "$entry" | nb edit "$NOTEBOOK:$filename"
+    _append_to_today "    - $description"
     echo "Added subpoint: $description"
 }
 
@@ -145,142 +172,93 @@ cmd_add() {
     nb edit "$NOTEBOOK:$filename"
 }
 
-# Show a specific date's entry
-cmd_show() {
-    local date_arg="$1"
-    local filename
-    
-    if [[ -z "$date_arg" ]]; then
-        filename=$(get_today_filename)
-    else
-        filename="$date_arg.md"
-    fi
-    
-    if nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
-        nb show "$NOTEBOOK:$filename" --print
-    else
-        echo "No entry found for $filename"
-        return 1
-    fi
+# Browse all entries or pre-filter by query, pick with fzf, open in editor
+cmd_open() {
+    local nb_id
+    nb_id=$(_fzf_journal_pick "$@") || return 1
+    nb edit "$nb_id"
 }
 
-# (removed) recent command
+# Open an entry from N days ago (default: 1 = yesterday)
+cmd_previous() {
+    local raw="${1:-1}"
 
-# Search journal entries
-cmd_search() {
-    local query="$*"
-    if [[ -z "$query" ]]; then
-        echo "Error: Search query required"
-        echo "Usage: j search <query>"
-        return 1
-    fi
-    
-    nb search "$NOTEBOOK:" "$query"
-}
-
-# Open yesterday's entry
-cmd_yesterday() {
-    local filename=$(get_offset_filename -1)
-    if nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
-        nb edit "$NOTEBOOK:$filename"
-    else
-        echo "No entry found for yesterday"
-        return 1
-    fi
-}
-
-# Handle relative day navigation — only view past entries (N days ago)
-# Accepts: N, -N, +N — all treated as N days ago (no future creation)
-cmd_relative() {
-    local raw=$1
-    if [[ -z "$raw" ]]; then
-        echo "Error: relative requires an offset, e.g. 1 or -1"
-        return 1
-    fi
-
-    # Normalize: convert +N or N to -N (we only view past entries)
+    # Normalize: convert +N or N to -N (we only navigate to past entries)
     if [[ "$raw" =~ ^\+[0-9]+$ ]]; then
         raw="-${raw#+}"
     elif [[ "$raw" =~ ^[0-9]+$ ]]; then
         raw="-$raw"
     fi
 
-    # ensure we have a negative offset
     if [[ ! "$raw" =~ ^-[0-9]+$ ]]; then
-        echo "Error: relative only supports past offsets (e.g. 1 or -1)." 
+        echo "Error: expected a number, e.g. j prev 2" >&2
         return 1
     fi
 
-    local filename=$(get_offset_filename "$raw")
-    local target_date=$(date -d "$raw days" +%F)
+    local filename target_date
+    filename=$(get_offset_filename "$raw")
+    target_date=$(date -d "$raw days" +%F)
 
-    # Only open existing past entries; do not create new files for past or future
-    if nb show "$NOTEBOOK:$filename" > /dev/null 2>&1; then
+    if _nb_exists "$filename"; then
         nb edit "$NOTEBOOK:$filename"
     else
-        echo "No entry found for $target_date (offset $raw)"
+        echo "No entry found for $target_date"
         return 1
     fi
 }
 
 # Show usage/help
-cmd_help() {
-    echo "Usage: j {start|end|log|sub|add|show|search|yesterday|relative ±N}"
-    echo ""
-    echo "Commands (shorthands):"
-    echo "  start (s)                     Start a tracked activity (description added on end)"
-    echo "  end (e) \"description\"         End the ongoing activity and optionally add description"
-    echo "  log (l) \"description\"         Log a one-off event"
-    echo "  sub (b) \"description\"         Add subpoint to last entry"
-    echo "  add (a)                       Open today's note in editor"
-    echo "  show (o) [date]               Show entry for date (YYYY-MM-DD)"
-    echo "  search (f) \"query\"            Search all journal entries"
-    echo "  yesterday (y)                 Open yesterday's entry"
-    echo "  relative (r) ±N|N             Open entry from N days ago"
+get_usage() {
+    cat <<EOF
+Usage: j {start|end|log|sub|add|open|prev|help}
+
+Commands:
+    start (s)                     Start a tracked activity.
+    end (e)    [description]      End the ongoing activity with optional description.
+    log (l)    <description>      Log a one-off timestamped event.
+    sub (b)    <description>      Add a subpoint to the last entry.
+    add (a)                       Open today's note in editor. (default)
+    open (o)   [query]            Browse all entries or pre-filter by query (fzf → editor).
+    prev (p)   [N | -N | +N]      Open entry from N days ago (default: 1 = yesterday).
+    help (h)                      Show this help.
+EOF
 }
 
 # Main command dispatcher
-cmd=$1
-shift || true
-
-case "$cmd" in
+case "${1:-}" in
     start|s)
-        cmd_start "$@"
+        shift; cmd_start "$@"
         ;;
     end|e)
-        cmd_end "$@"
+        shift; cmd_end "$@"
         ;;
     log|l)
-        cmd_log "$@"
+        shift; cmd_log "$@"
         ;;
     sub|b)
-        cmd_sub "$@"
+        shift; cmd_sub "$@"
         ;;
-    add|a|"")
-        cmd_add
+    add|a)
+        shift; cmd_add
         ;;
-    show|o)
-        cmd_show "$@"
+    open|o)
+        shift; cmd_open "$@"
         ;;
-    search|f)
-        cmd_search "$@"
-        ;;
-    yesterday|y)
-        cmd_yesterday
-        ;;
-    relative|r)
-        # accept a numeric offset as next arg
-        cmd_relative "$1"
+    prev|p)
+        shift; cmd_previous "$@"
         ;;
     -[0-9]*|+[0-9]*|[0-9]*)
-        # direct signed offset (e.g. -1, +2) or unsigned number
-        cmd_relative "$cmd"
+        cmd_previous "$1"
         ;;
-    help|h)
-        cmd_help
+    help|h|-h|--help)
+        get_usage
+        ;;
+    "")
+        cmd_add
         ;;
     *)
-        # default to help for unknown commands
-        cmd_help
+        echo "Unknown command: $1" >&2
+        get_usage
+        exit 1
         ;;
 esac
