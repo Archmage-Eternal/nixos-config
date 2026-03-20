@@ -1,6 +1,10 @@
 {...}: {
   flake = {
-    nixosModules.gaming = {inputs, pkgs, ...}: {
+    nixosModules.gaming = {
+      inputs,
+      pkgs,
+      ...
+    }: {
       programs = {
         steam = {
           enable = true;
@@ -23,25 +27,10 @@
         gamemode.enable = true;
       };
 
+      services.udev.packages = [pkgs.steam-devices-udev-rules];
     };
 
     homeModules.gaming = {pkgs, ...}: {
-      home.packages = with pkgs; [
-        # Windows compatibility
-        winetricks
-        wineWowPackages.waylandFull
-
-        # Minecraft launcher
-        prismlauncher
-
-        # Memory scanners
-        scanmem
-        med
-
-        # Steam achievement manager
-        samrewritten
-      ];
-
       programs.mangohud = {
         enable = true;
         enableSessionWide = false;
@@ -49,16 +38,14 @@
         settingsPerApplication = {};
       };
 
-      # home.packages = with pkgs; [
-      #   (retroarch.override {
-      #     cores = with libretro; [
-      #       fceumm
-      #       gambatte
-      #       mgba
-      #       snes9x
-      #     ];
-      #   })
-      # ];
+      home.packages = with pkgs; [
+        winetricks
+        wineWowPackages.waylandFull
+        prismlauncher
+        scanmem
+        med
+        samrewritten
+      ];
     };
   };
 }

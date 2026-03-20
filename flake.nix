@@ -72,26 +72,6 @@
       ];
       systems = ["x86_64-linux"];
 
-      flake = let
-        username = "david";
-      in {
-        nixosConfigurations = {
-          laptop = inputs.nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [
-              ./hosts/laptop
-              inputs.self.nixosModules.security
-              inputs.self.nixosModules.gaming
-            ];
-            specialArgs = {
-              host = "laptop";
-              inherit (inputs) self;
-              inherit inputs username;
-            };
-          };
-        };
-      };
-
       perSystem = {
         config,
         self',
