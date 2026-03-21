@@ -131,16 +131,7 @@ cmd_delete() {
 
     local nb_id
     nb_id=$(_fzf_pick "$@") || return 1
-
-    local info
-    info=$(nb show "$nb_id" --info-line --no-color 2>/dev/null)
-    echo "" >&2
-    echo "About to delete: $info" >&2
-    echo -n "Confirm? [y/N] " >&2
-    read -r confirm
-    [[ "$confirm" =~ ^[Yy]$ ]] || { echo "Aborted." >&2; return 1; }
-
-    nb delete "$nb_id" --force
+    nb delete "$nb_id"
 }
 
 case "${1:-}" in
