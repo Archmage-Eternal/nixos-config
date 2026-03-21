@@ -4,7 +4,7 @@ NOTEBOOK="lists"
 
 get_usage() {
     cat <<EOF
-Usage: l {add|open|search|delete|help}
+Usage: li {add|open|search|delete|help}
 
 Commands:
     add (a)    [-t <title>] [--tags <tag1>,<tag2>...]
