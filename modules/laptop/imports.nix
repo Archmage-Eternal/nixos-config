@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   configurations.nixos.laptop.module = {
     imports = [
       # ./_hardware-configuration.nix
