@@ -1,0 +1,92 @@
+Error:   × error loading config
+  ├─▶ error parsing
+  ╰─▶ error parsing KDL
+
+Error:   × unexpected node `include`
+   ╭─[config.kdl:1:1]
+ 1 │ include "hm.kdl"
+   · ────────┬────────
+   ·         ╰── unexpected node
+ 2 │ include "dms/alttab.kdl"
+ 3 │ include "dms/binds.kdl"
+   ╰────
+Error:   × unexpected node `include`
+   ╭─[config.kdl:1:1]
+ 1 │ include "hm.kdl"
+ 2 │ include "dms/alttab.kdl"
+   · ────────────┬────────────
+   ·             ╰── unexpected node
+ 3 │ include "dms/binds.kdl"
+ 4 │ include "dms/colors.kdl"
+   ╰────
+Error:   × unexpected node `include`
+   ╭─[config.kdl:2:1]
+ 2 │ include "dms/alttab.kdl"
+ 3 │ include "dms/binds.kdl"
+   · ────────────┬───────────
+   ·             ╰── unexpected node
+ 4 │ include "dms/colors.kdl"
+ 5 │ include "dms/cursor.kdl"
+   ╰────
+Error:   × unexpected node `include`
+   ╭─[config.kdl:3:1]
+ 3 │ include "dms/binds.kdl"
+ 4 │ include "dms/colors.kdl"
+   · ────────────┬────────────
+   ·             ╰── unexpected node
+ 5 │ include "dms/cursor.kdl"
+ 6 │ include "dms/layout.kdl"
+   ╰────
+Error:   × unexpected node `include`
+   ╭─[config.kdl:4:1]
+ 4 │ include "dms/colors.kdl"
+ 5 │ include "dms/cursor.kdl"
+   · ────────────┬────────────
+   ·             ╰── unexpected node
+ 6 │ include "dms/layout.kdl"
+ 7 │ include "dms/outputs.kdl"
+   ╰────
+Error:   × unexpected node `include`
+   ╭─[config.kdl:5:1]
+ 5 │ include "dms/cursor.kdl"
+ 6 │ include "dms/layout.kdl"
+   · ────────────┬────────────
+   ·             ╰── unexpected node
+ 7 │ include "dms/outputs.kdl"
+ 8 │ include "dms/windowrules.kdl"
+   ╰────
+Error:   × unexpected node `include`
+   ╭─[config.kdl:6:1]
+ 6 │ include "dms/layout.kdl"
+ 7 │ include "dms/outputs.kdl"
+   · ─────────────┬────────────
+   ·              ╰── unexpected node
+ 8 │ include "dms/windowrules.kdl"
+ 9 │ include "dms/wpblur.kdl"
+   ╰────
+Error:   × unexpected node `include`
+    ╭─[config.kdl:7:1]
+  7 │ include "dms/outputs.kdl"
+  8 │ include "dms/windowrules.kdl"
+    · ───────────────┬──────────────
+    ·                ╰── unexpected node
+  9 │ include "dms/wpblur.kdl"
+ 10 │
+    ╰────
+Error:   × unexpected node `include`
+    ╭─[config.kdl:8:1]
+  8 │ include "dms/windowrules.kdl"
+  9 │ include "dms/wpblur.kdl"
+    · ────────────┬────────────
+    ·             ╰── unexpected node
+ 10 │
+ 11 │ // Border fix
+    ╰────                                                                           Error:   × unexpected node `on`
+    ╭─[config.kdl:12:1]
+ 12 │ // See https://yalter.github.io/niri/Configuration%3A-Include.html#border-special-case for details
+ 13 │ layout { border { on; }; }
+    ·                   ─┬─
+    ·                    ╰── unexpected node
+    ╰────
+
+[ble: exit 1]
