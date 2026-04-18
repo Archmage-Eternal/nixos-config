@@ -1,7 +1,6 @@
 {inputs, ...}: {
   imports = [
     inputs.dankMaterialShell.homeModules.dank-material-shell
-    inputs.dankMaterialShell.homeModules.niri
   ];
 
   programs.dank-material-shell = {
@@ -20,11 +19,6 @@
 
     settings = {
       theme = "dark";
-    };
-
-    niri = {
-      enableKeybinds = false;
-      enableSpawn = false;
     };
   };
 }
