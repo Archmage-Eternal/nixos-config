@@ -18,7 +18,7 @@
 
 ## Configuration
 
-- [ ] Fix all evaluation warnings highlighted in [[eval_warnings]]
+- [ ] Write `nb` config and move notebooks back to `~/Notes` directory
 
 ### Shell & Terminal
 

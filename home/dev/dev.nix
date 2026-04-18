@@ -8,7 +8,7 @@
     gnumake
     llvmPackages_20.clang-tools
     nixd
-    nixfmt-rfc-style
+    nixfmt
     python3
     python312Packages.ipython
     valgrind

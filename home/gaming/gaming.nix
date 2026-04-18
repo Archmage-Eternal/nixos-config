@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     # Windows Compatibility
     winetricks # Scriptable wrapper for Wine configuration
-    wineWowPackages.waylandFull # Wine build with Wayland support
+    wineWow64Packages.waylandFull # Wine build with Wayland support
 
     # Minecraft Launcher
     prismlauncher

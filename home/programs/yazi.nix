@@ -3,6 +3,7 @@
         enable = true;
         enableBashIntegration = true;
         enableNushellIntegration = true;
+        shellWrapperName = "y";
 
         # User provided configuration for yazi (home-manager module)
         settings = {
