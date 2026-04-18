@@ -8,7 +8,7 @@
 
     systemd = { 
       enable = true;
-      restartIfChanged = true;
+      restartIfChanged = false;
     };
 
     enableSystemMonitoring = true;
