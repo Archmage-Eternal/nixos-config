@@ -22,6 +22,7 @@
 - [ ] Fix all evaluation warnings highlighted in [[eval_warnings]]
 - [ ] Configure cbz/cbr files to use zathrua for viewing
 - [ ] Add yazi plugin to preview comic books and ebooks
+- [ ] Write `nb` config and move notebooks back to `~/Notes` directory
 
 ### Shell & Terminal
 

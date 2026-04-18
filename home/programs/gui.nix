@@ -9,8 +9,8 @@
     openrgb-with-all-plugins
     pwvucontrol
     qbittorrent-enhanced
-    xfce.thunar
+    thunar
     vlc
-    zotero-beta
+    zotero
   ];
 }

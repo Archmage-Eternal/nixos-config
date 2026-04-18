@@ -18,7 +18,7 @@
     enableAudioWavelength = true;      # Audio visualizer (cava)
     enableCalendarEvents = true;       # Calendar integration (khal)
 
-    default.settings = {
+    settings = {
       theme = "dark";
     };
 
