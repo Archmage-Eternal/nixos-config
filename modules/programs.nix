@@ -52,7 +52,7 @@ in {
         openrgb-with-all-plugins
         pwvucontrol
         qbittorrent-enhanced
-        xfce.thunar
+        thunar
         vlc
         zotero
 
@@ -231,6 +231,7 @@ in {
           enable = true;
           enableBashIntegration = true;
           enableNushellIntegration = true;
+          shellWrapperName = "y";
           settings = {
             log.enabled = false;
             mgr = {
