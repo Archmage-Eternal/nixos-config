@@ -29,6 +29,7 @@ in {
 
     homeModules.programs = {
       inputs,
+      config,
       pkgs,
       ...
     }: let

@@ -1,11 +1,14 @@
 {...}: {
   flake = {
-    nixosModules.niri = {inputs, ...}: {
+    nixosModules.niri = {inputs, pkgs, ...}: {
       nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
       imports = [inputs.niri-flake.nixosModules.niri];
 
-      programs.niri.enable = true;
+      programs.niri = {
+        enable = true;
+        package = pkgs.niri-unstable;
+      };
 
       home-manager.sharedModules = [inputs.self.homeModules.niri];
     };
@@ -41,7 +44,7 @@
           variable-refresh-rate = true;
         };
 
-        screenshot-path = "~/Pictures/Screenshots/";
+        screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = false;
 
