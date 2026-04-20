@@ -99,13 +99,13 @@ in {
 
     homeModules.desktop = {
       inputs,
+      config,
       lib,
       pkgs,
       ...
     }: {
       imports = [
         inputs.dankMaterialShell.homeModules.dank-material-shell
-        inputs.dankMaterialShell.homeModules.niri
         inputs.dsearch.homeModules.default
       ];
 
@@ -113,7 +113,7 @@ in {
         enable = true;
         systemd = {
           enable = true;
-          restartIfChanged = true;
+          restartIfChanged = false;
         };
         enableSystemMonitoring = true;
         enableVPN = false;
@@ -121,10 +121,6 @@ in {
         enableAudioWavelength = true;
         enableCalendarEvents = true;
         default.settings.theme = "dark";
-        niri = {
-          enableKeybinds = false;
-          enableSpawn = false;
-        };
       };
 
       programs.dsearch = {
@@ -144,6 +140,8 @@ in {
         spicetify.enable = false;
         zen-browser.profileNames = ["default"];
       };
+
+      gtk.gtk4.theme = config.gtk.theme;
 
       home.packages = with pkgs; [
         grim

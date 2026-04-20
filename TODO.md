@@ -1,11 +1,5 @@
 # To-do
 
-## Cleanup
-
-- When deleting files that are referenced in `imports` lists, both the file deletion **and** the removal of the import reference must be staged together with `git add -A` before running `nix flake check`. Nix evaluates from the git index in flake mode, so unstaged edits to `default.nix` files are invisible — causing "path does not exist in Git repository" errors even when the disk is already correct. Fix: after deleting files, always `sed -i` or edit the parent `default.nix` to drop the reference, then `git add -A` before checking.
-
----
-
 ## Installation
 
 - [ ] Enable Protontricks and Winetricks
@@ -17,15 +11,85 @@
 - [ ] Install shadps4 (Bloodborne baby)
 - [ ] Add NUR usage
 
----
-
 ## Configuration
 
-- [ ] Fix all evaluation warnings highlighted in [[eval_warnings]]
+- [ ] Create options in nvidia module to define PCI addresses for GPUs
+- [ ] Investigate setting config.allowUnfree (may have overlap with new flake-parts way of doing it)
+- [ ] Duplicated bash alias decleration in shell module (nixos and home-manager)
+- [ ] Duplicated delcaration of default sops file in home and nixos module
+- [ ] Split xdg-mime config from desktop config
+- [ ] Screen outputs config for niri should be more generic. Extract host specific settings.
+- [ ] Alter keybinds to launch terminal and file explorer instead of specific ones like ghostty, or yazi. Also make option to define terminal or file explorer for modularity
+  - Example for terminal from mightyiam:
+  - default.nix
+    ```nix
+    { lib, withSystem, ... }:
+    {
+      flake.modules.homeManager.gui =
+        hmArgs@{ pkgs, ... }:
+        let
+          hyprcwd = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.hyprcwd);
+        in
+        {
+          options.terminal = {
+            path = lib.mkOption {
+              type = lib.types.path;
+              default = null;
+            };
+            desktopFileId = lib.mkOption {
+              type = lib.types.singleLineStr;
+            };
+          };
+          config = {
+            xdg.terminal-exec = {
+              enable = true;
+              settings.default = [ hmArgs.config.terminal.desktopFileId ];
+            };
+            wayland.windowManager = {
+              hyprland.settings.bind = [
+                "SUPER, Return, exec, ${hmArgs.config.terminal.path}"
+                "SUPER+SHIFT, Return, exec, ${hmArgs.config.terminal.path} --working-directory `${lib.getExe hyprcwd}`"
+              ];
+            };
+          };
+        };
+    }
+    ```
+  - alacritty.nix 
+    ``` nix
+    { lib, ... }:
+    {
+      flake.modules.homeManager.gui = hmArgs: {
+        terminal = {
+          path = lib.getExe hmArgs.config.programs.alacritty.package;
+          desktopFileId = "Alacritty.desktop";
+        };
+    
+        programs.alacritty = {
+          enable = true;
+          settings = {
+            general.live_config_reload = true;
+            window = {
+              decorations = "none";
+              dynamic_title = true;
+              title = "Terminal";
+            };
+            bell = {
+              # https://github.com/danth/stylix/discussions/1207
+              # ideally this would be some stylix color theme color
+              color = "#000000";
+              duration = 200;
+            };
+          };
+        };
+      };
+    }
+    ```
+- [ ] Do the same as above to define window manager and make the niri and hyprland (hyprland module is currently deleted) modules define them when imported 
 
 ### Shell & Terminal
 
-- [ ] Set vi as $EDITOR
+- [ ] Set vi/nvim/nixCats-minimal as $EDITOR
 - [x] Refine `.bashrc`
   - [x] Add auto-completion to Bash
 - [x] Check ligature functionality in terminal and/or Vim/Neovim
@@ -34,6 +98,7 @@
   - [x] Fix font configuration
 - [x] Refine Starship prompt
   - [x] Show current shell in use
+  - [ ] Minimized config, it is overly bloated
 - [ ] Get protonhax working on nix
 - [ ] Move all dev tools into devshells and remove them from system/home configuration
   - Devshells may also allow for nixCats overrides to be used for more target versions of the editor
@@ -68,9 +133,3 @@
 
 - [ ] Configure window rules for height and width of Imv and MPV
 - [ ] Configure `dsearch`'s indexed directories
-
----
-
-## Flakes & Home Manager
-
-- [x] Update flake to add Home Manager support for Zen browser
