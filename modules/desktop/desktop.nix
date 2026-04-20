@@ -120,7 +120,7 @@ in {
         enableDynamicTheming = false;
         enableAudioWavelength = true;
         enableCalendarEvents = true;
-        default.settings.theme = "dark";
+        settings.theme = "dark";
       };
 
       programs.dsearch = {

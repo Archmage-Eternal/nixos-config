@@ -54,7 +54,7 @@ in {
         qbittorrent-enhanced
         xfce.thunar
         vlc
-        zotero-beta
+        zotero
 
         # CLI utilities
         aria2
