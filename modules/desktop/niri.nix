@@ -88,7 +88,7 @@
           # Overview and launchers
           "Mod+O".action = toggle-overview;
           "Mod+Return".action = spawn "ghostty";
-          "Mod+B".action = spawn "zen";
+          "Mod+B".action = spawn "zen-twilight";
           "Mod+D".action = spawn "dms" "ipc" "call" "spotlight" "toggle";
 
           # Fullscreen and layout cycling
