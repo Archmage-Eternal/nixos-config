@@ -10,9 +10,13 @@
 - [ ] Install ReShade or vkBasalt
 - [ ] Install shadps4 (Bloodborne baby)
 - [ ] Add NUR usage
+- [ ] Ouch for managing archives
 
 ## Configuration
 
+- [ ] Add secure boot and TPM2 backed disk encryption
+  - `lanzaboote` for secure boot?
+  - Reference: [Secure Boot & TPM-backed Full Disk Encryption on NixOS](https://jnsgr.uk/2024/04/nixos-secure-boot-tpm-fde/#enabling-secure-boot-on-nixos)
 - [ ] Create options in nvidia module to define PCI addresses for GPUs
 - [ ] Investigate setting config.allowUnfree (may have overlap with new flake-parts way of doing it)
 - [ ] Duplicated bash alias decleration in shell module (nixos and home-manager)
@@ -55,8 +59,9 @@
         };
     }
     ```
-  - alacritty.nix 
-    ``` nix
+  - alacritty.nix
+
+    ```nix
     { lib, ... }:
     {
       flake.modules.homeManager.gui = hmArgs: {
@@ -64,7 +69,7 @@
           path = lib.getExe hmArgs.config.programs.alacritty.package;
           desktopFileId = "Alacritty.desktop";
         };
-    
+
         programs.alacritty = {
           enable = true;
           settings = {
@@ -85,7 +90,7 @@
       };
     }
     ```
-- [ ] Do the same as above to define window manager and make the niri and hyprland (hyprland module is currently deleted) modules define them when imported 
+- [ ] Do the same as above to define window manager and make the niri and hyprland (hyprland module is currently deleted) modules define them when imported
 
 ### Shell & Terminal
 

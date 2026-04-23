@@ -17,6 +17,7 @@
       inputs.self.nixosModules.gaming
       inputs.self.nixosModules.nvidia
       inputs.self.nixosModules.peripherals
+      inputs.self.nixosModules.virtualization
     ];
   };
 }
