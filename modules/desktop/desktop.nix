@@ -9,6 +9,7 @@ in {
     }: {
       imports = [
         inputs.self.nixosModules.niri
+        inputs.self.nixosModules.hyprland
         inputs.stylix.nixosModules.stylix
       ];
 
@@ -70,6 +71,7 @@ in {
         extraPortals = [
           pkgs.xdg-desktop-portal-gtk
           pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal-hyprland
         ];
         config = {
           common = {
@@ -78,6 +80,10 @@ in {
           };
           niri = {
             default = ["gnome" "gtk"];
+            "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
+          };
+          hyprland = {
+            default = ["hyprland" "gtk"];
             "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
           };
         };
