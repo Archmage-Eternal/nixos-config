@@ -2,7 +2,6 @@
 
 ## Installation
 
-- [ ] Enable Protontricks and Winetricks
 - [ ] Install LilyPond
 - [ ] Install pokeget-rs
 - [ ] Create installation script
@@ -90,19 +89,15 @@
       };
     }
     ```
+
 - [ ] Do the same as above to define window manager and make the niri and hyprland (hyprland module is currently deleted) modules define them when imported
+- [ ] Configure zathura as the default PDF, CBZ, CBR reader, currently Calibre hijacks reading PDFs
 
 ### Shell & Terminal
 
-- [ ] Set vi/nvim/nixCats-minimal as $EDITOR
-- [x] Refine `.bashrc`
-  - [x] Add auto-completion to Bash
-- [x] Check ligature functionality in terminal and/or Vim/Neovim
 - [ ] Configure Ghostty
   - [ ] Add shaders to Ghostty
-  - [x] Fix font configuration
-- [x] Refine Starship prompt
-  - [x] Show current shell in use
+- [ ] Refine Starship prompt
   - [ ] Minimized config, it is overly bloated
 - [ ] Get protonhax working on nix
 - [ ] Move all dev tools into devshells and remove them from system/home configuration

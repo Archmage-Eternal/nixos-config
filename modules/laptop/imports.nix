@@ -14,7 +14,7 @@
       inputs.self.nixosModules.asus
       inputs.self.nixosModules.services
       inputs.self.nixosModules.security
-      inputs.self.nixosModules.secureboot
+      # inputs.self.nixosModules.secureboot
       inputs.self.nixosModules.gaming
       inputs.self.nixosModules.nvidia
       inputs.self.nixosModules.peripherals

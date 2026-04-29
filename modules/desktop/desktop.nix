@@ -9,7 +9,7 @@ in {
     }: {
       imports = [
         inputs.self.nixosModules.niri
-        inputs.self.nixosModules.hyprland
+        # inputs.self.nixosModules.hyprland
         inputs.stylix.nixosModules.stylix
       ];
 
