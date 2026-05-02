@@ -52,7 +52,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.url = "github:kaylorben/nixcord";
+    nixcord.url = "github:FlameFlag/nixcord";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
@@ -63,7 +63,7 @@
     import-tree.url = "github:vic/import-tree";
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
+      url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -72,9 +72,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = inputs @ {flake-parts, ...}:

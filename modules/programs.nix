@@ -153,6 +153,7 @@ in {
 
         ghostty = {
           enable = true;
+          enableBashIntegration = false;
           settings = {
             window-decoration = false;
             keybind = [];

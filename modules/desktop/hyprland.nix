@@ -1,23 +1,29 @@
 {...}: {
   flake = {
-    nixosModules.hyprland = {inputs, ...}: {
+    nixosModules.hyprland = {
+      inputs,
+      pkgs,
+      ...
+    }: {
       imports = [inputs.hyprland.nixosModules.default];
 
       programs.hyprland = {
         enable = true;
         withUWSM = true;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       };
 
       home-manager.sharedModules = [
-        inputs.hyprland.homeManagerModules.default
         inputs.self.homeModules.hyprland
       ];
     };
 
-    homeModules.hyprland = {pkgs, ...}: {
+    homeModules.hyprland = {...}: {
       wayland.windowManager.hyprland = {
         enable = true;
-
+        package = null;
+        portalPackage = null;
         settings = {
           general = {
             gaps_in = 5;

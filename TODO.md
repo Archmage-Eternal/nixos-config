@@ -13,9 +13,6 @@
 
 ## Configuration
 
-- [ ] Add secure boot and TPM2 backed disk encryption
-  - `lanzaboote` for secure boot?
-  - Reference: [Secure Boot & TPM-backed Full Disk Encryption on NixOS](https://jnsgr.uk/2024/04/nixos-secure-boot-tpm-fde/#enabling-secure-boot-on-nixos)
 - [ ] Create options in nvidia module to define PCI addresses for GPUs
 - [ ] Investigate setting config.allowUnfree (may have overlap with new flake-parts way of doing it)
 - [ ] Duplicated bash alias decleration in shell module (nixos and home-manager)
@@ -113,6 +110,14 @@
 - [ ] Automate NVIDIA libraries setup
 - [ ] Automate Zotero Connector and Better BibTeX setup
 - [ ] Make `nb` configuration declaritive
+- [ ] Greetd shows multiple instances of the same session (2 hyprland, 2 niri, 2 hyprland with uwsm)
+
+### Hyprland
+
+- [ ] Switch layout to scrolling
+- [ ] Disable trackpad
+- [ ] Fix error: dispatcher `togglesplit` doesn't exist
+- [ ] Fix window scaling
 
 ### Niri
 
@@ -129,7 +134,7 @@
 
 - [ ] Configure home folders via XDG_HOME
 
-### File & Media Management
+### File & Media Managemen
 
 - [ ] Configure window rules for height and width of Imv and MPV
 - [ ] Configure `dsearch`'s indexed directories
