@@ -73,6 +73,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 
   outputs = inputs @ {flake-parts, ...}:

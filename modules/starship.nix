@@ -3,9 +3,7 @@
     programs.starship = {
       enable = true;
 
-      enableFishIntegration = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
+      enableBashIntegration = false;
       enableNushellIntegration = true;
 
       settings = {

@@ -1,5 +1,6 @@
 # To-do
 
+
 ## Installation
 
 - [ ] Install LilyPond
@@ -13,10 +14,9 @@
 
 ## Configuration
 
+- [ ] Explicitly delcare stylix colours instead of sourcing YAML file
 - [ ] Create options in nvidia module to define PCI addresses for GPUs
 - [ ] Investigate setting config.allowUnfree (may have overlap with new flake-parts way of doing it)
-- [ ] Duplicated bash alias decleration in shell module (nixos and home-manager)
-- [ ] Duplicated delcaration of default sops file in home and nixos module
 - [ ] Split xdg-mime config from desktop config
 - [ ] Screen outputs config for niri should be more generic. Extract host specific settings.
 - [ ] Alter keybinds to launch terminal and file explorer instead of specific ones like ghostty, or yazi. Also make option to define terminal or file explorer for modularity
@@ -110,14 +110,6 @@
 - [ ] Automate NVIDIA libraries setup
 - [ ] Automate Zotero Connector and Better BibTeX setup
 - [ ] Make `nb` configuration declaritive
-- [ ] Greetd shows multiple instances of the same session (2 hyprland, 2 niri, 2 hyprland with uwsm)
-
-### Hyprland
-
-- [ ] Switch layout to scrolling
-- [ ] Disable trackpad
-- [ ] Fix error: dispatcher `togglesplit` doesn't exist
-- [ ] Fix window scaling
 
 ### Niri
 

@@ -5,7 +5,10 @@
         enable = true;
         completion.enable = true;
         blesh.enable = true;
-        interactiveShellInit = "set -o vi";
+        interactiveShellInit = ''
+        set -o vi
+        eval "$(starship init bash)"
+        '';
         shellAliases = {
           ".." = "cd ..";
         };
