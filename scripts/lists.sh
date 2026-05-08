@@ -93,7 +93,7 @@ cmd_add() {
         [[ -z "$title" ]] && { echo "Aborted." >&2; return 1; }
     fi
 
-    nb add "$NOTEBOOK:" --title "$title" --content "# $title" "${args[@]}"
+    nb add "$NOTEBOOK:" --title "$title" "${args[@]}"
 }
 
 cmd_open() {
