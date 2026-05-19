@@ -87,7 +87,7 @@
     - Share one local binding for the secrets file path and reference it from both module scopes.
   - Verify on the Nix machine:
     - Rebuild and confirm no evaluation change beyond the refactor.
-    - `nix eval .#nixosConfigurations.laptop.config.sops.defaultSopsFile`
+    - `nix eval .#nixosConfigurations.daedalus.config.sops.defaultSopsFile`
 - Greetd shows multiple instances of the same session (2 hyprland, 2 niri, 2 hyprland with uwsm)
   - Potential solutions:
     - Most likely local source: multiple generated Wayland session `.desktop` files, with Hyprland's `withUWSM = true` in this repo being the strongest candidate for duplicate Hyprland entries.
@@ -135,7 +135,7 @@ evaluation warning: The xorg package set has been deprecated, 'xorg.libxcb' has 
   - If not present in this repo, identify which input or overlay still references it and either update or temporarily pin around the warning.
 - Verify on the Nix machine:
   - `rg 'xorg\.libxcb' .`
-  - `nix eval .#nixosConfigurations.laptop.config.system.build.toplevel.drvPath --show-trace`
+  - `nix eval .#nixosConfigurations.daedalus.config.system.build.toplevel.drvPath --show-trace`
   - If warning persists with no local match, inspect referenced inputs or use `nix why-depends` on the affected package if you can isolate it.
 
 ## solaar-cli

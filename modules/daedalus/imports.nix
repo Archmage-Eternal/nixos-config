@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  configurations.nixos.laptop.module = {
+  configurations.nixos.daedalus.module = {
     imports = [
       # ./_hardware-configuration.nix
       ./_disk-config.nix
