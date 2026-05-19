@@ -29,7 +29,7 @@
             gaps_in = 5;
             gaps_out = 10;
             border_size = 2;
-            layout = "dwindle";
+            layout = "scrolling";
           };
 
           input = {
@@ -41,9 +41,17 @@
             };
           };
 
-          dwindle = {
-            pseudotile = true;
-            preserve_split = true;
+          scrolling = {
+            column_width = 0.5;
+            focus_fit_method = 1;
+            follow_focus = true;
+            fullscreen_on_one_column = true;
+            wrap_focus = true;
+            wrap_swapcol = true;
+          };
+
+          xwayland = {
+            force_zero_scaling = true;
           };
 
           bind = [
@@ -74,7 +82,7 @@
             "SUPER, F, togglefloating"
             "SUPER, Space, fullscreen, 0"
             "SUPER ALT, Space, fullscreen, 1"
-            "SUPER, W, togglesplit"
+            "SUPER, W, layoutmsg, colresize +conf"
 
             # Launchers
             "SUPER, Return, exec, ghostty"
@@ -92,8 +100,14 @@
             ", XF86AudioNext, exec, playerctl next"
 
             # Screenshots
-            ", Print, exec, grimblast --notify copy area"
-            "CTRL, Print, exec, grimblast --notify save active"
+            ", Print, exec, hypr-screenshot copy-area"
+            "SHIFT, Print, exec, hypr-screenshot save-area"
+            "CTRL, Print, exec, hypr-screenshot save-screen"
+
+            # Recording
+            "SUPER, Print, exec, hypr-record toggle-area"
+            "SUPER SHIFT, Print, exec, hypr-record toggle-screen"
+            "SUPER CTRL, Print, exec, hypr-record stop"
           ];
 
           # Mouse binds
