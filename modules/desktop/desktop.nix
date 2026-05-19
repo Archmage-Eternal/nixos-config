@@ -161,18 +161,20 @@ in {
           video = ["mpv.desktop"];
           directory = ["thunar.desktop"];
           office = ["libreoffice.desktop"];
-          pdf = ["zathura.desktop"];
-          terminal = ["ghostty.desktop"];
+          reading = ["zathura.desktop"];
           archive = ["file-roller.desktop"];
           discord = ["vesktop.desktop"];
         };
         mimeMap = {
-          text = ["text/plain"];
+          text = [
+            "text/markdown"
+            "text/plain"
+            "text/x-shellscript"
+          ];
           image = [
             "image/bmp"
             "image/gif"
             "image/jpeg"
-            "image/jpg"
             "image/png"
             "image/svg+xml"
             "image/tiff"
@@ -181,6 +183,7 @@ in {
           ];
           audio = [
             "audio/aac"
+            "audio/flac"
             "audio/mpeg"
             "audio/ogg"
             "audio/opus"
@@ -193,6 +196,7 @@ in {
             "video/mp4"
             "video/mpeg"
             "video/ogg"
+            "video/quicktime"
             "video/webm"
             "video/x-flv"
             "video/x-matroska"
@@ -201,6 +205,7 @@ in {
           directory = ["inode/directory"];
           browser = [
             "text/html"
+            "application/xhtml+xml"
             "x-scheme-handler/about"
             "x-scheme-handler/http"
             "x-scheme-handler/https"
@@ -218,13 +223,23 @@ in {
             "application/vnd.ms-powerpoint"
             "application/rtf"
           ];
-          pdf = ["application/pdf"];
-          terminal = ["terminal"];
+          reading = [
+            "application/pdf"
+            "application/vnd.comicbook+zip"
+            "application/vnd.comicbook-rar"
+            "application/x-cbr"
+            "application/x-cbz"
+          ];
           archive = [
+            "application/vnd.rar"
+            "application/x-7z-compressed"
+            "application/x-bzip"
+            "application/x-bzip2"
+            "application/x-compressed-tar"
+            "application/x-gzip"
+            "application/x-tar"
+            "application/x-xz"
             "application/zip"
-            "application/rar"
-            "application/7z"
-            "application/*tar"
           ];
           discord = ["x-scheme-handler/discord"];
         };

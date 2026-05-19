@@ -96,6 +96,7 @@ in {
         (pkgs.writeShellScriptBin "j" (builtins.readFile ../scripts/journal.sh))
         (pkgs.writeShellScriptBin "z" (builtins.readFile ../scripts/zettelkasten.sh))
         (pkgs.writeShellScriptBin "li" (builtins.readFile ../scripts/lists.sh))
+        (pkgs.writeShellScriptBin "startup-diagnostics" (builtins.readFile ../scripts/startup_diagnostics.sh))
       ];
 
       programs = {

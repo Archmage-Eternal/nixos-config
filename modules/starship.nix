@@ -3,7 +3,7 @@
     programs.starship = {
       enable = true;
 
-      enableBashIntegration = false;
+      enableBashIntegration = true;
       enableNushellIntegration = true;
 
       settings = {

@@ -5,13 +5,6 @@
         enable = true;
         completion.enable = true;
         blesh.enable = true;
-        interactiveShellInit = ''
-        set -o vi
-        eval "$(starship init bash)"
-        '';
-        shellAliases = {
-          ".." = "cd ..";
-        };
       };
 
       home-manager.sharedModules = [inputs.self.homeModules.shell];
@@ -28,6 +21,9 @@
         bash = {
           enable = true;
           enableCompletion = true;
+          initExtra = ''
+            set -o vi
+          '';
           shellAliases = {
             ll = "ls -lah";
             ".." = "cd ..";
