@@ -1,5 +1,7 @@
 {inputs, ...}: {
   configurations.nixos.daedalus.module = {
+    meta.desktop.defaultSession = "niri-session";
+
     imports = [
       # ./_hardware-configuration.nix
       ./_disk-config.nix
@@ -8,6 +10,9 @@
       inputs.self.nixosModules.network
       inputs.self.nixosModules.audio
       inputs.self.nixosModules.desktop
+      inputs.self.nixosModules.desktopSession
+      inputs.self.nixosModules.niri
+      inputs.self.nixosModules.hyprland
       inputs.self.nixosModules.shell
       inputs.self.nixosModules.programs
       inputs.self.nixosModules.users

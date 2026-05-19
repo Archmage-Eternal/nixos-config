@@ -53,7 +53,6 @@ in {
         pwvucontrol
         qbittorrent-enhanced
         thunar
-        xwaylandvideobridge
         vlc
         zotero
 
@@ -93,8 +92,6 @@ in {
         playerctl
 
         # Scripts
-        (pkgs.writeShellScriptBin "hypr-screenshot" (builtins.readFile ../scripts/hypr-screenshot.sh))
-        (pkgs.writeShellScriptBin "hypr-record" (builtins.readFile ../scripts/hypr-record.sh))
         (pkgs.writeShellScriptBin "protonhax" (builtins.readFile ../scripts/protonhax.sh))
         (pkgs.writeShellScriptBin "j" (builtins.readFile ../scripts/journal.sh))
         (pkgs.writeShellScriptBin "z" (builtins.readFile ../scripts/zettelkasten.sh))

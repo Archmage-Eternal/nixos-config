@@ -7,6 +7,14 @@
     }: {
       imports = [inputs.hyprland.nixosModules.default];
 
+      xdg.portal.config.hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+        "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
+      };
+
       programs.hyprland = {
         enable = true;
         withUWSM = true;
@@ -25,9 +33,17 @@
       ...
     }: {
       home.packages = with pkgs; [
+        (pkgs.writeShellScriptBin "hypr-screenshot" (builtins.readFile ../../scripts/hypr-screenshot.sh))
+        (pkgs.writeShellScriptBin "hypr-record" (builtins.readFile ../../scripts/hypr-record.sh))
+        grim
+        grimblast
         hypridle
         hyprlock
         hyprpolkitagent
+        slurp
+        wf-recorder
+        wl-clipboard
+        xwaylandvideobridge
       ];
 
       xdg.configFile."hypr/hypridle.conf".text = ''

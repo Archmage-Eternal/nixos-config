@@ -5,6 +5,11 @@
 
       imports = [inputs.niri-flake.nixosModules.niri];
 
+      xdg.portal.config.niri = {
+        default = ["gtk"];
+        "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
+      };
+
       programs.niri = {
         enable = true;
         package = pkgs.niri-unstable;

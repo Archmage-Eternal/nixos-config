@@ -1,6 +1,4 @@
-{config, ...}: let
-  username = config.meta.username;
-in {
+{...}: {
   flake = {
     nixosModules.desktop = {
       inputs,
@@ -8,8 +6,6 @@ in {
       ...
     }: {
       imports = [
-        inputs.self.nixosModules.niri
-        inputs.self.nixosModules.hyprland
         inputs.stylix.nixosModules.stylix
       ];
 
@@ -20,14 +16,6 @@ in {
         nix-ld = {
           enable = true;
           libraries = [];
-        };
-      };
-
-      services.greetd = {
-        enable = true;
-        settings.default_session = {
-          user = username;
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
         };
       };
 
@@ -76,25 +64,10 @@ in {
             default = ["gtk"];
             "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
           };
-          hyprland = {
-            default = [
-              "hyprland"
-              "gtk"
-            ];
-            "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
-          };
-          niri = {
-            default = ["gtk"];
-            "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
-          };
         };
       };
 
       services = {
-        displayManager.autoLogin = {
-          enable = true;
-          user = username;
-        };
         libinput.enable = true;
       };
 
@@ -108,7 +81,6 @@ in {
       inputs,
       config,
       lib,
-      pkgs,
       ...
     }: {
       imports = [
@@ -149,14 +121,6 @@ in {
       };
 
       gtk.gtk4.theme = config.gtk.theme;
-
-      home.packages = with pkgs; [
-        grim
-        slurp
-        wf-recorder
-        wl-clipboard
-        grimblast
-      ];
 
       xdg.configFile."mimeapps.list".force = true;
       xdg.mimeApps = let
