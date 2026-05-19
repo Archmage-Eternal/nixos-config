@@ -5,7 +5,7 @@
     imports = [
       # ./_hardware-configuration.nix
       ./_disk-config.nix
-      ./nvidia.nix
+      ./_nvidia.nix
       inputs.self.nixosModules.disko
       inputs.self.nixosModules.core
       inputs.self.nixosModules.network
