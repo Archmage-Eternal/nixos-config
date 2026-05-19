@@ -40,15 +40,6 @@
           };
         };
 
-        outputs."Sharp Corporation LQ156M1JW25 Unknown" = {
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 60.005;
-          };
-          variable-refresh-rate = true;
-        };
-
         screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = false;
