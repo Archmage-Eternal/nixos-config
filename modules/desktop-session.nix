@@ -1,10 +1,12 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: let
+  username = config.meta.username;
+in {
   flake.nixosModules.desktopSession = {
+    lib,
+    config,
+    pkgs,
+    ...
+  }: {
     options.meta.desktop.defaultSession = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
       default = null;
@@ -15,14 +17,14 @@
       services.greetd = {
         enable = true;
         settings.default_session = {
-          user = config.meta.username;
+          user = username;
           command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd ${config.meta.desktop.defaultSession}";
         };
       };
 
       services.displayManager.autoLogin = {
         enable = true;
-        user = config.meta.username;
+        user = username;
       };
     };
   };
