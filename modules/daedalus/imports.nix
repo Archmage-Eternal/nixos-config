@@ -12,6 +12,7 @@
       inputs.self.nixosModules.network
       inputs.self.nixosModules.audio
       inputs.self.nixosModules.desktop
+      inputs.self.nixosModules.desktopLaunchers
       inputs.self.nixosModules.desktopSession
       inputs.self.nixosModules.niri
       inputs.self.nixosModules.hyprland

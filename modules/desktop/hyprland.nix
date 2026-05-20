@@ -28,6 +28,7 @@
     };
 
     homeModules.hyprland = {
+      config,
       lib,
       pkgs,
       ...
@@ -220,9 +221,9 @@
             "SUPER ALT, L, layoutmsg, consume_or_expel next"
 
             # Launchers
-            "SUPER, Return, exec, ghostty"
-            "SUPER, B, exec, zen-twilight"
-            "SUPER, D, exec, dms ipc call spotlight toggle"
+            "SUPER, Return, exec, ${lib.escapeShellArgs config.desktop.launchers.terminal}"
+            "SUPER, B, exec, ${lib.escapeShellArgs config.desktop.launchers.browser}"
+            "SUPER, D, exec, ${lib.escapeShellArgs config.desktop.launchers.appLauncher}"
 
             # Volume
             ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
