@@ -1,0 +1,349 @@
+$ journalctl -b | rg -i 'timed out|timeout|failed|slow|module|firmware|niri|greetd|tpm|crypt|luks|initrd'
+
+May 21 19:38:48 laptop kernel: efi: ACPI=0xece70000 ACPI 2.0=0xece70014 TPMFinalLog=0xed11d000 SMBIOS=0xed819000 SMBIOS 3.0=0xed818000 MEMATTR=0xe8939018 ESRT=0xea0fbc18 RNG=0xece20f18 INITRD=0xe7b26c18 TPMEventLog=0xece19018 
+May 21 19:38:48 laptop kernel: ACPI: TPM2 0x00000000ECE40000 00004C (v04 _ASUS_ Notebook 00000001 AMI  00000000)
+May 21 19:38:48 laptop kernel: ACPI: Reserving TPM2 table memory at [mem 0xece40000-0xece4004b]
+May 21 19:38:48 laptop kernel: Spectre V2 : Enabling Restricted Speculation for firmware calls
+May 21 19:38:48 laptop kernel: ACPI: Added _OSI(Module Device)
+May 21 19:38:48 laptop kernel: ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+May 21 19:38:48 laptop kernel: acpi PNP0A08:00: [Firmware Info]: ECAM [mem 0xf0000000-0xf7ffffff] for domain 0000 [bus 00-7f] only partially covers this bridge
+May 21 19:38:48 laptop kernel: tpm_crb MSFT0101:00: Disabling hwrng
+May 21 19:38:48 laptop kernel: Key type .fscrypt registered
+May 21 19:38:48 laptop kernel: Key type fscrypt-provisioning registered
+May 21 19:38:48 laptop kernel: Freeing initrd memory: 26660K
+May 21 19:38:48 laptop kernel: Freeing unused decrypted memory: 2028K
+May 21 19:38:48 laptop systemd[1]: Inserted module 'autofs4'
+May 21 19:38:48 laptop systemd[1]: systemd 259.3 running in system mode (+PAM +AUDIT -SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK -BTF -XKBCOMMON +UTMP -SYSVINIT +LIBARCHIVE)
+May 21 19:38:48 laptop systemd[1]: Running in initrd.
+May 21 19:38:48 laptop systemd[1]: Queued start job for default target Initrd Default Target.
+May 21 19:38:48 laptop systemd[1]: Created slice Slice /system/systemd-cryptsetup.
+May 21 19:38:48 laptop systemd[1]: Expecting device /dev/mapper/crypted-system...
+May 21 19:38:48 laptop systemd[1]: Starting Load Kernel Module configfs...
+May 21 19:38:48 laptop systemd[1]: Starting Load Kernel Modules...
+May 21 19:38:48 laptop systemd[1]: Starting Early TPM SRK Setup...
+May 21 19:38:48 laptop systemd[1]: Finished Load Kernel Module configfs.
+May 21 19:38:48 laptop systemd[1]: Finished Early TPM SRK Setup.
+May 21 19:38:48 laptop systemd-modules-load[244]: Using 2 probe threads
+May 21 19:38:48 laptop systemd-modules-load[244]: Inserted module 'dm_mod'
+May 21 19:38:48 laptop systemd-tpm2-setup[246]: SRK already stored in the TPM.
+May 21 19:38:48 laptop systemd-tpm2-setup[246]: SRK fingerprint is e0963cf554cce70a75a818fd2c58f96c7b7ff2d06f0f5e74305e9273449ca0b9.
+May 21 19:38:48 laptop systemd-tpm2-setup[246]: SRK public key saved to '/run/systemd/tpm2-srk-public-key.pem' in PEM format.
+May 21 19:38:48 laptop systemd-tpm2-setup[246]: SRK public key saved to '/run/systemd/tpm2-srk-public-key.tpm2b_public' in TPM2B_PUBLIC format.
+May 21 19:38:48 laptop systemd-modules-load[244]: Inserted module 'btrfs'
+May 21 19:38:48 laptop systemd[1]: Finished Load Kernel Modules.
+May 21 19:38:48 laptop systemd[1]: Condition check resulted in /dev/tpmrm0 being skipped.
+May 21 19:38:48 laptop systemd[1]: Expecting device /dev/tpm0...
+May 21 19:38:48 laptop systemd[1]: Found device /dev/tpm0.
+May 21 19:38:48 laptop systemd[1]: Reached target Trusted Platform Module.
+May 21 19:38:48 laptop systemd[1]: Starting Cryptography Setup for crypted-system...
+May 21 19:38:48 laptop kernel: nvme nvme0: failed to set APST feature (2)
+May 21 19:38:49 laptop systemd[1]: Starting Cryptography Setup for crypted-data...
+May 21 19:38:49 laptop kernel: Key type encrypted registered
+May 21 19:38:49 laptop systemd[1]: Found device /dev/mapper/crypted-system.
+May 21 19:38:49 laptop systemd[1]: Reached target Initrd Root Device.
+May 21 19:38:49 laptop kernel: BTRFS: device fsid c1c2c349-eea5-435a-aa99-279fde092ce4 devid 1 transid 103155 /dev/mapper/crypted-system (254:0) scanned by mount (382)
+May 21 19:38:50 laptop systemd[1]: Finished Cryptography Setup for crypted-system.
+May 21 19:38:50 laptop systemd[1]: Reached target Initrd Root File System.
+May 21 19:38:50 laptop systemd-sysroot-fstab-check[407]: /sysroot should be mounted in the initrd, will request daemon-reload.
+May 21 19:38:50 laptop systemd[1]: Reload requested from client PID 407 ('systemd-sysroot') (unit initrd-parse-etc.service)...
+May 21 19:38:50 laptop systemd-sysroot-fstab-check[407]: Requesting initrd-fs.target/start/replace...
+May 21 19:38:50 laptop systemd[1]: initrd-parse-etc.service: Deactivated successfully.
+May 21 19:38:50 laptop systemd[1]: initrd-parse-etc.service: Triggering OnSuccess= dependencies.
+May 21 19:38:50 laptop systemd[1]: Reached target Initrd File Systems.
+May 21 19:38:50 laptop systemd[1]: Finished Cryptography Setup for crypted-data.
+May 21 19:38:50 laptop systemd[1]: Reached target Local Encrypted Volumes.
+May 21 19:38:50 laptop systemd[1]: Reached target Initrd Default Target.
+May 21 19:38:50 laptop systemd[1]: Stopped target Initrd Default Target.
+May 21 19:38:50 laptop systemd[1]: Stopped target Initrd Root Device.
+May 21 19:38:50 laptop systemd[1]: Stopped target Local Encrypted Volumes.
+May 21 19:38:50 laptop systemd[1]: initrd-find-nixos-closure.service: Deactivated successfully.
+May 21 19:38:50 laptop systemd[1]: systemd-modules-load.service: Deactivated successfully.
+May 21 19:38:50 laptop systemd[1]: Stopped Load Kernel Modules.
+May 21 19:38:50 laptop systemd[1]: systemd-tpm2-setup-early.service: Deactivated successfully.
+May 21 19:38:50 laptop systemd[1]: Stopped Early TPM SRK Setup.
+May 21 19:38:50 laptop systemd[1]: Stopped target Trusted Platform Module.
+May 21 19:38:50 laptop systemd[1]: initrd-cleanup.service: Deactivated successfully.
+May 21 19:38:51 laptop systemd[1]: initrd-udevadm-cleanup-db.service: Deactivated successfully.
+May 21 19:38:51 laptop initrd-nixos-activation-start[695]: booting system configuration /nix/store/9r2nhdv329mr8h64i75snrsdjvy19n02-nixos-system-laptop-26.05.20260414.4bd9165
+May 21 19:38:51 laptop initrd-nixos-activation-start[695]: running activation script...
+May 21 19:38:51 laptop initrd-nixos-activation-start[723]: setting up /etc...
+May 21 19:38:51 laptop systemd[1]: initrd-nixos-activation.service: Deactivated successfully.
+May 21 19:38:51 laptop systemd[1]: systemd 259.3 running in system mode (+PAM +AUDIT -SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK -BTF -XKBCOMMON +UTMP -SYSVINIT +LIBARCHIVE)
+May 21 19:38:51 laptop systemd[1]: initrd-switch-root.service: Deactivated successfully.
+May 21 19:38:51 laptop systemd[1]: Stopped initrd-switch-root.service.
+May 21 19:38:51 laptop systemd[1]: Reached target Local Encrypted Volumes.
+May 21 19:38:51 laptop systemd[1]: Stopped target initrd-fs.target.
+May 21 19:38:51 laptop systemd[1]: Stopped target initrd-root-fs.target.
+May 21 19:38:51 laptop systemd[1]: Stopped target initrd-switch-root.target.
+May 21 19:38:51 laptop systemd[1]: Listening on Credential Encryption/Decryption.
+May 21 19:38:51 laptop systemd[1]: Listening on Make TPM PCR Policy.
+May 21 19:38:51 laptop systemd[1]: Starting Load Kernel Module configfs...
+May 21 19:38:51 laptop systemd[1]: Load Kernel Module drm skipped, unmet condition check ConditionKernelModuleLoaded=!drm
+May 21 19:38:51 laptop systemd[1]: Starting Load Kernel Module efi_pstore...
+May 21 19:38:51 laptop systemd[1]: Starting Load Kernel Module fuse...
+May 21 19:38:51 laptop systemd[1]: systemd-cryptsetup@crypted\x2ddata.service: Deactivated successfully.
+May 21 19:38:51 laptop systemd[1]: Stopped systemd-cryptsetup@crypted\x2ddata.service.
+May 21 19:38:51 laptop systemd[1]: systemd-cryptsetup@crypted\x2dsystem.service: Deactivated successfully.
+May 21 19:38:51 laptop systemd[1]: Stopped systemd-cryptsetup@crypted\x2dsystem.service.
+May 21 19:38:51 laptop systemd[1]: Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+May 21 19:38:51 laptop systemd[1]: Starting Load Kernel Modules...
+May 21 19:38:51 laptop systemd[1]: Early TPM SRK Setup skipped, unmet condition check ConditionPathExists=!/run/systemd/tpm2-srk-public-key.pem
+May 21 19:38:51 laptop systemd[1]: Finished Load Kernel Module configfs.
+May 21 19:38:51 laptop systemd[1]: Finished Load Kernel Module efi_pstore.
+May 21 19:38:51 laptop systemd[1]: Finished Load Kernel Module fuse.
+May 21 19:38:51 laptop kernel: loop: module loaded
+May 21 19:38:51 laptop systemd-modules-load[930]: Using 7 probe threads
+May 21 19:38:51 laptop systemd-modules-load[930]: Module 'ctr' is built in
+May 21 19:38:51 laptop systemd-modules-load[930]: Inserted module 'uinput'
+May 21 19:38:51 laptop systemd-modules-load[930]: Inserted module 'i2c_dev'
+May 21 19:38:51 laptop systemd-modules-load[930]: Inserted module 'tun'
+May 21 19:38:51 laptop systemd-modules-load[930]: Inserted module 'loop'
+May 21 19:38:51 laptop systemd[1]: Starting TPM SRK Setup...
+May 21 19:38:51 laptop systemd-tpm2-setup[945]: SRK already stored in the TPM.
+May 21 19:38:51 laptop systemd-tpm2-setup[945]: SRK fingerprint is e0963cf554cce70a75a818fd2c58f96c7b7ff2d06f0f5e74305e9273449ca0b9.
+May 21 19:38:51 laptop systemd-tpm2-setup[945]: SRK saved in '/var/lib/systemd/tpm2-srk-public-key.pem' matches SRK in TPM2.
+May 21 19:38:52 laptop systemd[1]: Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+May 21 19:38:52 laptop systemd[1]: Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+May 21 19:38:52 laptop systemd[1]: Condition check resulted in /dev/tpmrm0 being skipped.
+May 21 19:38:52 laptop systemd[1]: Expecting device /dev/tpm0...
+May 21 19:38:52 laptop systemd[1]: Found device /dev/tpm0.
+May 21 19:38:52 laptop kernel: nvidia: loading out-of-tree module taints kernel.
+May 21 19:38:52 laptop systemd[1]: Reached target Trusted Platform Module.
+May 21 19:38:53 laptop kernel: NVRM: loading NVIDIA UNIX Open Kernel Module for x86_64  595.58.03  Release Build  (nixbld@)  
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: Anchor secret file '/var/lib/systemd/nvpcr/nvpcr-anchor.cred' different from current anchor secret, updating.
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: Successfully written anchor secret to '/var/lib/systemd/nvpcr/nvpcr-anchor.cred'.
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: WARNING:esys:src/tss2-esys/api/Esys_NV_DefineSpace.c:345:Esys_NV_DefineSpace_Finish() Received TPM Error
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: ERROR:esys:src/tss2-esys/api/Esys_NV_DefineSpace.c:121:Esys_NV_DefineSpace() Esys Finish ErrorCode (0x0000014c)
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: WARNING:esys:src/tss2-esys/api/Esys_NV_DefineSpace.c:345:Esys_NV_DefineSpace_Finish() Received TPM Error
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: ERROR:esys:src/tss2-esys/api/Esys_NV_DefineSpace.c:121:Esys_NV_DefineSpace() Esys Finish ErrorCode (0x0000014c)
+May 21 19:38:53 laptop systemd-tpm2-setup[945]: 2 NvPCRs initialized.
+May 21 19:38:53 laptop systemd[1]: Finished TPM SRK Setup.
+May 21 19:38:53 laptop kernel: Bluetooth: hci0: Minimum firmware build 1 week 10 2014
+May 21 19:38:53 laptop kernel: Bluetooth: hci0: Found device firmware: intel/ibt-20-1-3.sfi
+May 21 19:38:53 laptop kernel: Bluetooth: hci0: Firmware Version: 255-255.255
+May 21 19:38:53 laptop kernel: iwlwifi 0000:03:00.0: loaded firmware version 77.f39cc7f9.0 cc-a0-77.ucode op_mode iwlmvm
+May 21 19:38:53 laptop (udev-worker)[979]: nvidia: Process '/nix/store/v8sa6r6q037ihghxfbwzjj4p59v2x0pv-bash-5.3p9/bin/bash -c 'mknod -m 666 /dev/nvidiactl c 195 255'' failed with exit code 1.
+May 21 19:38:53 laptop (udev-worker)[979]: nvidia: Process '/nix/store/v8sa6r6q037ihghxfbwzjj4p59v2x0pv-bash-5.3p9/bin/bash -c 'for i in $(cat /proc/driver/nvidia/gpus/*/information | grep Minor | cut -d \  -f 4); do mknod -m 666 /dev/nvidia${i} c 195 ${i}; done'' failed with exit code 1.
+May 21 19:38:53 laptop (udev-worker)[975]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 19:38:54 laptop systemd[1]: Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+May 21 19:38:54 laptop systemd[1]: Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+May 21 19:38:54 laptop systemd[1]: Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+May 21 19:38:54 laptop systemd[1]: Early TPM SRK Setup skipped, unmet condition check ConditionPathExists=!/run/systemd/tpm2-srk-public-key.pem
+May 21 19:38:54 laptop systemd[1]: Load Kernel Module efi_pstore skipped, unmet condition check ConditionKernelModuleLoaded=!efi_pstore
+May 21 19:38:54 laptop systemd[1]: Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+May 21 19:38:54 laptop systemd[1]: Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+May 21 19:38:54 laptop systemd[1]: Early TPM SRK Setup skipped, unmet condition check ConditionPathExists=!/run/systemd/tpm2-srk-public-key.pem
+May 21 19:38:54 laptop kernel: BTRFS: device fsid 0dcdb74f-6fe6-466e-a796-94986f5d2236 devid 1 transid 28831 /dev/mapper/crypted-data (254:1) scanned by mount (1126)
+May 21 19:38:54 laptop kernel: asus_wmi: fan_curve_get_factory_default (0x00110032) failed: -19
+May 21 19:38:55 laptop kernel: Bluetooth: hci0: Waiting for firmware download to complete
+May 21 19:38:55 laptop kernel: Bluetooth: hci0: Firmware loaded in 1355537 usecs
+May 21 19:38:55 laptop kernel: Bluetooth: hci0: Firmware revision 0.3 build 83 week 7 2026
+May 21 19:38:55 laptop systemd-modules-load[930]: Inserted module 'nvidia_uvm'
+May 21 19:38:55 laptop systemd[1]: Finished Load Kernel Modules.
+May 21 19:38:55 laptop (udev-worker)[1002]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 19:38:55 laptop (udev-worker)[1002]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 19:38:55 laptop kernel: amdgpu 0000:06:00.0: amdgpu: [drm] Loading DMUB firmware via PSP: version=0x0101002B
+May 21 19:38:55 laptop kernel: amdgpu 0000:06:00.0: amdgpu: [VCN instance 0] Found VCN firmware Version ENC: 1.24 DEC: 8 VEP: 0 Revision: 9
+May 21 19:38:56 laptop (udev-worker)[1002]: asus::kbd_backlight: Process '/nix/store/74sind1d6vf2bfwd7yklg8chsvzqxmmq-coreutils-9.10/bin/chmod a+w /sys/devices/pci0000:00/0000:00:08.1/0000:06:00.3/usb1/1-3/1-3:1.0/0003:0B05:1866.0005/leds/asus::kbd_backlight/kbd_rgb_mode' failed with exit code 1.
+May 21 19:38:56 laptop systemd[1]: virt-secret-init-encryption.service skipped, unmet condition check ConditionPathExists=!/var/lib/libvirt/secrets/secrets-encryption-key
+May 21 19:38:56 laptop nsncd[1448]: May 21 14:08:56.175 INFO started, config: Config { ignored_request_types: {}, worker_count: 8, handoff_timeout: 10s }, path: "/var/run/nscd/socket"
+May 21 19:38:56 laptop kernel: asus_wmi: Accessing attributes through /sys/bus/platform/asus_wmi is deprecated and will be removed in a future release. Please switch over to /sys/class/firmware_attributes.
+May 21 19:38:56 laptop systemctl[1573]: Failed to start nvidia-powerd.service: Unit nvidia-powerd.service not found.
+May 21 19:38:56 laptop supergfxd[1463]: [WARN  supergfxctl] true nvidia-powerd.service failed: Some(5)
+May 21 19:38:56 laptop nsncd[1610]: May 21 14:08:56.229 INFO started, config: Config { ignored_request_types: {}, worker_count: 8, handoff_timeout: 10s }, path: "/var/run/nscd/socket"
+May 21 19:38:57 laptop openrgb[1849]: Connection attempt failed
+May 21 19:38:57 laptop openrgb[1849]: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] Reload called on firmware attribute charge_mode
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: charge_mode. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: charge_mode. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: charge_mode. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] Reload called on firmware attribute panel_overdrive
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: panel_overdrive. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: panel_overdrive. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: panel_overdrive. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to read: Io(Os { code: 19, kind: Uncategorized, message: "No such device" })
+May 21 19:38:57 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to read: Io(Os { code: 19, kind: Uncategorized, message: "No such device" })
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: dgpu_disable. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: dgpu_disable. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: dgpu_disable. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] Reload called on firmware attribute boot_sound
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: boot_sound. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: boot_sound. You can ignore this if your device does not support the feature
+May 21 19:38:57 laptop asusd[1978]: [INFO  asusd::asus_armoury] inotify watch failed: Attribute not found: boot_sound. You can ignore this if your device does not support the feature
+May 21 19:38:58 laptop systemd[1]: Started greetd.service.
+May 21 19:38:58 laptop systemd[1]: Startup finished in 7.555s (firmware) + 5.760s (loader) + 536ms (kernel) + 3.155s (initrd) + 5.771s (userspace) = 22.780s.
+May 21 19:38:58 laptop greetd[2551]: pam_unix(greetd:session): session opened for user david(uid=1000) by (uid=0)
+May 21 19:38:58 laptop greetd[2551]: gkr-pam: gnome-keyring-daemon started properly
+May 21 19:39:00 laptop openrgb[1849]: <h2>Some internal devices may not be detected:</h2><p>One or more I2C or SMBus interfaces failed to initialize.</p><p><b>RGB DRAM modules, some motherboards' onboard RGB lighting, and RGB Graphics Cards, will not be available in OpenRGB</b> without I2C or SMBus.</p><h4>How to fix this:</h4><p>On Linux, this is usually because the i2c-dev module is not loaded.</p><p>You must load the i2c-dev module along with the correct i2c driver for your motherboard. This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p><h3>If you are not using internal RGB on a desktop this message is not important to you.</h3>
+May 21 19:39:00 laptop dbus-broker-launch[1383]: Activation request for 'org.freedesktop.resolve1' failed: The systemd unit 'dbus-org.freedesktop.resolve1.service' could not be found.
+May 21 19:39:00 laptop nsncd[2719]: May 21 14:09:00.603 INFO started, config: Config { ignored_request_types: {}, worker_count: 8, handoff_timeout: 10s }, path: "/var/run/nscd/socket"
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: unable to locate daemon control file
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: stashed password to try later in open session
+May 21 19:39:23 laptop greetd[2551]: pam_unix(greetd:session): session closed for user david
+May 21 19:39:23 laptop greetd[2789]: pam_unix(greetd:session): session opened for user david(uid=1000) by (uid=0)
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.512638Z  INFO niri: starting version unstable 2026-04-19 (commit 68bb942d2146cd2c8af69c0f16db18396b4388fe)
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.515240Z DEBUG niri_config: loaded config from "/home/david/.config/niri/config.kdl"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.630719Z  INFO niri::backend::tty: using as the render node: "/dev/dri/renderD129"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.676611Z DEBUG niri::backend::tty: adding device: 57858 "/dev/dri/card2"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.676644Z DEBUG niri::backend::tty: this is the primary node
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.891107Z DEBUG niri::backend::tty: got render node: renderD129
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.891120Z DEBUG niri::backend::tty: initializing the primary renderer
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.921185Z DEBUG niri::backend::tty: device changed: 57858
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.923620Z DEBUG niri::backend::tty: new connector: eDP-1 "Sharp Corporation LQ156M1JW25 Unknown"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.923730Z DEBUG niri::backend::tty: connecting connector: eDP-1
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.923744Z DEBUG niri::backend::tty: picking mode: Mode { name: "1920x1080", clock: 133330, size: (1920, 1080), hsync: (1944, 1960, 2000), vsync: (1083, 1088, 1111), hskew: 0, vscan: 0, vrefresh: 60, mode_type: ModeTypeFlags(PREFERRED | DRIVER) }
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.927329Z DEBUG niri::niri: putting output eDP-1 at x=0 y=0
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.927351Z DEBUG niri::backend::tty: adding device: 57857 "/dev/dri/card1"
+May 21 19:39:25 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1256105306 heartbeat 0 heartbeatWithOffsetMs 0 diff 1256105306 timeout 5200
+May 21 19:39:25 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.005156Z DEBUG niri::backend::tty: got render node: renderD128
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.005237Z DEBUG niri::backend::tty: device changed: 57857
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.006151Z  INFO niri: listening on Wayland socket: wayland-1
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.006158Z  INFO niri: IPC listening on: /run/user/1000/niri.wayland-1.2893.sock
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.016439Z  INFO niri: listening on X11 socket: :0
+May 21 19:39:26 laptop systemd[2558]: Started PolicyKit Authentication Agent provided by niri-flake.
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:26 laptop dms[2957]:   WARN  go: GeoClue2 unavailable: failed to create GeoClue2 client: The name is not activatable
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:27 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:27 laptop niri[2893]: 2026-05-21T14:09:27.140185Z DEBUG niri::utils::xwayland::satellite: connection to X11 abstract socket; spawning xwayland-satellite
+May 21 19:39:27 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:27 laptop systemd[2558]: Failed to start UPower-powered power alerter.
+May 21 19:39:27 laptop polkit-kde-authentication-agent-1[2958]: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2958/root")
+May 21 19:39:27 laptop polkit-kde-authentication-agent-1[2958]: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2958/root")
+May 21 19:39:27 laptop nm-applet[2968]: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+May 21 19:39:27 laptop wireplumber[3083]: default: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+May 21 19:39:28 laptop systemd[2558]: Started app-niri-ghostty-3139.scope.
+May 21 19:39:28 laptop dms[2989]:   WARN scene: QML FileView at @Common/SettingsData.qml[2737:5]: Write of /home/david/.config/DankMaterialShell/settings.json failed: Permission denied.
+May 21 19:39:29 laptop dms[2989]:   WARN scene: QML FileView at @Common/Theme.qml[1996:5]: Read of /home/david/.cache/DankMaterialShell/dms-colors.json failed: File does not exist.
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.service.polkit.listener: failed to register listener: GDBus.Error:org.freedesktop.PolicyKit1.Error.Failed: An authentication agent already exists for the given subject
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.service.polkit: failed to register listener on path "/org/quickshell/PolkitAgent"
+May 21 19:39:29 laptop dms[2989]:   WARN qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+May 21 19:39:29 laptop dms[2989]:   INFO qml: CompositorService: Detected Niri with socket: /run/user/1000/niri.wayland-1.2893.sock
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated wpblur config at /home/david/.config/niri/dms/wpblur.kdl
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Loaded 1 outputs
+May 21 19:39:29 laptop dms[2989]:   INFO qml: CompositorService: Detected Niri with socket: /run/user/1000/niri.wayland-1.2893.sock
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated wpblur config at /home/david/.config/niri/dms/wpblur.kdl
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated alttab config at /home/david/.config/niri/dms/alttab.kdl
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated layout config at /home/david/.config/niri/dms/layout.kdl
+May 21 19:39:53 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1256132820 heartbeat 0 heartbeatWithOffsetMs 0 diff 1256132820 timeout 5200
+May 21 19:39:53 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 19:39:53 laptop (udev-worker)[5013]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 19:39:54 laptop (udev-worker)[5487]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 20:04:22 laptop systemd[2558]: Started app-niri-dms-18268.scope.
+May 21 20:04:32 laptop steam[18361]: [04:32.086] BOOTSTRAP-ERROR Failed to load Millennium library: /usr/lib/millennium/libmillennium_x86.so: cannot open shared object file: No such file or directory
+May 21 20:04:32 laptop steam[18361]: XOpenIM() failed, LANG = en_US.UTF-8
+May 21 20:04:32 laptop steam[18361]: XOpenIM() failed, LANG = en_US.UTF-8XRRGetOutputInfo Workaround: initialized with override: 0 real: 0xf61c3840
+May 21 20:04:34 laptop kernel: NVRM: nvAssertFailedNoLog: Assertion failed: 0 @ kernel_gsp.c:1446
+May 21 20:04:34 laptop kernel: NVRM: nvAssertFailedNoLog: Assertion failed: 0 @ kernel_gsp.c:1446
+May 21 20:04:34 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1257614289 heartbeat 0 heartbeatWithOffsetMs 0 diff 1257614289 timeout 5200
+May 21 20:04:34 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 20:05:12 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1257651688 heartbeat 0 heartbeatWithOffsetMs 0 diff 1257651688 timeout 5200
+May 21 20:05:12 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 20:16:39 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1258339136 heartbeat 0 heartbeatWithOffsetMs 0 diff 1258339136 timeout 5200
+May 21 20:16:39 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after AC/DC toggle: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:33:43 laptop (udev-worker)[35350]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:33:44 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1262963953 heartbeat 0 heartbeatWithOffsetMs 0 diff 1262963953 timeout 5200
+May 21 21:33:44 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:33:44 laptop (udev-worker)[35350]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:33:59 laptop NetworkManager[1651]: <warn>  [1779379439.1944] device (wlp3s0): link timed out.
+May 21 21:33:59 laptop NetworkManager[1651]: <warn>  [1779379439.2160] device (wlp3s0): Activation: failed for connection 'STANZA_SPECTRA'
+May 21 21:33:59 laptop nsncd[35433]: May 21 16:03:59.226 INFO started, config: Config { ignored_request_types: {}, worker_count: 8, handoff_timeout: 10s }, path: "/var/run/nscd/socket"
+May 21 21:34:30 laptop nsncd[35587]: May 21 16:04:30.821 INFO started, config: Config { ignored_request_types: {}, worker_count: 8, handoff_timeout: 10s }, path: "/var/run/nscd/socket"
+May 21 21:34:32 laptop nsncd[35661]: May 21 16:04:32.204 INFO started, config: Config { ignored_request_types: {}, worker_count: 8, handoff_timeout: 10s }, path: "/var/run/nscd/socket"
+May 21 21:35:26 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:35:26 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:35:26 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:35:26 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:35:26 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:35:26 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after AC/DC toggle: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:35:27 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1263066659 heartbeat 0 heartbeatWithOffsetMs 0 diff 1263066659 timeout 5200
+May 21 21:35:27 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:35:27 laptop (udev-worker)[35794]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:35:28 laptop (udev-worker)[35803]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:31 laptop (udev-worker)[35942]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:35 laptop (udev-worker)[35951]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:43 laptop (udev-worker)[35971]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:44 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1263143582 heartbeat 0 heartbeatWithOffsetMs 0 diff 1263143582 timeout 5200
+May 21 21:36:44 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:36:44 laptop (udev-worker)[35971]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after AC/DC toggle: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:44 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:47 laptop (udev-worker)[35983]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after AC/DC toggle: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:48 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:36:50 laptop (udev-worker)[35997]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:57 laptop (udev-worker)[36012]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:59 laptop (udev-worker)[36012]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:37:01 laptop (udev-worker)[36022]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:37:02 laptop (udev-worker)[36022]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after AC/DC toggle: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl1_spl': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::asus_armoury] Failed to emit updated limits for attribute 'ppt_pl2_sppt': Zbus(FDO(Failed("Could not read current value")))
+May 21 21:37:02 laptop asusd[1978]: [ERROR asusd::ctrl_platform] Failed to emit armoury updates after profile change: Zbus(FDO(Failed("Could not read current value")))
+May 21 21:39:30 laptop (udev-worker)[36344]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:42:11 laptop (udev-worker)[36688]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:44:56 laptop (udev-worker)[37037]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:47:34 laptop (udev-worker)[37373]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:50:17 laptop (udev-worker)[37730]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:52:55 laptop (udev-worker)[38065]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:55:37 laptop (udev-worker)[38410]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:58:16 laptop (udev-worker)[38743]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:00:54 laptop (udev-worker)[39085]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:03:38 laptop (udev-worker)[39433]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:04:51 laptop steam[18361]: src/clientdll/compatmanager.cpp (1279) : Assertion Failed: Tool 4183110 "Steam Linux Runtime 4.0" unsupported version 0.
+May 21 22:04:51 laptop steam[18361]: src/clientdll/compatmanager.cpp (1279) : Assertion Failed: Tool 4183110 "Steam Linux Runtime 4.0" unsupported version 0.
+May 21 22:06:16 laptop (udev-worker)[39789]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:08:55 laptop (udev-worker)[40124]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:11:37 laptop (udev-worker)[40468]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:14:15 laptop (udev-worker)[40802]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:16:54 laptop (udev-worker)[41140]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:19:31 laptop (udev-worker)[41481]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:22:12 laptop (udev-worker)[41822]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:24:50 laptop (udev-worker)[42152]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:27:03 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1266162665 heartbeat 0 heartbeatWithOffsetMs 0 diff 1266162665 timeout 5200
+May 21 22:27:03 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 22:27:05 laptop (udev-worker)[43076]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:27:56 laptop (udev-worker)[43634]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:28:51 laptop (udev-worker)[43785]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:29:41 laptop (udev-worker)[43928]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:30:27 laptop (udev-worker)[44040]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:30:57 laptop systemd[2558]: Started app-niri-zen\x2dtwilight-44120.scope.
+May 21 22:31:27 laptop (udev-worker)[44782]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:33:32 laptop (udev-worker)[45764]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:33:35 laptop systemd[2558]: Started app-niri-dms-45774.scope.
+May 21 22:35:43 laptop (udev-worker)[47452]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:38:09 laptop (udev-worker)[47799]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:40:36 laptop (udev-worker)[48146]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:43:05 laptop (udev-worker)[48466]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.

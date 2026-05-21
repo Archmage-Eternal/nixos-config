@@ -1,0 +1,21 @@
+$ systemd-analyze critical-chain
+
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @5.771s
+└─multi-user.target @5.771s
+  └─libvirt-guests.service @5.753s +17ms
+    └─libvirtd.service @4.245s +1.507s
+      └─network.target @4.243s
+        └─NetworkManager.service @3.474s +765ms
+          └─network-pre.target @3.472s
+            └─resolvconf.service @3.409s +62ms
+              └─basic.target @3.382s
+                └─dbus-broker.service @3.340s +30ms
+                  └─dbus.socket @3.326s +63us
+                    └─sysinit.target @3.325s
+                      └─systemd-backlight@backlight:amdgpu_bl2.service @4.259s +19ms
+                        └─system-systemd\x2dbacklight.slice @3.345s
+                          └─system.slice
+                            └─-.slice

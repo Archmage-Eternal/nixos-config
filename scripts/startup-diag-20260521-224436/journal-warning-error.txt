@@ -1,0 +1,218 @@
+$ journalctl -b -p warning..err
+
+May 21 19:38:48 laptop kernel: Speculative Return Stack Overflow: IBPB-extending microcode not applied!
+May 21 19:38:48 laptop kernel: Speculative Return Stack Overflow: WARNING: See https://kernel.org/doc/html/latest/admin-guide/hw-vuln/srso.html for mitigation options.
+May 21 19:38:48 laptop kernel: i8042: PNP: PS/2 appears to have AUX port disabled, if this is incorrect please boot with i8042.nopnp
+May 21 19:38:48 laptop kernel: nvme nvme0: failed to set APST feature (2)
+May 21 19:38:49 laptop kernel: nvme0n1: I/O Cmd(0x2) @ LBA 4096, 8 blocks, I/O Error (sct 0x2 / sc 0x81) 
+May 21 19:38:49 laptop kernel: critical medium error, dev nvme0n1, sector 4096 op 0x0:(READ) flags 0x880700 phys_seg 1 prio class 2
+May 21 19:38:52 laptop kernel: nvidia: loading out-of-tree module taints kernel.
+May 21 19:38:53 laptop kernel: 
+May 21 19:38:53 laptop kernel: NVRM: loading NVIDIA UNIX Open Kernel Module for x86_64  595.58.03  Release Build  (nixbld@)  
+May 21 19:38:53 laptop (udev-worker)[979]: nvidia: Process '/nix/store/v8sa6r6q037ihghxfbwzjj4p59v2x0pv-bash-5.3p9/bin/bash -c 'mknod -m 666 /dev/nvidiactl c 195 255'' failed with exit code 1.
+May 21 19:38:53 laptop (udev-worker)[979]: nvidia: Process '/nix/store/v8sa6r6q037ihghxfbwzjj4p59v2x0pv-bash-5.3p9/bin/bash -c 'for i in $(cat /proc/driver/nvidia/gpus/*/information | grep Minor | cut -d \  -f 4); do mknod -m 666 /dev/nvidia${i} c 195 ${i}; done'' failed with exit code 1.
+May 21 19:38:53 laptop (udev-worker)[975]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 19:38:53 laptop kernel: asus_armoury: No matching power limits found for this system
+May 21 19:38:54 laptop kernel: asus_wmi: fan_curve_get_factory_default (0x00110032) failed: -19
+May 21 19:38:55 laptop kernel: Bluetooth: hci0: HCI LE Coded PHY feature bit is set, but its usage is not supported.
+May 21 19:38:55 laptop (udev-worker)[1002]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 19:38:55 laptop (udev-worker)[1002]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 19:38:56 laptop (udev-worker)[1002]: asus::kbd_backlight: Process '/nix/store/74sind1d6vf2bfwd7yklg8chsvzqxmmq-coreutils-9.10/bin/chmod a+w /sys/devices/pci0000:00/0000:00:08.1/0000:06:00.3/usb1/1-3/1-3:1.0/0003:0B05:1866.0005/leds/asus::kbd_backlight/kbd_rgb_mode' failed with exit code 1.
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'id.waydro.Container' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/system-services/id.waydro.Container.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'fi.w1.wpa_supplicant1' in service file '/nix/store/ahvcvci710737cwrqq1mrlkck1gbyf9v-wpa_supplicant-2.11/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.freedesktop.nm_dispatcher' in service file '/nix/store/aixx182m5bcg9n3w30h26pkkdbjzrzaf-networkmanager-1.56.0/share/dbus-1/system-services/org.freedesktop.nm_dispatcher.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.freedesktop.nm_priv_helper' in service file '/nix/store/aixx182m5bcg9n3w30h26pkkdbjzrzaf-networkmanager-1.56.0/share/dbus-1/system-services/org.freedesktop.nm_priv_helper.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.freedesktop.ModemManager1' in service file '/nix/store/93hjvx9cb5ailbkidah4dq3b2gg34nqp-modemmanager-1.24.2/share/dbus-1/system-services/org.freedesktop.ModemManager1.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.freedesktop.ratbag1' in service file '/nix/store/q0z2hxys5k0xqvivxg2gj6kxg1xza4g6-libratbag-0.18/share/dbus-1/system-services/org.freedesktop.ratbag1.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.bluez.mesh' in service file '/nix/store/h62im4mqizh3smv2n532jncaz47819w4-bluez-5.84/share/dbus-1/system-services/org.bluez.mesh.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.bluez' in service file '/nix/store/h62im4mqizh3smv2n532jncaz47819w4-bluez-5.84/share/dbus-1/system-services/org.bluez.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.freedesktop.RealtimeKit1' in service file '/nix/store/0czvpnp87k6a836hj5gl74jwib86296y-rtkit-0.14/share/dbus-1/system-services/org.freedesktop.RealtimeKit1.service'
+May 21 19:38:56 laptop dbus-broker-launch[1383]: Ignoring duplicate name 'org.freedesktop.PolicyKit1' in service file '/nix/store/v28vyw5s4dy99dj3z1f03xca2rifpfpi-polkit-127/share/dbus-1/system-services/org.freedesktop.PolicyKit1.service'
+May 21 19:38:56 laptop systemctl[1573]: Failed to start nvidia-powerd.service: Unit nvidia-powerd.service not found.
+May 21 19:38:56 laptop NetworkManager[1651]: <warn>  [1779372536.9378] device (p2p-dev-wlp3s0): error setting IPv4 forwarding to '0': Resource temporarily unavailable
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'com.mitchellh.ghostty' in service file '/etc/profiles/per-user/david/share/dbus-1/services/com.mitchellh.ghostty.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Service file '/etc/profiles/per-user/david/share/dbus-1/services/org.xfce.Thunar.FileManager1.service' is not named after the D-Bus name 'org.freedesktop.FileManager1'.
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'ca.desrt.dconf' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/ca.desrt.dconf.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'com.feralinteractive.GameMode' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/com.feralinteractive.GameMode.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.bluez.obex' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.bluez.obex.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.PermissionStore' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.Secret' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gnome' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gnome.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gtk' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.hyprland' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.import1' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.import1.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.machine1' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.machine1.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Desktop' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.portal.Desktop.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Documents' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.portal.Documents.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.secrets' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.secrets.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.systemd1' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.systemd1.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.gnome.keyring' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.gnome.keyring.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.bluez.obex' in service file '/nix/store/h62im4mqizh3smv2n532jncaz47819w4-bluez-5.84/share/dbus-1/services/org.bluez.obex.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.Secret' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.secrets' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.secrets.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.gnome.keyring' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.gnome.keyring.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'ca.desrt.dconf' in service file '/nix/store/6j2gzrryz8327ba6dj0s311f70mgwnvd-dconf-0.49.0/share/dbus-1/services/ca.desrt.dconf.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.PermissionStore' in service file '/nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Desktop' in service file '/nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/share/dbus-1/services/org.freedesktop.portal.Desktop.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Documents' in service file '/nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/share/dbus-1/services/org.freedesktop.portal.Documents.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gnome' in service file '/nix/store/jja11zkapqrp0ipb5gj26xci1cmd6ibl-xdg-desktop-portal-gnome-49.0/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gnome.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gtk' in service file '/nix/store/86zmqzjz652wlnaiv5v7byyp8rcp81a3-xdg-desktop-portal-gtk-1.15.3/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.Secret' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.secrets' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.secrets.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.gnome.keyring' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.gnome.keyring.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.hyprland' in service file '/nix/store/8g6f7sg5mv4ssqz1rdinaiqk25rv7796-xdg-desktop-portal-hyprland-1.3.11+date=2026-04-19_4a29352/share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gtk' in service file '/nix/store/86zmqzjz652wlnaiv5v7byyp8rcp81a3-xdg-desktop-portal-gtk-1.15.3/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service'
+May 21 19:39:00 laptop dbus-broker-launch[1383]: Activation request for 'org.freedesktop.resolve1' failed: The systemd unit 'dbus-org.freedesktop.resolve1.service' could not be found.
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: unable to locate daemon control file
+May 21 19:39:25 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1256105306 heartbeat 0 heartbeatWithOffsetMs 0 diff 1256105306 timeout 5200
+May 21 19:39:25 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:26 laptop gnome-keyring-daemon[2972]: discover_other_daemon: 1
+May 21 19:39:26 laptop gnome-keyring-daemon[2974]: discover_other_daemon: 1
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:26 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:27 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:27 laptop systemd[2558]: poweralertd.service: Start request repeated too quickly.
+May 21 19:39:27 laptop systemd[2558]: poweralertd.service: Failed with result 'exit-code'.
+May 21 19:39:27 laptop systemd[2558]: Failed to start UPower-powered power alerter.
+May 21 19:39:27 laptop polkit-kde-authentication-agent-1[2958]: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2958/root")
+May 21 19:39:27 laptop polkit-kde-authentication-agent-1[2958]: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2958/root")
+May 21 19:39:27 laptop nm-applet[2968]: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+May 21 19:39:27 laptop wireplumber[3083]: default: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+May 21 19:39:29 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 3364: Could not fstatat ns/pid: Not a directory
+May 21 19:39:29 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 3364: Could not fstatat ns/pid: Not a directory
+May 21 19:39:53 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1256132820 heartbeat 0 heartbeatWithOffsetMs 0 diff 1256132820 timeout 5200
+May 21 19:39:53 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 19:39:53 laptop (udev-worker)[5013]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 19:39:54 laptop (udev-worker)[5487]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 20:04:34 laptop kernel: NVRM: _kgspProcessRpcEvent: Attempted to process RPC event from GPU0: 0x101a (PFM_REQ_HNDLR_STATE_SYNC_CALLBACK) during bootup without API lock
+May 21 20:04:34 laptop kernel: NVRM: nvAssertFailedNoLog: Assertion failed: 0 @ kernel_gsp.c:1446
+May 21 20:04:34 laptop kernel: NVRM: _kgspProcessRpcEvent: Attempted to process RPC event from GPU0: 0x101a (PFM_REQ_HNDLR_STATE_SYNC_CALLBACK) during bootup without API lock
+May 21 20:04:34 laptop kernel: NVRM: nvAssertFailedNoLog: Assertion failed: 0 @ kernel_gsp.c:1446
+May 21 20:04:34 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1257614289 heartbeat 0 heartbeatWithOffsetMs 0 diff 1257614289 timeout 5200
+May 21 20:04:34 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 20:04:35 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:04:35 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:04:36 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:04:36 laptop steamwebhelper[18520]: pressure-vessel-wrap[18508]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:04:36 laptop steamwebhelper[18520]: pressure-vessel-wrap[18508]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:04:36 laptop steamwebhelper[18520]: pressure-vessel-wrap[18508]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:04:36 laptop steamwebhelper[18520]: pressure-vessel-wrap[18508]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:04:37 laptop kernel: warning: `ThreadPoolForeg' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
+May 21 20:04:44 laptop steam[18361]: pressure-vessel-wrap[19059]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:04:44 laptop steam[18361]: pressure-vessel-wrap[19059]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:04:44 laptop steam[18361]: pressure-vessel-wrap[19059]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:04:44 laptop steam[18361]: pressure-vessel-wrap[19059]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:04:46 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 19444: Could not fstatat ns/pid: Not a directory
+May 21 20:04:50 laptop steam[18361]: pressure-vessel-wrap[19568]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:04:50 laptop steam[18361]: pressure-vessel-wrap[19568]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:04:50 laptop steam[18361]: pressure-vessel-wrap[19568]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:04:50 laptop steam[18361]: pressure-vessel-wrap[19568]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:04:51 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 19780: Could not fstatat ns/pid: Not a directory
+May 21 20:05:08 laptop steam[18361]: pressure-vessel-wrap[19927]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:05:08 laptop steam[18361]: pressure-vessel-wrap[19927]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:05:08 laptop steam[18361]: pressure-vessel-wrap[19927]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:05:08 laptop steam[18361]: pressure-vessel-wrap[19927]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:05:09 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 20154: Could not fstatat ns/pid: Not a directory
+May 21 20:05:12 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1257651688 heartbeat 0 heartbeatWithOffsetMs 0 diff 1257651688 timeout 5200
+May 21 20:05:12 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 20:05:14 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:05:14 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:05:16 laptop steam[18361]: pressure-vessel-wrap[20236]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:05:16 laptop steam[18361]: pressure-vessel-wrap[20236]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:05:16 laptop steam[18361]: pressure-vessel-wrap[20236]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:05:16 laptop steam[18361]: pressure-vessel-wrap[20236]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:05:42 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:05:50 laptop steam[18361]: pressure-vessel-wrap[20818]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:05:50 laptop steam[18361]: pressure-vessel-wrap[20818]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:05:50 laptop steam[18361]: pressure-vessel-wrap[20818]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:05:50 laptop steam[18361]: pressure-vessel-wrap[20818]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:05:52 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 21032: Could not fstatat ns/pid: Not a directory
+May 21 20:05:55 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 20:05:56 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 20:16:33 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:16:35 laptop steam[18361]: pressure-vessel-wrap[23808]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 20:16:35 laptop steam[18361]: pressure-vessel-wrap[23808]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 20:16:35 laptop steam[18361]: pressure-vessel-wrap[23808]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:16:35 laptop steam[18361]: pressure-vessel-wrap[23808]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 20:16:39 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1258339136 heartbeat 0 heartbeatWithOffsetMs 0 diff 1258339136 timeout 5200
+May 21 20:16:39 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 20:39:20 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 21:33:43 laptop (udev-worker)[35350]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:33:44 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1262963953 heartbeat 0 heartbeatWithOffsetMs 0 diff 1262963953 timeout 5200
+May 21 21:33:44 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:33:44 laptop (udev-worker)[35350]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:33:59 laptop NetworkManager[1651]: <warn>  [1779379439.1944] device (wlp3s0): link timed out.
+May 21 21:33:59 laptop NetworkManager[1651]: <warn>  [1779379439.2160] device (wlp3s0): Activation: failed for connection 'STANZA_SPECTRA'
+May 21 21:33:59 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 21:35:27 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1263066659 heartbeat 0 heartbeatWithOffsetMs 0 diff 1263066659 timeout 5200
+May 21 21:35:27 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:35:27 laptop (udev-worker)[35794]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:35:28 laptop (udev-worker)[35803]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:31 laptop (udev-worker)[35942]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:35 laptop (udev-worker)[35951]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:43 laptop (udev-worker)[35971]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:44 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1263143582 heartbeat 0 heartbeatWithOffsetMs 0 diff 1263143582 timeout 5200
+May 21 21:36:44 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 21:36:44 laptop (udev-worker)[35971]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:47 laptop (udev-worker)[35983]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:50 laptop (udev-worker)[35997]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:57 laptop (udev-worker)[36012]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block start nvidia-powerd.service' failed with exit code 5.
+May 21 21:36:59 laptop (udev-worker)[36012]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:37:01 laptop (udev-worker)[36022]: ucsi-source-psy-USBC000:001: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:37:02 laptop (udev-worker)[36022]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:39:30 laptop (udev-worker)[36344]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:42:11 laptop (udev-worker)[36688]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:44:56 laptop (udev-worker)[37037]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:47:34 laptop (udev-worker)[37373]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:50:17 laptop (udev-worker)[37730]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:52:55 laptop (udev-worker)[38065]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:55:37 laptop (udev-worker)[38410]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 21:58:16 laptop (udev-worker)[38743]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:00:54 laptop (udev-worker)[39085]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:03:38 laptop (udev-worker)[39433]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:06:16 laptop (udev-worker)[39789]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:08:55 laptop (udev-worker)[40124]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:11:37 laptop (udev-worker)[40468]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:14:15 laptop (udev-worker)[40802]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:16:54 laptop (udev-worker)[41140]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:19:31 laptop (udev-worker)[41481]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:22:12 laptop (udev-worker)[41822]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:24:50 laptop (udev-worker)[42152]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:26:56 laptop steam[18361]: pressure-vessel-wrap[42769]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 22:26:56 laptop steam[18361]: pressure-vessel-wrap[42769]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 22:26:56 laptop steam[18361]: pressure-vessel-wrap[42769]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 22:26:56 laptop steam[18361]: pressure-vessel-wrap[42769]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 22:27:00 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 43014: Could not fstatat ns/pid: Not a directory
+May 21 22:27:03 laptop kernel: NVRM: _kgspIsHeartbeatTimedOut: Heartbeat timed out, currentTimeMs 1266162665 heartbeat 0 heartbeatWithOffsetMs 0 diff 1266162665 timeout 5200
+May 21 22:27:03 laptop kernel: NVRM: _kgspRpcRecvPoll: GSP RM heartbeat timed out
+May 21 22:27:05 laptop (udev-worker)[43076]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:27:08 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 22:27:08 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 22:27:13 laptop steam[18361]: pressure-vessel-wrap[43106]: W: "/run/current-system/sw/bin/getent" is unlikely to appear in "/run/host"
+May 21 22:27:13 laptop steam[18361]: pressure-vessel-wrap[43106]: W: Unable to determine architecture of provider / ldconfig: Error reading "(null)" ELF header: invalid `Elf' handle
+May 21 22:27:13 laptop steam[18361]: pressure-vessel-wrap[43106]: W: "run/opengl-driver/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 22:27:13 laptop steam[18361]: pressure-vessel-wrap[43106]: W: "run/opengl-driver-32/share/drirc.d" is unlikely to appear in "/run/host"
+May 21 22:27:38 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 22:27:56 laptop (udev-worker)[43634]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:28:51 laptop (udev-worker)[43785]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:29:41 laptop (udev-worker)[43928]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:30:27 laptop (udev-worker)[44040]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:31:27 laptop (udev-worker)[44782]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:33:32 laptop (udev-worker)[45764]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:33:57 laptop python[45808]: virtual void QtWaylandClient::QWaylandTextInputv3::enableSurface(wl_surface*) Try to enable surface 0x55815f7f0db0 with focusing surface 0x55815e769360
+May 21 22:34:01 laptop python[45808]: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x55815f72ff50 with focusing surface 0x55815e769360
+May 21 22:34:12 laptop python[46768]: Note 'webEngineArgs' are overridden by QTWEBENGINE_CHROMIUM_FLAGS
+May 21 22:34:13 laptop python[46838]: Note 'webEngineArgs' are overridden by QTWEBENGINE_CHROMIUM_FLAGS
+May 21 22:35:43 laptop (udev-worker)[47452]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:36:12 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:36:18 laptop python[45808]: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x55815f5d2600 with focusing surface 0x55815e769360
+May 21 22:36:27 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:38:09 laptop (udev-worker)[47799]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:38:22 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:38:41 laptop python[45808]: virtual void QtWaylandClient::QWaylandTextInputv3::enableSurface(wl_surface*) Try to enable surface 0x55815e664ee0 with focusing surface 0x55815e769360
+May 21 22:40:36 laptop (udev-worker)[48146]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:43:05 laptop (udev-worker)[48466]: ADP0: Process '/nix/store/ik8a7b32nqv2q5p4g86hmp65jklmrp3g-systemd-259.3/bin/systemctl --no-block stop nvidia-powerd.service' failed with exit code 5.
+May 21 22:43:32 laptop python[45808]: virtual void QtWaylandClient::QWaylandTextInputv3::enableSurface(wl_surface*) Try to enable surface 0x55815e769360 with focusing surface 0x55815e664ee0
+May 21 22:43:41 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory

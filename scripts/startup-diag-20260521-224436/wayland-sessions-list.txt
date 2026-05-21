@@ -1,0 +1,6 @@
+$ ls -l /run/current-system/sw/share/wayland-sessions
+
+total 12
+lrwxrwxrwx 4 root root 123 Jan  1  1970 hyprland.desktop -> /nix/store/whq7d5bh8252ffh0q5gwvi8bqgw8gnyc-hyprland-0.54.0+date=2026-04-23_b65714e/share/wayland-sessions/hyprland.desktop
+lrwxrwxrwx 4 root root 128 Jan  1  1970 hyprland-uwsm.desktop -> /nix/store/whq7d5bh8252ffh0q5gwvi8bqgw8gnyc-hyprland-0.54.0+date=2026-04-23_b65714e/share/wayland-sessions/hyprland-uwsm.desktop
+lrwxrwxrwx 5 root root 112 Jan  1  1970 niri.desktop -> /nix/store/042a52hdvpzn486klj0rjw1f0k26xcra-niri-unstable-2026-04-19-68bb942/share/wayland-sessions/niri.desktop

@@ -1,0 +1,272 @@
+$ journalctl --user -b | rg -i 'niri|dms|portal|dbus|xdg|uwsm'
+
+May 21 19:38:58 laptop hm-activate-david[2470]: dbus-daemon[2470]: [session uid=1000 pid=2470 pidfd=5] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=1000 pid=2471 comm="/nix/store/6j2gzrryz8327ba6dj0s311f70mgwnvd-dconf-")
+May 21 19:38:58 laptop hm-activate-david[2470]: dbus-daemon[2470]: [session uid=1000 pid=2470 pidfd=5] Successfully activated service 'ca.desrt.dconf'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'com.mitchellh.ghostty' in service file '/etc/profiles/per-user/david/share/dbus-1/services/com.mitchellh.ghostty.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Service file '/etc/profiles/per-user/david/share/dbus-1/services/org.xfce.Thunar.FileManager1.service' is not named after the D-Bus name 'org.freedesktop.FileManager1'.
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'ca.desrt.dconf' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/ca.desrt.dconf.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'com.feralinteractive.GameMode' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/com.feralinteractive.GameMode.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.bluez.obex' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.bluez.obex.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.PermissionStore' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Policy to allow eavesdropping in /etc/dbus-1/session.conf +27: Eavesdropping is deprecated and ignored
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Policy to allow eavesdropping in /etc/dbus-1/session.conf +29: Eavesdropping is deprecated and ignored
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.Secret' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gnome' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gnome.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gtk' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.hyprland' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.import1' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.import1.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.machine1' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.machine1.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Desktop' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.portal.Desktop.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Documents' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.portal.Documents.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.secrets' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.secrets.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.systemd1' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.freedesktop.systemd1.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.gnome.keyring' in service file '/nix/store/2l778rvg82zrdnqkdbqlslnncsb255mn-system-path/share/dbus-1/services/org.gnome.keyring.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.bluez.obex' in service file '/nix/store/h62im4mqizh3smv2n532jncaz47819w4-bluez-5.84/share/dbus-1/services/org.bluez.obex.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.Secret' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.secrets' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.secrets.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.gnome.keyring' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.gnome.keyring.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'ca.desrt.dconf' in service file '/nix/store/6j2gzrryz8327ba6dj0s311f70mgwnvd-dconf-0.49.0/share/dbus-1/services/ca.desrt.dconf.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.PermissionStore' in service file '/nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Desktop' in service file '/nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/share/dbus-1/services/org.freedesktop.portal.Desktop.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.portal.Documents' in service file '/nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/share/dbus-1/services/org.freedesktop.portal.Documents.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gnome' in service file '/nix/store/jja11zkapqrp0ipb5gj26xci1cmd6ibl-xdg-desktop-portal-gnome-49.0/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gnome.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gtk' in service file '/nix/store/86zmqzjz652wlnaiv5v7byyp8rcp81a3-xdg-desktop-portal-gtk-1.15.3/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.Secret' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.secrets' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.freedesktop.secrets.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.gnome.keyring' in service file '/nix/store/r54q19glwzv947la5551pz4lbbq4449b-gnome-keyring-48.0/share/dbus-1/services/org.gnome.keyring.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.hyprland' in service file '/nix/store/8g6f7sg5mv4ssqz1rdinaiqk25rv7796-xdg-desktop-portal-hyprland-1.3.11+date=2026-04-19_4a29352/share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ignoring duplicate name 'org.freedesktop.impl.portal.desktop.gtk' in service file '/nix/store/86zmqzjz652wlnaiv5v7byyp8rcp81a3-xdg-desktop-portal-gtk-1.15.3/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service'
+May 21 19:38:58 laptop dbus-broker-launch[2604]: Ready
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.512638Z  INFO niri: starting version unstable 2026-04-19 (commit 68bb942d2146cd2c8af69c0f16db18396b4388fe)
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.515240Z DEBUG niri_config: loaded config from "/home/david/.config/niri/config.kdl"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.630719Z  INFO niri::backend::tty: using as the render node: "/dev/dri/renderD129"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.676611Z DEBUG niri::backend::tty: adding device: 57858 "/dev/dri/card2"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.676644Z DEBUG niri::backend::tty: this is the primary node
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.891107Z DEBUG niri::backend::tty: got render node: renderD129
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.891120Z DEBUG niri::backend::tty: initializing the primary renderer
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.921185Z DEBUG niri::backend::tty: device changed: 57858
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.923620Z DEBUG niri::backend::tty: new connector: eDP-1 "Sharp Corporation LQ156M1JW25 Unknown"
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.923730Z DEBUG niri::backend::tty: connecting connector: eDP-1
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.923744Z DEBUG niri::backend::tty: picking mode: Mode { name: "1920x1080", clock: 133330, size: (1920, 1080), hsync: (1944, 1960, 2000), vsync: (1083, 1088, 1111), hskew: 0, vscan: 0, vrefresh: 60, mode_type: ModeTypeFlags(PREFERRED | DRIVER) }
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.927329Z DEBUG niri::niri: putting output eDP-1 at x=0 y=0
+May 21 19:39:23 laptop niri[2893]: 2026-05-21T14:09:23.927351Z DEBUG niri::backend::tty: adding device: 57857 "/dev/dri/card1"
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.005156Z DEBUG niri::backend::tty: got render node: renderD128
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.005237Z DEBUG niri::backend::tty: device changed: 57857
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.006151Z  INFO niri: listening on Wayland socket: wayland-1
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.006158Z  INFO niri: IPC listening on: /run/user/1000/niri.wayland-1.2893.sock
+May 21 19:39:26 laptop niri[2893]: 2026-05-21T14:09:26.016439Z  INFO niri: listening on X11 socket: :0
+May 21 19:39:26 laptop systemd[2558]: Started PolicyKit Authentication Agent provided by niri-flake.
+May 21 19:39:26 laptop systemd[2558]: Reached target Startup of XDG autostart applications.
+May 21 19:39:26 laptop dms[2957]: dms 1.5-beta+date=2026-04-18_4c2c193
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Spawning quickshell with -p /nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms
+May 21 19:39:26 laptop dms[2957]:                                   
+May 21 19:39:26 laptop dms[2957]: ██████╗  █████╗ ███╗   ██╗██╗  ██╗
+May 21 19:39:26 laptop dms[2957]: ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝
+May 21 19:39:26 laptop dms[2957]: ██║  ██║███████║██╔██╗ ██║█████╔╝
+May 21 19:39:26 laptop dms[2957]: ██║  ██║██╔══██║██║╚██╗██║██╔═██╗
+May 21 19:39:26 laptop dms[2957]: ██████╔╝██║  ██║██║ ╚████║██║  ██╗
+May 21 19:39:26 laptop dms[2957]: ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
+May 21 19:39:26 laptop dms[2957]:   INFO  go: DMS API Server listening on: /run/user/1000/danklinux-2957.sock
+May 21 19:39:26 laptop dms[2957]:   INFO  go: API Version: 24
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Protocol: JSON over Unix socket
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Request format: {"id": <any>, "method": "...", "params": {...}}
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Response format: {"id": <any>, "result": {...}} or {"id": <any>, "error": "..."}
+May 21 19:39:26 laptop dms[2957]:   INFO  go:
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Initializing managers...
+May 21 19:39:26 laptop dms[2957]:   INFO  go:
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Attempting to initialize Wayland gamma control...
+May 21 19:39:26 laptop dms[2957]: loginctl: using XDG_SESSION_ID=3
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Network backend detection: NetworkManager present. Using NM API.
+May 21 19:39:26 laptop systemd[2558]: Starting Portal service...
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Loginctl manager initialized
+May 21 19:39:26 laptop dms[2989]:   INFO: Launching config: "/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/shell.qml"
+May 21 19:39:26 laptop dms[2989]:   INFO: Shell ID: "4908177bc23f57067c95b1fe78b0d29d" Path ID "4908177bc23f57067c95b1fe78b0d29d"
+May 21 19:39:26 laptop dms[2989]:   INFO: Saving logs to "/run/user/1000/quickshell/by-id/1b2qn4eft/log.qslog"
+May 21 19:39:26 laptop dms[2957]:   INFO  go: [SecretAgent] Registered with NetworkManager (id=com.danklinux.NMAgent, unique name=:1.35, fixed path=/org/freedesktop/NetworkManager/SecretAgent)
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Network manager initialized
+May 21 19:39:26 laptop systemd[2558]: Starting flatpak document portal service...
+May 21 19:39:26 laptop systemd[2558]: Started flatpak document portal service.
+May 21 19:39:26 laptop systemd[2558]: Starting Portal service (GTK/GNOME implementation)...
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Wayland gamma control initialized successfully
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Theme mode automation manager initialized
+May 21 19:39:26 laptop dms[2957]:   INFO  go: AppPicker manager initialized
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Attempting to initialize DWL IPC...
+May 21 19:39:26 laptop dms[2957]:   INFO  go: DWL: starting registry setup
+May 21 19:39:26 laptop dms[2957]:   INFO  go: TrayRecovery manager initialized
+May 21 19:39:26 laptop dms[2957]:   INFO  go: DWL: Bound wl_output id=9 registry_name=44
+May 21 19:39:26 laptop dms[2957]:   INFO  go: DWL: manager not found in registry
+May 21 19:39:26 laptop dms[2957]:   WARN  go: GeoClue2 unavailable: failed to create GeoClue2 client: The name is not activatable
+May 21 19:39:26 laptop dms[2957]:   INFO  go: ExtWorkspace capability detected and will be available on subscription
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Attempting to initialize WlrOutput management...
+May 21 19:39:26 laptop dms[2957]:   INFO  go: WlrOutput: starting registry setup
+May 21 19:39:26 laptop dms[2957]:   INFO  go: WlrOutput: registry setup complete (events will be processed async)
+May 21 19:39:26 laptop dms[2957]:   INFO  go: WlrOutput management initialized successfully
+May 21 19:39:26 laptop dms[2957]:   INFO  go:
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Ready! Capabilities: [plugins network loginctl gamma browser extworkspace wlroutput theme.auto]
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Brightness manager initialized
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Attempting to initialize clipboard manager...
+May 21 19:39:26 laptop dms[2957]:   INFO  go: [BluezManager] found adapter: /org/bluez/hci0
+May 21 19:39:26 laptop dms[2957]:   INFO  go: WlrOutput: found zwlr_output_manager_v1
+May 21 19:39:26 laptop dms[2957]:   INFO  go: WlrOutput: manager bound successfully
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Logind backend initialized - will use for brightness control
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Bound ext_data_control_manager_v1
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Bound wl_seat
+May 21 19:39:26 laptop dms[2957]:   INFO  go: DBus manager initialized
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Sysfs backend initialized with 10 devices
+May 21 19:39:26 laptop dms[2957]:   INFO  go: [BluezAgent] registered at /com/danklinux/bluez/agent with capability KeyboardDisplay
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Udev monitor started for backlight/drm/i2c events
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Bluez manager initialized
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Data device setup complete
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Clipboard manager initialized successfully
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Wayland event dispatcher started
+May 21 19:39:26 laptop dms[2957]:   INFO  go: Evdev manager initialized
+May 21 19:39:27 laptop systemd[2558]: Started Portal service (GTK/GNOME implementation).
+May 21 19:39:27 laptop niri[2893]: 2026-05-21T14:09:27.140185Z DEBUG niri::utils::xwayland::satellite: connection to X11 abstract socket; spawning xwayland-satellite
+May 21 19:39:27 laptop dms[2957]:   INFO  go: DDC backend initialized
+May 21 19:39:27 laptop systemd[2558]: Started Portal service.
+May 21 19:39:27 laptop polkit-kde-authentication-agent-1[2958]: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2958/root")
+May 21 19:39:27 laptop polkit-kde-authentication-agent-1[2958]: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2958/root")
+May 21 19:39:27 laptop dms[2957]:   WARN  go: Screensaver name org.freedesktop.ScreenSaver already owned by another process
+May 21 19:39:27 laptop dms[2957]:   INFO  go: Claimed org.gnome.ScreenSaver on session bus
+May 21 19:39:27 laptop dms[2957]:   INFO  go: Screensaver listener initialized
+May 21 19:39:27 laptop dms[2957]:   INFO  go: Freedesktop manager initialized
+May 21 19:39:27 laptop wireplumber[3083]: default: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+May 21 19:39:28 laptop systemd[2558]: Started app-niri-ghostty-3139.scope.
+May 21 19:39:28 laptop dms[2957]:   INFO  go: Using IP location
+May 21 19:39:28 laptop dms[2957]:   INFO  go: Location manager initialized
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrating settings from version 0 to version 2
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrated single bar settings to barConfigs
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrating settings from version 0 to version 3
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Per-widget controlCenterButton config now supported via widgetData properties
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrating settings from version 0 to version 4
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrating desktop widgets to unified desktopWidgetInstances
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrating settings from version 0 to version 5
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Moving sensitive data (weather location, coordinates) to session.json
+May 21 19:39:28 laptop dms[2989]:   INFO qml: Migrating settings from version 0 to version 6
+May 21 19:39:28 laptop dms[2989]:   WARN scene: QML FileView at @Common/SettingsData.qml[2737:5]: Write of /home/david/.config/DankMaterialShell/settings.json failed: Permission denied.
+May 21 19:39:28 laptop dms[2989]:   INFO qml: BlurService: BackgroundEffect not available - blur disabled. Requires a newer version of Quickshell.
+May 21 19:39:28 laptop dms[2989]:   INFO qml: NetworkService: Initializing...
+May 21 19:39:28 laptop dms[2989]:   INFO qml: PolkitService: Initialized successfully
+May 21 19:39:28 laptop dms[2989]:   INFO qml: IdleService: Initialized with idle monitoring support
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.I3.ipc: $I3SOCK is unset. Trying $SWAYSOCK.
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.I3.ipc: $SWAYSOCK and I3SOCK are unset. Cannot connect to socket.
+May 21 19:39:29 laptop dms[2989]:   WARN: $HYPRLAND_INSTANCE_SIGNATURE is unset. Cannot connect to hyprland.
+May 21 19:39:29 laptop dms[2989]:   INFO: Configuration Loaded
+May 21 19:39:29 laptop dms[2989]:   INFO qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version 8.0.1 GPL version 3 or later
+May 21 19:39:29 laptop dms[2989]:   WARN: spaVisitChoice: parse error "Object: size 136, type Spa:Pod:Object:Param:Format (262147), id Spa:Enum:ParamId:EnumFormat (3)" "  Prop: key Spa:Pod:Object:Param:Format:mediaType (1), flags 00000000" "    Id 1        (Spa:Enum:MediaType:audio)" "  Prop: key Spa:Pod:Object:Param:Format:mediaSubtype (2), flags 00000000" "    Id 1        (Spa:Enum:MediaSubtype:raw)" "  Prop: key Spa:Pod:Object:Param:Format:Audio:format (65537), flags 00000000" "    Id 518      (Spa:Enum:AudioFormat:F32P)" "  Prop: key Spa:Pod:Object:Param:Format:Audio:channels (65540), flags 00000000" "    Int 1" "  Prop: key Spa:Pod:Object:Param:Format:Audio:position (65541), flags 00000000" "    Array: child.size 4, child.type Spa:Id" "      Id 2        (Spa:Enum:AudioChannel:MONO)"
+May 21 19:39:29 laptop dms[2989]:   WARN: spaVisitChoice: parse error "Object: size 136, type Spa:Pod:Object:Param:Format (262147), id Spa:Enum:ParamId:EnumFormat (3)" "  Prop: key Spa:Pod:Object:Param:Format:mediaType (1), flags 00000000" "    Id 1        (Spa:Enum:MediaType:audio)" "  Prop: key Spa:Pod:Object:Param:Format:mediaSubtype (2), flags 00000000" "    Id 1        (Spa:Enum:MediaSubtype:raw)" "  Prop: key Spa:Pod:Object:Param:Format:Audio:format (65537), flags 00000000" "    Id 518      (Spa:Enum:AudioFormat:F32P)" "  Prop: key Spa:Pod:Object:Param:Format:Audio:channels (65540), flags 00000000" "    Int 1" "  Prop: key Spa:Pod:Object:Param:Format:Audio:position (65541), flags 00000000" "    Array: child.size 4, child.type Spa:Id" "      Id 2        (Spa:Enum:AudioChannel:MONO)"
+May 21 19:39:29 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 3364: Could not fstatat ns/pid: Not a directory
+May 21 19:39:29 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 3364: Could not fstatat ns/pid: Not a directory
+May 21 19:39:29 laptop dms[2989]:   WARN scene: QML FileView at @Common/Theme.qml[1996:5]: Read of /home/david/.cache/DankMaterialShell/dms-colors.json failed: File does not exist.
+May 21 19:39:29 laptop dms[2989]:   WARN qml: I18n: Falling back to built-in English strings
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/audio-volume-change.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:00.06, bitrate: 1420 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/message.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:00.31, bitrate: 1413 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.dbus.properties: Error updating properties of org.mpris.MediaPlayer2.playerctld/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2 via GetAll
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.dbus.properties: QDBusError("com.github.altdesktop.playerctld.NoActivePlayer", "No player is being controlled by playerctld")
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.dbus.properties: Error updating properties of org.mpris.MediaPlayer2.playerctld/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player via GetAll
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.dbus.properties: QDBusError("com.github.altdesktop.playerctld.NoActivePlayer", "No player is being controlled by playerctld")
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.dbus: Could not launch service org.freedesktop.UPower: QDBusError(org.freedesktop.DBus.Error.ServiceUnknown, The name is not activatable)
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.service.upower: Could not start UPower. The UPower service will not work.
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/message-new-instant.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:01.03, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/plasma/power-plug.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:03.00, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/desktop-login.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf61.7.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:04.02, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/plasma/power-unplug.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:03.00, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.service.polkit.listener: failed to register listener: GDBus.Error:org.freedesktop.PolicyKit1.Error.Failed: An authentication agent already exists for the given subject
+May 21 19:39:29 laptop dms[2989]:   WARN quickshell.service.polkit: failed to register listener on path "/org/quickshell/PolkitAgent"
+May 21 19:39:29 laptop dms[2989]:   INFO qml: Detected distribution: NixOS 26.05 (Yarara)
+May 21 19:39:29 laptop dms[2989]:   WARN qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+May 21 19:39:29 laptop dms[2989]:   INFO qml: CompositorService: Detected Niri with socket: /run/user/1000/niri.wayland-1.2893.sock
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/audio-volume-change.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:00.06, bitrate: 1420 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/message.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:00.31, bitrate: 1413 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated wpblur config at /home/david/.config/niri/dms/wpblur.kdl
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NetworkService: Network capability detected, using DMSNetworkService
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/message-new-instant.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:01.03, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/plasma/power-plug.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:03.00, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/plasma/power-unplug.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf62.3.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:03.00, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]: Input #0, wav, from '/nix/store/h6ri61ilnqyyhlfg0g8dk19907rzw5rq-dms-shell-1.5-beta+date=2026-04-18_4c2c193/share/quickshell/dms/assets/sounds/freedesktop/desktop-login.wav':
+May 21 19:39:29 laptop dms[2989]:   Metadata:
+May 21 19:39:29 laptop dms[2989]:     encoder         : Lavf61.7.100
+May 21 19:39:29 laptop dms[2989]:   Duration: 00:00:04.02, bitrate: 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 2 channels, s16, 1411 kb/s
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NetworkService: Switched to DMSNetworkService, networkAvailable: true
+May 21 19:39:29 laptop dms[2989]:   INFO qml: DMSService: Connected (API v24, CLI 1.5-beta+date=2026-04-18_4c2c193) - ["plugins","network","loginctl","freedesktop","gamma","bluetooth","browser","extworkspace","brightness","wlroutput","evdev","clipboard","theme.auto","location","dbus"]
+May 21 19:39:29 laptop dms[2989]:   INFO qml: WlrOutputService: wlr-output-management capability detected
+May 21 19:39:29 laptop dms[2989]:   INFO qml: ExtWorkspaceService: ext-workspace available but compositor has native support
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Loaded 1 outputs
+May 21 19:39:29 laptop dms[2989]:   INFO qml: CompositorService: Detected Niri with socket: /run/user/1000/niri.wayland-1.2893.sock
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated wpblur config at /home/david/.config/niri/dms/wpblur.kdl
+May 21 19:39:29 laptop dms[2989]:   INFO qml: SessionService: Native inhibitor available: true
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated alttab config at /home/david/.config/niri/dms/alttab.kdl
+May 21 19:39:29 laptop dms[2989]:   INFO qml: NiriService: Generated layout config at /home/david/.config/niri/dms/layout.kdl
+May 21 20:04:22 laptop systemd[2558]: Started app-niri-dms-18268.scope.
+May 21 20:04:22 laptop dms[2989]:   WARN: Could not load icon "application-x-executable" at size QSize(40, 40) from request
+May 21 20:04:35 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:04:35 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:04:36 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:04:41 laptop dms[2989]:   WARN qt.qpa.wayland.textinput: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x7fa4f4ae7ce0 with focusing surface 0x7fa4f4790780
+May 21 20:04:46 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 19444: Could not fstatat ns/pid: Not a directory
+May 21 20:04:51 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 19780: Could not fstatat ns/pid: Not a directory
+May 21 20:05:09 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 20154: Could not fstatat ns/pid: Not a directory
+May 21 20:05:14 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:05:14 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:05:42 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:05:52 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 21032: Could not fstatat ns/pid: Not a directory
+May 21 20:05:55 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 20:05:56 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 20:16:33 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 20:39:20 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 21:33:59 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:27:00 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 43014: Could not fstatat ns/pid: Not a directory
+May 21 22:27:08 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 22:27:08 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 22:27:38 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 18439: Could not fstatat ns/pid: Not a directory
+May 21 22:30:57 laptop systemd[2558]: Started app-niri-zen\x2dtwilight-44120.scope.
+May 21 22:33:35 laptop systemd[2558]: Started app-niri-dms-45774.scope.
+May 21 22:36:12 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:36:27 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:38:22 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
+May 21 22:43:41 laptop /nix/store/hn4yqa95qmna06rdhgyxr9pjzqhk231v-xdg-desktop-portal-1.20.4/libexec/xdg-desktop-portal[2990]: Realtime error: Could not get pidns for pid 2989: Could not fstatat ns/pid: Not a directory
