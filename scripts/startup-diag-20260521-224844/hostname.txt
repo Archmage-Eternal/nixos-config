@@ -1,0 +1,20 @@
+$ hostnamectl
+
+  Static hostname: laptop
+        Icon name: computer-laptop
+          Chassis: laptop 💻
+Chassis Asset Tag:  No  Asset  Tag
+       Machine ID: c96d32b6ed094b1d959691e1620160ac
+          Boot ID: aba935a6330d46c3a2483ad08573014b
+     Product UUID: 589aa3f2-a492-934f-8a48-b2d7f0c981e6
+ Operating System: NixOS 26.05 (Yarara)
+      CPE OS Name: cpe:/o:nixos:nixos:26.05
+           Kernel: Linux 6.19.11-zen1
+     Architecture: x86-64
+  Hardware Vendor: ASUSTeK COMPUTER INC.
+   Hardware Model: ROG Strix G533QS_G533QS
+  Hardware Serial: M1NRKD00219802B
+ Hardware Version: 1.0
+ Firmware Version: G533QS.331
+    Firmware Date: Fri 2023-02-24
+     Firmware Age: 3y 2month 3w 5d

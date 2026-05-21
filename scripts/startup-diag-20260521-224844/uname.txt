@@ -1,0 +1,3 @@
+$ uname -a
+
+Linux laptop 6.19.11-zen1 #1-NixOS ZEN SMP PREEMPT_DYNAMIC Tue Jan  1 00:00:00 UTC 1980 x86_64 GNU/Linux

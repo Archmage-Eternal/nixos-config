@@ -1,0 +1,9 @@
+$ journalctl -b -u greetd
+
+May 21 19:38:58 laptop systemd[1]: Started greetd.service.
+May 21 19:38:58 laptop greetd[2551]: pam_unix(greetd:session): session opened for user david(uid=1000) by (uid=0)
+May 21 19:38:58 laptop greetd[2551]: gkr-pam: gnome-keyring-daemon started properly
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: unable to locate daemon control file
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: stashed password to try later in open session
+May 21 19:39:23 laptop greetd[2789]: pam_unix(greetd:session): session opened for user david(uid=1000) by (uid=0)
+May 21 19:39:23 laptop greetd[2789]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
