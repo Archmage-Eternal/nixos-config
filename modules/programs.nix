@@ -53,7 +53,6 @@ in {
         pwvucontrol
         qbittorrent-enhanced
         thunar
-        xwaylandvideobridge
         vlc
         zotero
 

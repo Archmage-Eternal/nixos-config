@@ -162,14 +162,6 @@
             force_zero_scaling = true;
           };
 
-          windowrulev2 = [
-            "noinitialfocus,class:^(xwaylandvideobridge)$"
-            "nofocus,class:^(xwaylandvideobridge)$"
-            "noblur,class:^(xwaylandvideobridge)$"
-            "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-            "maxsize 1 1,class:^(xwaylandvideobridge)$"
-          ];
-
           bind = [
             # Session
             "SUPER SHIFT, Q, exec, uwsm stop"
