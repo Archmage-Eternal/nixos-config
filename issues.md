@@ -116,6 +116,30 @@
     - `time dms ipc call spotlight toggle`
     - `journalctl --user -b | rg -i 'dms|dbus|portal'`
     - Launch once after login and once after caches are warm.
+- DMS cannot persist settings and may be competing for session-polkit ownership
+  - Evidence from diagnostics:
+    - `Write of /home/david/.config/DankMaterialShell/settings.json failed: Permission denied`
+    - `failed to register listener: ... An authentication agent already exists for the given subject`
+    - `Could not start UPower. The UPower service will not work.`
+  - Repo-side changes already made:
+    - `UPower` is enabled so DMS and related desktop consumers have a power backend.
+    - `systemd.tmpfiles` now creates and recursively resets ownership on `~/.config/DankMaterialShell` and `~/.cache/DankMaterialShell`.
+  - Potential solutions if problems remain after rebuild:
+    - Repair user ownership on DMS config/cache paths if they were previously created by root.
+    - Keep only one session polkit agent; if DMS warnings persist, decide whether DMS or the compositor-provided agent should own that role.
+    - If the write error disappears but startup is still slow, profile DMS separately from the compositor launch path.
+  - Verify on the Nix machine after rebuild:
+    - `systemctl status systemd-tmpfiles-setup.service`
+    - `ls -ld /home/david/.config/DankMaterialShell /home/david/.cache/DankMaterialShell`
+    - `find /home/david/.config/DankMaterialShell /home/david/.cache/DankMaterialShell -maxdepth 2 \( ! -user david -o ! -group users \) -ls`
+    - `journalctl --user -b | rg -i 'dms|polkit|upower|portal'`
+    - `systemctl --user status poweralertd`
+    - `systemctl --user status xdg-desktop-portal`
+    - Launch DMS once, then recheck `journalctl --user -b | rg -i 'dms|polkit|upower|portal'`
+  - If ownership is still wrong on the machine, one-time recovery:
+    - `sudo chown -R david:users /home/david/.config/DankMaterialShell /home/david/.cache/DankMaterialShell`
+    - `rm -f /home/david/.cache/DankMaterialShell/dms-colors.json`
+    - log out and back in, then retry DMS
 
 ## Hyprland
 

@@ -100,7 +100,15 @@ in {
       };
 
       # Prevent getting stuck at shutdown
-      systemd.settings.Manager.DefaultTimeoutStopSec = "10s";
+      systemd = {
+        settings.Manager.DefaultTimeoutStopSec = "10s";
+        tmpfiles.rules = [
+          "d /home/${username}/.config/DankMaterialShell 0700 ${username} users - -"
+          "Z /home/${username}/.config/DankMaterialShell 0700 ${username} users - -"
+          "d /home/${username}/.cache/DankMaterialShell 0700 ${username} users - -"
+          "Z /home/${username}/.cache/DankMaterialShell 0700 ${username} users - -"
+        ];
+      };
 
       home-manager.sharedModules = [inputs.self.homeModules.desktop];
     };
