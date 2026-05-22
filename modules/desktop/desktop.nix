@@ -96,6 +96,7 @@ in {
           user = username;
         };
         libinput.enable = true;
+        upower.enable = true;
       };
 
       # Prevent getting stuck at shutdown
