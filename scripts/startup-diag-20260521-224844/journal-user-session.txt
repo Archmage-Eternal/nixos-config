@@ -1,0 +1,7 @@
+$ journalctl --user -b | rg -i 'niri|dms|portal|dbus|xdg|uwsm'
+
+bash: line 1: rg: command not found
+
+Retrying with sudo -n bash -lc
+
+bash: line 1: rg: command not found

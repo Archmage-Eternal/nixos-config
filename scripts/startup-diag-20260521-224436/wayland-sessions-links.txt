@@ -1,0 +1,5 @@
+$ readlink -f /run/current-system/sw/share/wayland-sessions/*
+
+/nix/store/whq7d5bh8252ffh0q5gwvi8bqgw8gnyc-hyprland-0.54.0+date=2026-04-23_b65714e/share/wayland-sessions/hyprland.desktop
+/nix/store/whq7d5bh8252ffh0q5gwvi8bqgw8gnyc-hyprland-0.54.0+date=2026-04-23_b65714e/share/wayland-sessions/hyprland-uwsm.desktop
+/nix/store/042a52hdvpzn486klj0rjw1f0k26xcra-niri-unstable-2026-04-19-68bb942/share/wayland-sessions/niri.desktop

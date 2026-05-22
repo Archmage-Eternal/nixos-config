@@ -1,0 +1,7 @@
+$ journalctl -b | rg -i 'timed out|timeout|failed|slow|module|firmware|niri|greetd|tpm|crypt|luks|initrd'
+
+bash: line 1: rg: command not found
+
+Retrying with sudo -n bash -lc
+
+bash: line 1: rg: command not found

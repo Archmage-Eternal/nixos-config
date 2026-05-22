@@ -1,0 +1,28 @@
+$ for f in /run/current-system/sw/share/wayland-sessions/*; do echo "== $f =="; sed -n "1,160p" "$f"; echo; done
+
+== /run/current-system/sw/share/wayland-sessions/hyprland.desktop ==
+[Desktop Entry]
+Name=Hyprland
+Comment=An intelligent dynamic tiling Wayland compositor
+Exec=/nix/store/whq7d5bh8252ffh0q5gwvi8bqgw8gnyc-hyprland-0.54.0+date=2026-04-23_b65714e/bin/start-hyprland
+Type=Application
+DesktopNames=Hyprland
+Keywords=tiling;wayland;compositor;
+
+== /run/current-system/sw/share/wayland-sessions/hyprland-uwsm.desktop ==
+[Desktop Entry]
+Name=Hyprland (uwsm-managed)
+Comment=An intelligent dynamic tiling Wayland compositor
+Exec=uwsm start -e -D Hyprland hyprland.desktop
+TryExec=uwsm
+DesktopNames=Hyprland
+Type=Application
+
+== /run/current-system/sw/share/wayland-sessions/niri.desktop ==
+[Desktop Entry]
+Name=Niri
+Comment=A scrollable-tiling Wayland compositor
+Exec=niri-session
+Type=Application
+DesktopNames=niri
+

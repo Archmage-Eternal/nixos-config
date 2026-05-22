@@ -1,0 +1,163 @@
+$ systemd-analyze blame
+
+3.474s dev-tpm0.device
+3.474s sys-devices-LNXSYSTM:00-LNXSYBUS:00-MSFT0101:00-tpm-tpm0.device
+3.462s dev-ttyS2.device
+3.462s sys-devices-platform-serial8250-serial8250:0-serial8250:0.2-tty-ttyS2.device
+3.461s sys-devices-platform-serial8250-serial8250:0-serial8250:0.3-tty-ttyS3.device
+3.461s dev-ttyS3.device
+3.460s dev-ttyS1.device
+3.460s sys-devices-platform-serial8250-serial8250:0-serial8250:0.1-tty-ttyS1.device
+3.459s sys-devices-LNXSYSTM:00-LNXSYBUS:00-MSFT0101:00-tpmrm-tpmrm0.device
+3.459s dev-tpmrm0.device
+3.457s sys-devices-platform-serial8250-serial8250:0-serial8250:0.0-tty-ttyS0.device
+3.457s dev-ttyS0.device
+3.412s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartuuid-d00ffbe2\x2d3063\x2d4fab\x2dbd79\x2da86fd21022a0.device
+3.412s dev-disk-by\x2did-nvme\x2dnvme.1c5c\x2d434a304354303032313133383043483431\x2d48464d3030315444334a583031334e\x2d00000001\x2dpart2.device
+3.412s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart2.device
+3.412s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartlabel-disk\x2ddisk0\x2dsystem.device
+3.412s dev-disk-by\x2did-nvme\x2dHFM001TD3JX013N_CJ0CT00211380CH41_1\x2dpart2.device
+3.412s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartnum-2.device
+3.412s dev-nvme1n1p2.device
+3.412s dev-disk-by\x2duuid-78665696\x2d3d9b\x2d4952\x2d9832\x2d46c54817980e.device
+3.412s dev-disk-by\x2ddiskseq-1\x2dpart2.device
+3.412s dev-disk-by\x2dpartuuid-d00ffbe2\x2d3063\x2d4fab\x2dbd79\x2da86fd21022a0.device
+3.412s sys-devices-pci0000:00-0000:00:02.4-0000:05:00.0-nvme-nvme1-nvme1n1-nvme1n1p2.device
+3.412s dev-disk-by\x2dpartlabel-disk\x2ddisk0\x2dsystem.device
+3.412s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2duuid-78665696\x2d3d9b\x2d4952\x2d9832\x2d46c54817980e.device
+3.412s dev-disk-by\x2did-nvme\x2dHFM001TD3JX013N_CJ0CT00211380CH41\x2dpart2.device
+3.393s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartuuid-8c581d5f\x2dfd65\x2d4cb4\x2d8d66\x2d9f4ab786422b.device
+3.393s dev-disk-by\x2dpartlabel-disk\x2ddisk0\x2dESP.device
+3.393s dev-disk-by\x2dpartuuid-8c581d5f\x2dfd65\x2d4cb4\x2d8d66\x2d9f4ab786422b.device
+3.393s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart1.device
+3.393s dev-disk-by\x2duuid-BEA7\x2dBD25.device
+3.393s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2duuid-BEA7\x2dBD25.device
+3.393s dev-disk-by\x2did-nvme\x2dnvme.1c5c\x2d434a304354303032313133383043483431\x2d48464d3030315444334a583031334e\x2d00000001\x2dpart1.device
+3.393s dev-disk-by\x2ddiskseq-1\x2dpart1.device
+3.393s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartnum-1.device
+3.393s dev-disk-by\x2did-nvme\x2dHFM001TD3JX013N_CJ0CT00211380CH41\x2dpart1.device
+3.393s sys-devices-pci0000:00-0000:00:02.4-0000:05:00.0-nvme-nvme1-nvme1n1-nvme1n1p1.device
+3.393s dev-nvme1n1p1.device
+3.393s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartlabel-disk\x2ddisk0\x2dESP.device
+3.393s dev-disk-by\x2ddesignator-esp.device
+3.393s dev-disk-by\x2did-nvme\x2dHFM001TD3JX013N_CJ0CT00211380CH41_1\x2dpart1.device
+3.358s sys-devices-pci0000:00-0000:00:02.4-0000:05:00.0-nvme-nvme1-nvme1n1.device
+3.358s dev-disk-by\x2ddiskseq-1.device
+3.358s dev-disk-by\x2did-nvme\x2dnvme.1c5c\x2d434a304354303032313133383043483431\x2d48464d3030315444334a583031334e\x2d00000001.device
+3.358s dev-nvme1n1.device
+3.358s dev-disk-by\x2did-nvme\x2dHFM001TD3JX013N_CJ0CT00211380CH41_1.device
+3.358s dev-disk-by\x2did-nvme\x2dHFM001TD3JX013N_CJ0CT00211380CH41.device
+3.358s dev-disk-by\x2dpath-pci\x2d0000:05:00.0\x2dnvme\x2d1.device
+3.105s dev-disk-by\x2did-nvme\x2dADATA_SX6000LNP_2L082L46GSLH_1\x2dpart1.device
+3.105s sys-devices-pci0000:00-0000:00:02.3-0000:04:00.0-nvme-nvme0-nvme0n1-nvme0n1p1.device
+3.105s dev-disk-by\x2dpath-pci\x2d0000:04:00.0\x2dnvme\x2d1\x2dpart1.device
+3.105s dev-disk-by\x2dpath-pci\x2d0000:04:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartnum-1.device
+3.105s dev-disk-by\x2dpartuuid-caec55bc\x2d866f\x2d4cab\x2dab6e\x2d232d6c9ce783.device
+3.105s dev-disk-by\x2did-nvme\x2dnvme.10ec\x2d324c3038324c343647534c48\x2d4144415441205358363030304c4e50\x2d00000001\x2dpart1.device
+3.105s dev-nvme0n1p1.device
+3.105s dev-disk-by\x2dpath-pci\x2d0000:04:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartlabel-disk\x2ddisk1\x2ddata.device
+3.105s dev-disk-by\x2did-nvme\x2dADATA_SX6000LNP_2L082L46GSLH\x2dpart1.device
+3.105s dev-disk-by\x2dpath-pci\x2d0000:04:00.0\x2dnvme\x2d1\x2dpart-by\x2dpartuuid-caec55bc\x2d866f\x2d4cab\x2dab6e\x2d232d6c9ce783.device
+3.105s dev-disk-by\x2ddiskseq-2\x2dpart1.device
+3.105s dev-disk-by\x2dpartlabel-disk\x2ddisk1\x2ddata.device
+3.105s dev-disk-by\x2dpath-pci\x2d0000:04:00.0\x2dnvme\x2d1\x2dpart-by\x2duuid-1fac54fc\x2d39a5\x2d4a3d\x2d9fbe\x2dcf129f716b74.device
+3.105s dev-disk-by\x2duuid-1fac54fc\x2d39a5\x2d4a3d\x2d9fbe\x2dcf129f716b74.device
+3.052s dev-disk-by\x2did-nvme\x2dADATA_SX6000LNP_2L082L46GSLH_1.device
+3.052s dev-disk-by\x2dpath-pci\x2d0000:04:00.0\x2dnvme\x2d1.device
+3.052s dev-nvme0n1.device
+3.052s dev-disk-by\x2ddiskseq-2.device
+3.052s sys-devices-pci0000:00-0000:00:02.3-0000:04:00.0-nvme-nvme0-nvme0n1.device
+3.052s dev-disk-by\x2did-nvme\x2dnvme.10ec\x2d324c3038324c343647534c48\x2d4144415441205358363030304c4e50\x2d00000001.device
+3.052s dev-disk-by\x2did-nvme\x2dADATA_SX6000LNP_2L082L46GSLH.device
+2.838s systemd-modules-load.service
+1.898s home-manager-david.service
+1.867s boot.mount
+1.851s data.mount
+1.793s games.mount
+1.793s home.mount
+1.792s sys-fs-fuse-connections.mount
+1.507s libvirtd.service
+1.222s asusd.service
+ 830ms libvirtd-config.service
+ 824ms waydroid-container.service
+ 765ms NetworkManager.service
+ 759ms network-setup.service
+ 556ms systemd-tpm2-setup.service
+ 485ms initrd-switch-root.service
+ 230ms firewall.service
+ 203ms systemd-udev-trigger.service
+ 180ms user@1000.service
+ 130ms systemd-hostnamed.service
+ 107ms suid-sgid-wrappers.service
+ 105ms logrotate.service
+  78ms systemd-journal-flush.service
+  76ms systemd-fsck@dev-disk-by\x2dpartlabel-disk\x2ddisk0\x2dESP.service
+  68ms \x2eswapvol.mount
+  63ms systemd-rfkill.service
+  62ms resolvconf.service
+  57ms polkit.service
+  55ms bluetooth.service
+  53ms systemd-logind.service
+  52ms systemd-udevd.service
+  49ms wpa_supplicant.service
+  49ms systemd-journald.service
+  46ms systemd-vconsole-setup.service
+  46ms rtkit-daemon.service
+  44ms NetworkManager-dispatcher.service
+  41ms systemd-tpm2-setup-early.service
+  40ms systemd-timesyncd.service
+  37ms nscd.service
+  31ms systemd-tmpfiles-clean.service
+  30ms dbus-broker.service
+  29ms spice-vdagentd.service
+  29ms systemd-oomd.service
+  23ms systemd-machined.service
+  22ms user-runtime-dir@1000.service
+  21ms run-wrappers.mount
+  20ms systemd-user-sessions.service
+  19ms systemd-backlight@backlight:amdgpu_bl2.service
+  19ms \x2eswapvol-swapfile.swap
+  18ms modprobe@fuse.service
+  17ms dev-hugepages.mount
+  17ms libvirt-guests.service
+  17ms dev-mqueue.mount
+  16ms sys-kernel-debug.mount
+  16ms logrotate-checkconf.service
+  16ms systemd-boot-random-seed.service
+  16ms systemd-tmpfiles-setup.service
+  15ms sys-kernel-tracing.mount
+  14ms post-boot.service
+  14ms kmod-static-nodes.service
+  14ms systemd-tmpfiles-setup-dev.service
+  14ms supergfxd.service
+  14ms sys-kernel-config.mount
+  13ms modprobe@configfs.service
+  13ms podman.socket
+  13ms modprobe@efi_pstore.service
+  12ms systemd-tmpfiles-setup-dev-early.service
+  12ms systemd-sysctl.service
+  11ms systemd-remount-fs.service
+  11ms systemd-random-seed.service
+   9ms systemd-backlight@leds:asus::kbd_backlight.service
+   8ms linger-users.service
+   8ms systemd-update-utmp.service
+   1ms polkit-agent-helper.socket
+ 624us systemd-coredump.socket
+ 412us systemd-bootctl.socket
+ 350us systemd-creds.socket
+ 344us systemd-pcrlock.socket
+ 206us nix-daemon.socket
+  64us systemd-rfkill.socket
+  63us dbus.socket
+  38us libvirtd.socket
+  38us systemd-journald-dev-log.socket
+  33us systemd-oomd.socket
+  32us systemd-journald.socket
+  24us libvirtd-ro.socket
+  23us libvirtd-admin.socket
+  23us systemd-hostnamed.socket
+  21us virtlogd.socket
+  21us virtlockd.socket
+  20us systemd-udevd-control.socket
+  17us systemd-udevd-kernel.socket
+  13us systemd-journald-audit.socket

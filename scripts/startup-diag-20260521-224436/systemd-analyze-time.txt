@@ -1,0 +1,4 @@
+$ systemd-analyze time
+
+Startup finished in 7.555s (firmware) + 5.760s (loader) + 536ms (kernel) + 3.155s (initrd) + 5.771s (userspace) = 22.780s 
+graphical.target reached after 5.771s in userspace.
