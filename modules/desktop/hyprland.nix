@@ -150,18 +150,22 @@
         portalPackage = null;
         settings = {
           general = {
-            gaps_in = 5;
-            gaps_out = 10;
-            border_size = 2;
+            border_size = 1;
+            gaps_in = 4;
+            gaps_out = 4;
             layout = "scrolling";
           };
 
           input = {
             kb_layout = "us";
             follow_mouse = 1;
+            repeat_rate = 25;
+            repeat_delay = 600;
+            sensitivity = 0.0;
             touchpad = {
               natural_scroll = true;
               disable_while_typing = true;
+              middle_button_emulation = true;
             };
           };
 
