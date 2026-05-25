@@ -22,6 +22,7 @@
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       };
 
+      # What does this bit do?
       home-manager.sharedModules = [
         inputs.self.homeModules.hyprland
       ];
@@ -34,18 +35,22 @@
       ...
     }: {
       home.packages = with pkgs; [
+        # scripts may be broken
         (pkgs.writeShellScriptBin "hypr-screenshot" (builtins.readFile ../../scripts/hypr-screenshot.sh))
         (pkgs.writeShellScriptBin "hypr-record" (builtins.readFile ../../scripts/hypr-record.sh))
+        # Do we need both grim and grimblast?
         grim
         grimblast
         hypridle
         hyprlock
+        # Use services.hyprpolkitagent.enable
         hyprpolkitagent
         slurp
         wf-recorder
         wl-clipboard
       ];
 
+      # Use home-manager module for configuration
       xdg.configFile."hypr/hypridle.conf".text = ''
         general {
             lock_cmd = pidof hyprlock || hyprlock
@@ -65,6 +70,7 @@
         }
       '';
 
+      # Use home-manager module for configuration
       xdg.configFile."hypr/hyprlock.conf".text = ''
         general {
             hide_cursor = true
@@ -131,6 +137,7 @@
         Install.WantedBy = ["graphical-session.target"];
       };
 
+      # Use services.hyprpolkitagent.enable
       systemd.user.services.hyprpolkitagent = {
         Unit = {
           Description = "Hyprland polkit agent";
@@ -182,43 +189,48 @@
             force_zero_scaling = true;
           };
 
+          # Also split other components, so that this file is exclusively for hyprland configuration
+          # Split binds into separate file for easier readability
+          "$mod" = "SUPER";
+
           bind = [
             # Session
-            "SUPER SHIFT, Q, exec, uwsm stop"
-            "SUPER, Q, killactive"
-            "SUPER CTRL, L, exec, loginctl lock-session"
+            "$mod SHIFT, Q, exec, uwsm stop"
+            "$mod, Q, killactive"
+            # I can't use ESC for some reason
+            "$mod CTRL, L, exec, loginctl lock-session"
 
             # Focus — Vim hjkl
-            "SUPER, H, movefocus, l"
-            "SUPER, J, movefocus, d"
-            "SUPER, K, movefocus, u"
-            "SUPER, L, movefocus, r"
+            "$mod, H, movefocus, l"
+            "$mod, J, movefocus, d"
+            "$mod, K, movefocus, u"
+            "$mod, L, movefocus, r"
 
             # Move windows
-            "SUPER SHIFT, H, movewindow, l"
-            "SUPER SHIFT, J, movewindow, d"
-            "SUPER SHIFT, K, movewindow, u"
-            "SUPER SHIFT, L, movewindow, r"
+            "$mod SHIFT, H, movewindow, l"
+            "$mod SHIFT, J, movewindow, d"
+            "$mod SHIFT, K, movewindow, u"
+            "$mod SHIFT, L, movewindow, r"
 
             # Workspaces
-            "SUPER CTRL, K, workspace, -1"
-            "SUPER CTRL, J, workspace, +1"
-            "SUPER CTRL SHIFT, K, movetoworkspace, -1"
-            "SUPER CTRL SHIFT, J, movetoworkspace, +1"
+            "$mod CTRL, K, workspace, -1"
+            "$mod CTRL, J, workspace, +1"
+            "$mod CTRL SHIFT, K, movetoworkspace, -1"
+            "$mod CTRL SHIFT, J, movetoworkspace, +1"
 
             # Window state
-            "SUPER, M, fullscreen, 1"
-            "SUPER, F, togglefloating"
-            "SUPER, Space, fullscreen, 0"
-            "SUPER ALT, Space, fullscreen, 1"
-            "SUPER, W, layoutmsg, colresize +conf"
-            "SUPER ALT, H, layoutmsg, consume_or_expel prev"
-            "SUPER ALT, L, layoutmsg, consume_or_expel next"
+            "$mod, M, fullscreen, 1"
+            "$mod, F, togglefloating"
+            "$mod, Space, fullscreen, 0"
+            "$mod ALT, Space, fullscreen, 1"
+            "$mod, W, layoutmsg, colresize +conf"
+            "$mod ALT, H, layoutmsg, consume_or_expel prev"
+            "$mod ALT, L, layoutmsg, consume_or_expel next"
 
             # Launchers
-            "SUPER, Return, exec, ${lib.escapeShellArgs config.desktop.launchers.terminal}"
-            "SUPER, B, exec, ${lib.escapeShellArgs config.desktop.launchers.browser}"
-            "SUPER, D, exec, ${lib.escapeShellArgs config.desktop.launchers.appLauncher}"
+            "$mod, Return, exec, ${lib.escapeShellArgs config.desktop.launchers.terminal}"
+            "$mod, B, exec, ${lib.escapeShellArgs config.desktop.launchers.browser}"
+            "$mod, D, exec, ${lib.escapeShellArgs config.desktop.launchers.appLauncher}"
 
             # Volume
             ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
@@ -236,15 +248,15 @@
             "CTRL, Print, exec, hypr-screenshot save-screen"
 
             # Recording
-            "SUPER, Print, exec, hypr-record toggle-area"
-            "SUPER SHIFT, Print, exec, hypr-record toggle-screen"
-            "SUPER CTRL, Print, exec, hypr-record stop"
+            "$mod, Print, exec, hypr-record toggle-area"
+            "$mod SHIFT, Print, exec, hypr-record toggle-screen"
+            "$mod CTRL, Print, exec, hypr-record stop"
           ];
 
           # Mouse binds
           bindm = [
-            "SUPER, mouse:272, movewindow"
-            "SUPER, mouse:273, resizewindow"
+            "$mod, mouse:272, movewindow"
+            "$mod, mouse:273, resizewindow"
           ];
         };
       };

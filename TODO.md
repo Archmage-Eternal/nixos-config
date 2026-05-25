@@ -11,6 +11,7 @@
 - [ ] Install shadps4 (Bloodborne baby)
 - [ ] Add NUR usage
 - [ ] Ouch for managing archives
+- [ ] Add hyprlauncher or walker. Remove DMS
 
 ## Configuration
 
