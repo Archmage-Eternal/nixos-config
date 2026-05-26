@@ -1,6 +1,6 @@
 {...}: {
   flake = {
-    nixosModules.niri = {
+    nixosModules.desktop = {
       inputs,
       pkgs,
       ...
@@ -18,11 +18,9 @@
         enable = true;
         package = pkgs.niri-unstable;
       };
-
-      home-manager.sharedModules = [inputs.self.homeModules.niri];
     };
 
-    homeModules.niri = {
+    homeModules.desktop = {
       config,
       lib,
       pkgs,

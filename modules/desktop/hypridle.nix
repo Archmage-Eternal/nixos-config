@@ -1,5 +1,5 @@
 {...}: {
-  flakes.homeManagerModules.desktop.hypr.services.hypridle = {
+  flake.homeModules.desktop.services.hypridle = {
     enable = true;
     settings = {
       general = {

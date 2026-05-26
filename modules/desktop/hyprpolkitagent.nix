@@ -1,3 +1,3 @@
 {...}: {
-  flake.homeManagerModules.hypr.services.hyprpolkitagent.enable = true;
+  flake.homeModules.desktop.services.hyprpolkitagent.enable = true;
 }

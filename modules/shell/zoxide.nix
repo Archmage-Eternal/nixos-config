@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.shell.programs.zoxide = {
+  flake.homeModules.shell.programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;

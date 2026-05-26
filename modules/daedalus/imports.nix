@@ -15,8 +15,6 @@
       inputs.self.nixosModules.desktopLaunchers
       inputs.self.nixosModules.desktopSession
       inputs.self.nixosModules.mime
-      inputs.self.nixosModules.niri
-      inputs.self.nixosModules.hyprland
       inputs.self.nixosModules.shell
       inputs.self.nixosModules.programs
       inputs.self.nixosModules.users

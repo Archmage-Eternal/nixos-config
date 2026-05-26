@@ -1,6 +1,6 @@
 {...}: {
   flake = {
-    nixosModules.hyprland = {
+    nixosModules.desktop = {
       inputs,
       pkgs,
       ...
@@ -21,14 +21,9 @@
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       };
-
-      # What does this bit do?
-      home-manager.sharedModules = [
-        inputs.self.homeModules.hyprland
-      ];
     };
 
-    homeModules.hyprland = {
+    homeModules.desktop = {
       config,
       lib,
       pkgs,
@@ -36,8 +31,8 @@
     }: {
       home.packages = with pkgs; [
         # scripts may be broken
-        (pkgs.writeShellScriptBin "hypr-screenshot" (builtins.readFile ../../scripts/hypr-screenshot.sh))
-        (pkgs.writeShellScriptBin "hypr-record" (builtins.readFile ../../scripts/hypr-record.sh))
+        (pkgs.writeShellScriptBin "hypr-screenshot" (builtins.readFile ../../../scripts/hypr-screenshot.sh))
+        (pkgs.writeShellScriptBin "hypr-record" (builtins.readFile ../../../scripts/hypr-record.sh))
         # Do we need both grim and grimblast?
         grim
         grimblast

@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.shell.programs.readline = {
+  flake.homeModules.shell.programs.readline = {
     enable = true;
     variables = {
       "editing-mode" = "vi";

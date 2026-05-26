@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.shell = {
+  flake.homeModules.shell = {config, ...}: {
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
