@@ -1,7 +1,7 @@
 {...}: {
-	flake.nixosModules.gaming.programs.gamescope = {
-		enable = true;
-		capSysNice = true;
-		args = [ "--rt" "--expose-wayland" ];
-	};
+  flake.nixosModules.gaming.programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+    args = ["--rt" "--expose-wayland"];
+  };
 }

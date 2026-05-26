@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.shell = 
+  flake.nixosModules.shell = {
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
@@ -19,6 +19,7 @@
           identitiesOnly = true;
         };
       };
-    services.ssh-agent.enable = true;
+      services.ssh-agent.enable = true;
+    };
   };
 }

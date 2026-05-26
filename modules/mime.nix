@@ -4,10 +4,7 @@
       home-manager.sharedModules = [inputs.self.homeModules.mime];
     };
 
-    homeModules.mime = {
-      lib,
-      ...
-    }: {
+    homeModules.mime = {lib, ...}: {
       xdg.configFile."mimeapps.list".force = true;
       xdg.mimeApps = let
         defaultApps = {

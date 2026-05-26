@@ -1,6 +1,10 @@
 {...}: {
   flake = {
-    nixosModules.niri = {inputs, pkgs, ...}: {
+    nixosModules.niri = {
+      inputs,
+      pkgs,
+      ...
+    }: {
       nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
       imports = [inputs.niri-flake.nixosModules.niri];
