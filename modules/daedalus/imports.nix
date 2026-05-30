@@ -27,5 +27,6 @@
       inputs.self.nixosModules.peripherals
       inputs.self.nixosModules.virtualization
     ];
+    home-manager.sharedModules = [inputs.self.homeModules.shell];
   };
 }

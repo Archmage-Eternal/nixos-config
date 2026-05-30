@@ -15,6 +15,7 @@
 
 ## Configuration
 
+- [ ] Make script to toggle refresh rate in hyprland
 - [ ] Explicitly delcare stylix colours instead of sourcing YAML file
 - [ ] Create options in nvidia module to define PCI addresses for GPUs
 - [ ] Investigate setting config.allowUnfree (may have overlap with new flake-parts way of doing it)
