@@ -3,6 +3,7 @@
   flake.modules.homeManager.david = {
     imports = with inputs.self.modules.homeManager; [
       keybinds
+      terminal
     ];
   };
 }
