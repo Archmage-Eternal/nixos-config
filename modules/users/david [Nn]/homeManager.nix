@@ -1,6 +1,8 @@
 # User `david` — Home-Manager bundle. Imports grow as features are added.
-{
+{inputs, ...}: {
   flake.modules.homeManager.david = {
-    imports = [];
+    imports = with inputs.self.modules.homeManager; [
+      keybinds
+    ];
   };
 }
