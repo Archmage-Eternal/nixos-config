@@ -6,6 +6,7 @@
   flake.modules.nixos.daedalus = {
     imports = with inputs.self.modules.nixos; [
       home-manager
+      hyprland
       david
     ];
 
