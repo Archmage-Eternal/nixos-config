@@ -19,8 +19,7 @@
     enable = true;
     package = null;
     portalPackage = null;
-    # Our settings are hyprlang-style; pin configType since the HM default
-    # changed to "lua".
-    configType = "hyprlang";
+    # Lua is the preferred config language (hyprlang is deprecated since 0.55).
+    configType = "lua";
   };
 }

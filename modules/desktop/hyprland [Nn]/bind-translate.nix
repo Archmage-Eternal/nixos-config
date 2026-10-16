@@ -1,41 +1,66 @@
 # Translates the shared keybind registry (config.keybinds.*) into Hyprland's
-# `bind` syntax. Pure syntax mapping — no business logic.
+# Lua `bind` entries. Each entry is { _args = [ keys (mkLuaInline dispatcher) ] }
+# which the HM module serializes to `hl.bind(keys, <dispatcher>)` in
+# hyprland.lua. Only the dispatcher is inline Lua; keys stay a plain string.
+#
+# Combos in the registry are comma-style ("SUPER, K"); Lua wants plus-style
+# ("SUPER + K"), so we rewrite them here — registry data is unchanged.
 {lib, ...}: {
   flake.modules.homeManager.hyprland = {
     config,
     lib,
     ...
   }: let
-    toBind = combo: a:
+    inherit (lib.generators) mkLuaInline;
+
+    # "SUPER CTRL, K" -> "SUPER + CTRL + K"
+    toKeys = combo: let
+      parts = lib.splitString "," combo;
+      mods = lib.filter (s: s != "") (lib.splitString " " (lib.head parts));
+      key = lib.strings.trim (lib.concatStringsSep "," (lib.tail parts));
+    in
+      lib.concatStringsSep " + " (mods ++ [key]);
+
+    # Lua string literal via long-bracket form, so embedded quotes in a
+    # command can't break out. ponytail: assumes cmd has no "]]"; fine for
+    # launch commands.
+    luaStr = s: "[[${s}]]";
+
+    relWs = delta:
+      if delta >= 0
+      then "e+${toString delta}"
+      else "e${toString delta}";
+
+    # action def -> inline Lua dispatcher expression (as a string)
+    dispatcher = combo: a:
       if a.app != null
-      then "${combo}, exec, ${config.keybinds.apps.${a.app}}"
+      then "hl.dsp.exec_cmd(${luaStr config.keybinds.apps.${a.app}})"
       else if a.run != null
-      then "${combo}, exec, ${a.run}"
+      then "hl.dsp.exec_cmd(${luaStr a.run})"
       else if a.action == "focusDirection"
-      then "${combo}, movefocus, ${a.dir}"
+      then ''hl.dsp.focus({ direction = "${a.dir}" })''
       else if a.action == "moveWindowDirection"
-      then "${combo}, movewindow, ${a.dir}"
+      then ''hl.dsp.window.move({ direction = "${a.dir}" })''
       else if a.action == "workspaceRelative"
-      then "${combo}, workspace, ${
-        if a.delta >= 0
-        then "+${toString a.delta}"
-        else toString a.delta
-      }"
+      then ''hl.dsp.focus({ workspace = "${relWs a.delta}" })''
       else if a.action == "workspaceGoto"
-      then "${combo}, workspace, ${toString a.index}"
+      then ''hl.dsp.focus({ workspace = "${toString a.index}" })''
       else if a.action == "moveToWorkspaceRelative"
-      then "${combo}, movetoworkspace, ${
-        if a.delta >= 0
-        then "+${toString a.delta}"
-        else toString a.delta
-      }"
+      then ''hl.dsp.window.move({ workspace = "${relWs a.delta}" })''
       else if a.action == "moveToWorkspaceGoto"
-      then "${combo}, movetoworkspace, ${toString a.index}"
+      then ''hl.dsp.window.move({ workspace = "${toString a.index}" })''
       else if a.action == "toggleFullscreen"
-      then "${combo}, fullscreen"
+      then ''hl.dsp.window.fullscreen({ action = "toggle", mode = "fullscreen" })''
       else if a.action == "toggleFloating"
-      then "${combo}, togglefloating"
-      else throw "keybinds.actions.\"${combo}\": no translation yet for this action";
+      then ''hl.dsp.window.float({ action = "toggle" })''
+      else throw "keybinds.actions.\"${combo}\": no translation for this action";
+
+    toBind = combo: a: {
+      _args = [
+        (toKeys combo)
+        (mkLuaInline (dispatcher combo a))
+      ];
+    };
   in {
     wayland.windowManager.hyprland.settings.bind =
       lib.mapAttrsToList toBind config.keybinds.actions;
