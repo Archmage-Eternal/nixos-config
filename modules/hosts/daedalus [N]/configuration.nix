@@ -13,7 +13,7 @@
 
     networking.hostName = "daedalus";
     nixpkgs.hostPlatform = "x86_64-linux";
-    system.stateVersion = "24.05";
+    system.stateVersion = "26.11";
 
     fileSystems."/" = {
       device = "/dev/disk/by-label/nixos";
