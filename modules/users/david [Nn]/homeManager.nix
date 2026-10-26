@@ -5,6 +5,7 @@
       keybinds
       terminal
       hyprland
+      mangowm
     ];
   };
 }
