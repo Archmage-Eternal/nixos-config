@@ -8,6 +8,8 @@
       (with inputs.self.modules.nixos; [
         home-manager
         disko
+        allow-unfree
+        nvidia
         hyprland
         mangowm
         david
@@ -15,6 +17,7 @@
       ++ [
         # host-local hardware (import-tree ignores files prefixed with _)
         ./_disk-config.nix
+        ./_nvidia.nix
       ];
 
     networking.hostName = "daedalus";
