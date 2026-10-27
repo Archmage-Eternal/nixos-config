@@ -10,7 +10,6 @@
         disko
         allow-unfree
         nix-settings
-        substituters
         locale
         timezone
         nvidia
