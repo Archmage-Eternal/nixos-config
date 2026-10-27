@@ -11,6 +11,7 @@
         allow-unfree
         nix-settings
         substituters
+        locale
         nvidia
         hyprland
         mangowm
