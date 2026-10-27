@@ -11,11 +11,6 @@
 
     nix.settings.allowed-users = ["david"];
 
-    home-manager.users.david = {
-      imports = [inputs.self.modules.homeManager.david];
-      home.username = "david";
-      home.homeDirectory = "/home/david";
-      home.stateVersion = "26.11";
-    };
+    home-manager.users.david.imports = [inputs.self.modules.homeManager.david];
   };
 }
