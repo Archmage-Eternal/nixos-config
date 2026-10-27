@@ -12,6 +12,7 @@
         nix-settings
         substituters
         locale
+        timezone
         nvidia
         hyprland
         mangowm
