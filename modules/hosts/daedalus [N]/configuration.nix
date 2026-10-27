@@ -10,6 +10,7 @@
         disko
         allow-unfree
         nix-settings
+        substituters
         nvidia
         hyprland
         mangowm
