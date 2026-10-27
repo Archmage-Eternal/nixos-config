@@ -2,6 +2,7 @@
 {
   flake.modules.homeManager.david.keybinds.actions = {
     "SUPER, Return" = {app = "terminal";};
+    "SUPER, B" = {app = "browser";};
 
     # Focus — vim hjkl
     "SUPER, H" = {
