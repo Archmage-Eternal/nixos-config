@@ -9,6 +9,7 @@
         home-manager
         disko
         allow-unfree
+        nix-settings
         nvidia
         hyprland
         mangowm
