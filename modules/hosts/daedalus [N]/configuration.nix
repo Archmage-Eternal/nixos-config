@@ -13,6 +13,7 @@
         locale
         timezone
         nvidia
+        greetd
         hyprland
         mangowm
         david
