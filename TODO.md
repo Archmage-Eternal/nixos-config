@@ -54,3 +54,20 @@
     - Hardware-only checks: Setup Mode bootstrap, sbctl status/verify, quiet
       greeter TTY, passphrase fallback, migration from legacy keys, boot time
       (3 cold boots, systemd-analyze).
+13. Impermanence + sops-nix (only if/when impermanence is adopted). The secrets
+    file is safe (in /nix store); the age key is not: the HM module reads
+    ~/.config/sops/age/keys.txt, which a wiped $HOME loses, so sops-nix.service
+    fails at login and nothing decrypts. Options:
+    - Point sops.age.keyFile at the persisted file directly, e.g.
+      /persist/home/david/.config/sops/age/keys.txt (sops-nix README
+      recommends this). Prefer it over bind-mounting via home.persistence:
+      user-level mounts can race with sops-nix.service at login.
+    - Then the sops CLI no longer finds the key by default. Set
+      SOPS_AGE_KEY_FILE to the same path (home.sessionVariables, and the dev
+      shell), sharing one let-bound path with age.keyFile.
+    - Or use age.sshKeyPaths with a persisted SSH key (host key
+      /etc/ssh/ssh_host_ed25519_key for system secrets, a user key for HM);
+      public half via ssh-to-age in .sops.yaml. Avoids a separate key file;
+      fits system-level secrets (nixos.sops aspect) best.
+    - Back up the key regardless; losing it makes secrets unrecoverable.
+    - Update docs/secrets.md bootstrap step 2 with the persisted location.
