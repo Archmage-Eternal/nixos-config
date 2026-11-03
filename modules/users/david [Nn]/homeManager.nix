@@ -7,6 +7,7 @@
     home.homeDirectory = "/home/david";
     home.stateVersion = "26.11";
     imports = with inputs.self.modules.homeManager; [
+      sops
       keybinds
       terminal
       browser
