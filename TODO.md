@@ -43,3 +43,14 @@
     boot.initrd.verbose = false to keep kernel/initrd output off the tuigreet
     TTY (journalctl -b keeps the logs). useTextGreeter already covers systemd
     unit output. Also decide whether boot and secureboot need to be two modules.
+12. Re-evaluate secureboot decisions once the daily-driver laptop is accessible
+    (spec: .kiro/specs/secureboot-module). Decide with real hardware state:
+    - autoEnrollKeys (keep on, or enroll manually with sbctl)
+    - measured boot (pcrs [0 4 7], configurationLimit 4, systemd-pcrlock
+      is-supported must print yes; pcrlock is experimental)
+    - TPM2 LUKS enrollment (crypted-system / crypted-data via
+      systemd-cryptenroll --tpm2-pcrlock) and the matching
+      boot.initrd.luks.devices.<name>.crypttabExtraOpts = ["tpm2-device=auto"]
+    - Hardware-only checks: Setup Mode bootstrap, sbctl status/verify, quiet
+      greeter TTY, passphrase fallback, migration from legacy keys, boot time
+      (3 cold boots, systemd-analyze).
