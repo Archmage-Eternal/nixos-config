@@ -25,6 +25,6 @@
       };
     };
 
-    devShells.default = config.pre-commit.devShell;
+    devshell.inputsFrom = [config.pre-commit.devShell];
   };
 }
