@@ -17,6 +17,7 @@
         greetd
         hyprland
         mangowm
+        gaming-desktop
         david
       ])
       ++ [

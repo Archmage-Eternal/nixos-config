@@ -13,6 +13,7 @@
       browser
       hyprland
       mangowm
+      gaming-desktop
     ];
   };
 }
