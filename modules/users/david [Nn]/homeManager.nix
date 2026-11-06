@@ -14,6 +14,7 @@
       hyprland
       mangowm
       gaming-desktop
+      caelestia
     ];
   };
 }
