@@ -5,7 +5,7 @@
 {inputs, ...}: {
   flake.modules.nixos.gaming-desktop.imports = with inputs.self.modules.nixos; [
     steam
-    millennium
+    # millennium  # TODO: needs npm fetch through a TLS-proxied network; test at home (see TODO 15)
     gamemode
     gamescope
   ];
