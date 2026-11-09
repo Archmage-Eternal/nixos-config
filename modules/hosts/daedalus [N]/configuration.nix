@@ -9,6 +9,7 @@
         disko
         allow-unfree
         nix-settings
+        nh
         locale
         timezone
         # Fallback: swap `secureboot` for `boot` (import exactly one).
