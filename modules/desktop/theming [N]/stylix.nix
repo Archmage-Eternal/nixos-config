@@ -1,21 +1,21 @@
-# Theming via stylix: fonts and cursor only.
+# Theming via stylix: colours, fonts and cursor for GTK, Qt and every app that
+# has a stylix target.
 #
-# autoEnable = false: no app is themed unless its target is enabled
-# explicitly. base16Scheme is still required by stylix (the palette file is
-# always generated) but colours nothing while no colour target is on.
-# Home-Manager inherits enable/autoEnable/cursor/fonts from the NixOS side
-# automatically; the HM half below only widens where the cursor is applied.
+# autoEnable = true: each installed app with a target is themed automatically.
+# Opt a single app out with `stylix.targets.<app>.enable = false`. Home-Manager
+# inherits enable/autoEnable/cursor/fonts/colours from the NixOS side
+# automatically, so the HM half below only carries per-app options.
 {inputs, ...}: {
   flake.modules.nixos.theming = {pkgs, ...}: {
     imports = [
       inputs.stylix.nixosModules.stylix
-      # The home-manager half sets gtk.enable, which needs dconf.
+      # The gtk target's home-manager half writes dconf settings.
       inputs.self.modules.nixos.dconf
     ];
 
     stylix = {
       enable = true;
-      autoEnable = false;
+      autoEnable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
       polarity = "dark";
 
@@ -26,6 +26,12 @@
       };
 
       fonts = {
+        sizes = {
+          desktop = 12;
+          applications = 15;
+          terminal = 17;
+          popups = 17;
+        };
         monospace = {
           package = pkgs.nerd-fonts.iosevka-term;
           name = "Iosevka Term NF";
@@ -43,25 +49,14 @@
           name = "Noto Color Emoji";
         };
       };
-
-      # Only the font targets: install the packages and set fontconfig defaults.
-      targets = {
-        font-packages.enable = true;
-        fontconfig.enable = true;
-      };
     };
   };
 
-  # Apply the stylix cursor beyond XCURSOR_*: GTK settings (needs the `dconf`
-  # NixOS aspect), X11 resources and hyprcursor env. Values come from
-  # stylix.cursor via home.pointerCursor. hyprcursor has no effect for an
-  # XCursor-only theme (see TODO item 16).
   flake.modules.homeManager.theming = {
-    gtk.enable = true;
-    home.pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      hyprcursor.enable = true;
-    };
+    # The zen-browser target needs to know which profiles to style.
+    stylix.targets.zen-browser.profileNames = ["default"];
+    # rofi isn't installed; its target triggers a deprecation warning
+    # (programs.rofi.font renamed) when autoEnable is on.
+    stylix.targets.rofi.enable = false;
   };
 }
