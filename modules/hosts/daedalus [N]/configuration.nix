@@ -16,6 +16,7 @@
         firmware
         network
         bluetooth
+        audio
         nvidia
         asus
         greetd
