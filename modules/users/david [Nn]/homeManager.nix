@@ -13,6 +13,7 @@
       browser
       hyprland
       mangowm
+      polkit-agent
       gaming-desktop
       caelestia
       discord
