@@ -16,7 +16,6 @@
     wine
     prismlauncher
     protonhax
-    dualsensectl
     memory-scanners
   ];
 }

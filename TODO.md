@@ -73,7 +73,7 @@
     - Update docs/secrets.md bootstrap step 2 with the persisted location.
 14. Controller udev rules (hardware.steam-hardware.enable, DualSense/Xbox pad
     permissions) currently only arrive via programs.steam.enable. If a
-    gaming-desktop host ever drops Steam, controllers (dualsensectl, wine
+    gaming-desktop host ever drops Steam, controllers (wine
     games) lose udev access with no obvious error. Split into its own aspect
     if/when that happens; not worth it while every gaming host runs Steam.
 15. Millennium (steam client mod) is wired as its own aspect (gaming/millennium.nix
