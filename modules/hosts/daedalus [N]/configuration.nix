@@ -15,6 +15,7 @@
         secureboot
         firmware
         network
+        bluetooth
         nvidia
         asus
         greetd
