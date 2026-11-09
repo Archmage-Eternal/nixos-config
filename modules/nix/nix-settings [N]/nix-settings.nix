@@ -22,12 +22,7 @@
       ];
     };
 
-    # Weekly GC, keep the last 2 weeks of roots. Port add: legacy had no GC,
-    # store grows unbounded without it.
-    nix.gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
+    # Garbage collection is owned by programs.nh.clean (see the nh aspect), so
+    # nix.gc stays off.
   };
 }
