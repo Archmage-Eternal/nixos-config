@@ -1,5 +1,5 @@
 # hyprland input + binary cache (added once; only used when hyprland is).
-{inputs, ...}: {
+{
   flake-file.inputs.hyprland.url = "github:hyprwm/Hyprland";
 
   flake.modules.nixos.hyprland.nix.settings = {

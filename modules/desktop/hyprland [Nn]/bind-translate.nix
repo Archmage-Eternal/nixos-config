@@ -5,7 +5,7 @@
 #
 # Combos in the registry are comma-style ("SUPER, K"); Lua wants plus-style
 # ("SUPER + K"), so we rewrite them here — registry data is unchanged.
-{lib, ...}: {
+{
   flake.modules.homeManager.hyprland = {
     config,
     lib,
