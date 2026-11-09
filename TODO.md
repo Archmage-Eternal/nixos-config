@@ -35,7 +35,8 @@
    a `uwsm finalize` call in mango's autostart, or uwsm may hang waiting for
    the compositor. Worth it once HM systemd services tied to
    graphical-session.target (waybar, hypridle, ...) should run under mango;
-   plain mango never starts that target.
+   plain mango never starts that target. Already affected: caelestia and the
+   polkit-agent (hyprpolkitagent) services, so neither runs under plain mango.
 10. Launch keybind apps with `uwsm app --` so they run in their own systemd
     scopes instead of as children of the compositor. A plain exec from a
     keybind is still a child, even under uwsm.
@@ -97,3 +98,18 @@
       non-Hyprland; hyprcursor would be an additive layer, not a replacement.
     - Revisit hyprcursor.enable (currently on, no effect) once a theme is
       chosen; drop the flag if not adopting.
+17. Hardware follow-ups on daedalus (check on the machine):
+    - asusd vs power-profiles-daemon: ppd is off. asus-linux docs tie profile
+      switching to ppd, but an asusctl issue reports ppd resetting EPP. Test
+      `asusctl profile` and the desktop power toggle before enabling ppd.
+    - supergfxd with nvidia prime offload + finegrained power management: confirm
+      Hybrid mode behaves, and that Integrated mode isn't used by accident.
+    - Logitech: only Solaar is set up. Add programs.solaar.userService.enable to
+      apply settings at login (rides graphical-session.target, see item 9).
+      services.ratbagd (+ Piper) only matters for gaming mice with onboard
+      profiles; hardware.keyboard.qmk only for flashing QMK keyboards. Add if
+      the hardware needs them.
+    - File pickers: the GTK portal is installed and Hyprland ships its portal
+      config; confirm the file chooser works in Zen under both compositors.
+    - Lock/idle: Caelestia ships its own lock screen and idle monitors; confirm
+      they lock on lid close/suspend before relying on them.
