@@ -1,12 +1,7 @@
 # Hyprland (NixOS + Home-Manager).
-{
-  flake.modules.nixos.hyprland = {
-    inputs,
-    pkgs,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.modules.nixos.hyprland = {pkgs, ...}: {
     imports = [inputs.hyprland.nixosModules.default];
-
     programs.hyprland = {
       enable = true;
       withUWSM = true;
@@ -14,7 +9,6 @@
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
   };
-
   flake.modules.homeManager.hyprland.wayland.windowManager.hyprland = {
     enable = true;
     package = null;

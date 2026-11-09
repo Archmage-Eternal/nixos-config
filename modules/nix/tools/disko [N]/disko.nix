@@ -1,5 +1,3 @@
-{
-  flake.modules.nixos.disko = {inputs, ...}: {
-    imports = [inputs.disko.nixosModules.disko];
-  };
+{inputs, ...}: {
+  flake.modules.nixos.disko.imports = [inputs.disko.nixosModules.disko];
 }

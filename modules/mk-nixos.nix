@@ -15,7 +15,6 @@
         inputs.self.modules.nixos.${name}
         {nixpkgs.hostPlatform = lib.mkDefault system;}
       ];
-      specialArgs = {inherit inputs;};
     };
   };
 }

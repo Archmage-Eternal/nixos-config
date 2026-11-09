@@ -2,7 +2,7 @@
 # home-manager bundle. Home-manager itself is wired by nixos.home-manager,
 # which the host imports.
 {inputs, ...}: {
-  flake.modules.nixos.david = {inputs, ...}: {
+  flake.modules.nixos.david = {
     users.users.david = {
       isNormalUser = true;
       description = "david";

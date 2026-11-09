@@ -5,12 +5,8 @@
 # always generated) but colours nothing while no colour target is on.
 # Home-Manager inherits enable/autoEnable/cursor/fonts from the NixOS side
 # automatically; the HM half below only widens where the cursor is applied.
-{
-  flake.modules.nixos.theming = {
-    inputs,
-    pkgs,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.modules.nixos.theming = {pkgs, ...}: {
     imports = [inputs.stylix.nixosModules.stylix];
 
     stylix = {
