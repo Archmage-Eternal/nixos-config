@@ -8,7 +8,6 @@
       useUserPackages = true;
       useGlobalPkgs = true;
       backupFileExtension = "backup";
-      extraSpecialArgs = {inherit inputs;};
     };
   };
 }
