@@ -96,8 +96,9 @@
       behavior when a hyprcursor theme is missing.
     - Compatibility: keep XCursor as the baseline for mango and everything
       non-Hyprland; hyprcursor would be an additive layer, not a replacement.
-    - Revisit hyprcursor.enable (currently on, no effect) once a theme is
-      chosen; drop the flag if not adopting.
+    - The hyprcursor flag was dropped. A hyprcursor theme also needs
+      HYPRCURSOR_THEME/HYPRCURSOR_SIZE (home.pointerCursor.hyprcursor.enable)
+      on top of the stylix cursor.
 17. Hardware follow-ups on daedalus (check on the machine):
     - asusd vs power-profiles-daemon: ppd is off. asus-linux docs tie profile
       switching to ppd, but an asusctl issue reports ppd resetting EPP. Test
@@ -113,3 +114,16 @@
       config; confirm the file chooser works in Zen under both compositors.
     - Lock/idle: Caelestia ships its own lock screen and idle monitors; confirm
       they lock on lid close/suspend before relying on them.
+18. Stylix now themes everything with a target (autoEnable = true; opt out per
+    app with stylix.targets.<app>.enable = false). Things to check on the machine:
+    - Caelestia has no stylix target (Qt Quick shell with its own colour scheme),
+      so the shell won't match the rest. Align its scheme by hand or via
+      programs.caelestia.settings.
+    - The qt target sets QT_QPA_PLATFORMTHEME=qt5ct and kvantum; it may touch
+      Caelestia (Qt). If the shell looks off, override those in the shell's
+      programs.caelestia.systemd.environment.
+    - Font sizes were restored from the legacy config (desktop 12, applications
+      15, terminal 17, popups 17); adjust if text is too large.
+    - New apps are themed automatically; some targets warn when their app isn't
+      installed (rofi did, now disabled). Disable noisy ones as they show up.
+    - No wallpaper is set (stylix.image null); Caelestia manages wallpaper.
