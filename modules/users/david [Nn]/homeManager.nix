@@ -15,6 +15,7 @@
       mangowm
       gaming-desktop
       caelestia
+      discord
     ];
   };
 }
