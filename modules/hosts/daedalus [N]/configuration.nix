@@ -14,6 +14,7 @@
         # Fallback: swap `secureboot` for `boot` (import exactly one).
         secureboot
         nvidia
+        asus
         greetd
         hyprland
         mangowm
