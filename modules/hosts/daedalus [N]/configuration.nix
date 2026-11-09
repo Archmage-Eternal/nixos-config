@@ -13,6 +13,7 @@
         timezone
         # Fallback: swap `secureboot` for `boot` (import exactly one).
         secureboot
+        firmware
         nvidia
         asus
         greetd
@@ -29,6 +30,8 @@
       ];
 
     networking.hostName = "daedalus";
+    # AMD CPU: load microcode updates (needs the firmware aspect).
+    hardware.cpu.amd.updateMicrocode = true;
     system.stateVersion = "26.11";
   };
 }
