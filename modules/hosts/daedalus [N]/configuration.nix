@@ -18,6 +18,7 @@
         hyprland
         mangowm
         gaming-desktop
+        theming
         david
       ])
       ++ [
