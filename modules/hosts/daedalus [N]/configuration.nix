@@ -18,7 +18,6 @@
         hyprland
         mangowm
         gaming-desktop
-        dconf
         theming
         david
       ])

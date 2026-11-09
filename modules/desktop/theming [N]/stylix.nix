@@ -7,7 +7,11 @@
 # automatically; the HM half below only widens where the cursor is applied.
 {inputs, ...}: {
   flake.modules.nixos.theming = {pkgs, ...}: {
-    imports = [inputs.stylix.nixosModules.stylix];
+    imports = [
+      inputs.stylix.nixosModules.stylix
+      # The home-manager half sets gtk.enable, which needs dconf.
+      inputs.self.modules.nixos.dconf
+    ];
 
     stylix = {
       enable = true;
