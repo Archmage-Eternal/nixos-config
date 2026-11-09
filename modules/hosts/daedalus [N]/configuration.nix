@@ -17,6 +17,7 @@
         network
         bluetooth
         audio
+        upower
         nvidia
         asus
         greetd
