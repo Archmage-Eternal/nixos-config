@@ -37,14 +37,21 @@
     };
     mangowm = {
       url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     nixcord = {
       url = "github:4evy/nixcord";
       inputs = {
         home-manager.follows = "home-manager";
+        nix-darwin.follows = "";
         nixpkgs.follows = "nixpkgs";
+        nixpkgs-ci.follows = "nixpkgs";
+        nixpkgs-packages.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
       };
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -54,7 +61,10 @@
     };
     stylix = {
       url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";

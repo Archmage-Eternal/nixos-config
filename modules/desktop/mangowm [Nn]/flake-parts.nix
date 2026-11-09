@@ -2,6 +2,9 @@
 {
   flake-file.inputs.mangowm = {
     url = "github:mangowm/mango";
-    inputs.nixpkgs.follows = "nixpkgs";
+    inputs = {
+      nixpkgs.follows = "nixpkgs";
+      flake-parts.follows = "flake-parts";
+    };
   };
 }
