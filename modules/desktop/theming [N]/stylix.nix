@@ -1,9 +1,10 @@
-# Theming via stylix (NixOS): fonts and cursor only.
+# Theming via stylix: fonts and cursor only.
 #
 # autoEnable = false: no app is themed unless its target is enabled
 # explicitly. base16Scheme is still required by stylix (the palette file is
 # always generated) but colours nothing while no colour target is on.
-# Home-Manager inherits enable/autoEnable/cursor/fonts from here automatically.
+# Home-Manager inherits enable/autoEnable/cursor/fonts from the NixOS side
+# automatically; the HM half below only widens where the cursor is applied.
 {
   flake.modules.nixos.theming = {
     inputs,
@@ -48,6 +49,19 @@
         font-packages.enable = true;
         fontconfig.enable = true;
       };
+    };
+  };
+
+  # Apply the stylix cursor beyond XCURSOR_*: GTK settings (needs the `dconf`
+  # NixOS aspect), X11 resources and hyprcursor env. Values come from
+  # stylix.cursor via home.pointerCursor. hyprcursor has no effect for an
+  # XCursor-only theme (see TODO item 16).
+  flake.modules.homeManager.theming = {
+    gtk.enable = true;
+    home.pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      hyprcursor.enable = true;
     };
   };
 }

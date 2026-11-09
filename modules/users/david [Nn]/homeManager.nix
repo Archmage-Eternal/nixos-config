@@ -16,6 +16,7 @@
       gaming-desktop
       caelestia
       discord
+      theming
     ];
   };
 }
