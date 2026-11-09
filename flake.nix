@@ -17,7 +17,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-file.url = "github:denful/flake-file";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +30,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    import-tree.url = "github:vic/import-tree";
+    import-tree.url = "github:denful/import-tree";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.2.0";
       inputs.nixpkgs.follows = "nixpkgs";
