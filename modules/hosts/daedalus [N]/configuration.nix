@@ -18,6 +18,7 @@
         bluetooth
         audio
         upower
+        logitech
         nvidia
         asus
         greetd
