@@ -82,3 +82,18 @@
     TLS-intercepting proxy (SELF_SIGNED_CERT_IN_CHAIN) and has no binary cache.
     Re-enable the import and build on a network without the proxy. If it still
     fails, override the derivation to pass the CA bundle to bun, or drop it.
+16. Hyprcursor cursors (investigate later). Today the cursor is XCursor
+    (Bibata-Modern-Ice) via stylix.cursor + home.pointerCursor; the
+    HYPRCURSOR_* env set by pointerCursor.hyprcursor does nothing for an
+    XCursor-only theme. Evaluate switching to a hyprcursor-format theme:
+    - Benefits to check: vector (SVG) cursors that stay sharp at any scale or
+      per-monitor scale; fewer scaling artifacts than bitmap XCursor.
+    - Drawbacks to check: Hyprland-only. mangowm (wlroots-based) and
+      XWayland/GTK/Qt apps still use XCursor, so the cursor would differ
+      between compositors unless the XCursor theme stays installed alongside.
+      Small theme ecosystem and nixpkgs availability; confirm the fallback
+      behavior when a hyprcursor theme is missing.
+    - Compatibility: keep XCursor as the baseline for mango and everything
+      non-Hyprland; hyprcursor would be an additive layer, not a replacement.
+    - Revisit hyprcursor.enable (currently on, no effect) once a theme is
+      chosen; drop the flag if not adopting.
