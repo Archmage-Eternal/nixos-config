@@ -10,6 +10,7 @@
       sops
       keybinds
       terminal
+      nushell
       bash
       browser
       hyprland
