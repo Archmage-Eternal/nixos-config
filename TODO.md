@@ -185,34 +185,33 @@
     `config.boot.kernelPackages.nvidiaPackages`, so the kernel choice changes
     which driver build the laptop gets. Keep the kernel decision in one place.
     Keep the host-level override until there is a third kind of host.
-23. Bash line editing: ghostty integration vs readline mode indicator vs ble.sh.
-    Today (bash aspect): readline vi mode with `show-mode-in-prompt on` (cursor
-    shape per mode) and `programs.ghostty.enableBashIntegration = false`,
-    because ghostty's bash integration puts the mode indicator on the previous
-    line (ghostty-org/ghostty#10953, reported on macOS with Ghostty 1.3; the
-    1.4.0 script in nixpkgs has no handling for it; not reproduced here). The
-    price: no ghostty title, pwd reporting, prompt marks or sudo/ssh helpers
-    in bash. Options:
-    - Keep as is.
-    - Drop `show-mode-in-prompt` and its mode strings, turn the integration back
-      on (lose the mode indicator).
-    - Add ble.sh (below), which draws the mode indicator itself. The ghostty
-      1.4.0 script and starship (1.26.0 checked) both have explicit ble.sh
-      branches, so all three are meant to work together.
-    ble.sh audit (not added): it replaces readline as the line editor, adding
-    syntax highlighting, history auto-suggestions, menu completion and a much
-    fuller vim mode (visual modes, text objects, registers, macros). nushell's
-    reedline already has highlighting/hints/menus, so the value depends on
-    whether bash or nushell is the daily interactive shell. Costs: pure-bash
-    script startup time (not measured), another moving part, and it takes over
-    the readline settings (check the mode strings/bindings still apply).
-    Placement if wanted: home-manager, as its own `blesh` aspect (per-user
-    interactive preference; the NixOS module sources it for every user
-    including root and smith, and skips the documented pattern of sourcing with
-    `--attach=none` near the top of .bashrc and `ble-attach` at the bottom).
-    Needs `programs.bash.bashrcExtra` (top) + `initExtra` at a late `mkOrder`
-    (end), pkgs.blesh (0.4.0-devel3 in this nixpkgs), and optionally
-    ~/.config/blesh/init.sh; no home-manager module exists.
+23. Bash line editing: ble.sh is in (bash aspect, blesh.nix) on top of readline.
+    Open: simplify the mode indicator and re-enable ghostty's bash integration.
+    Today readline prints the vi mode strings (cursor shape escapes) via
+    `show-mode-in-prompt`, ble.sh also draws its own "-- INSERT --" line, and
+    `programs.ghostty.enableBashIntegration = false` works around ghostty's
+    integration misplacing readline's mode indicator (ghostty-org/ghostty#10953,
+    a macOS report on Ghostty 1.3; the nixpkgs 1.4.0 script has no handling for
+    it). That is the legacy combination. The price: no ghostty title, pwd
+    reporting, prompt marks or sudo/ssh helpers in bash.
+    Tested on this machine in a pty: ble.sh can set the cursor per vi mode
+    itself (`ble-bind -m vi_imap --cursor 6`, `ble-bind -m vi_nmap --cursor 2`
+    emit ESC[6 q / ESC[2 q on xterm-like terminals, nothing on TERM=linux).
+    So an alternative is: drop `show-mode-in-prompt` and the two mode strings
+    from readline, put the two `--cursor` lines in ~/.config/blesh/init.sh, and
+    remove the ghostty workaround (the conflict is specific to
+    show-mode-in-prompt). Trade-offs: other readline programs (psql, python,
+    sqlite3) lose the mode indicator, and the ghostty integration with ble.sh
+    is unverified on the real terminal (its 1.4.0 script has an explicit ble.sh
+    branch; try it on the laptop). On the Linux console the raw `ESC[6 q` in
+    the readline strings may leave a stray character (unverified).
+    Facts checked while adding ble.sh: it imports ~/.inputrc (editing-mode vi,
+    the C-p/C-n prefix search, mode strings), so readline config is still needed;
+    ble.sh already binds C-l and C-x C-e itself in vi insert mode, but readline
+    does not (C-l is self-insert there), so those two lines serve other
+    readline apps. It loads and attaches under TERM=linux and xterm-ghostty,
+    and starship hooks in through blehook (checked with the generated .bashrc).
+    Not tested: the real Linux virtual console.
 24. ssh and git still need porting as their own aspects (legacy put ssh inside
     the `shell` aspect; it needs the sops secret path). Port after the age key
     and secrets file exist. The legacy ssh.nix is the last file left in the
