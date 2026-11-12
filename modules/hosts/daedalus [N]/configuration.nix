@@ -2,7 +2,7 @@
 #
 # Disk layout lives in _disk-config.nix (disko); it provides fileSystems.*.
 {inputs, ...}: {
-  flake.modules.nixos.daedalus = {
+  flake.modules.nixos.daedalus = {pkgs, ...}: {
     imports =
       (with inputs.self.modules.nixos; [
         home-manager
@@ -39,5 +39,18 @@
     # AMD CPU: load microcode updates (needs the firmware aspect).
     hardware.cpu.amd.updateMicrocode = true;
     system.stateVersion = "26.11";
+
+    # Desktop/laptop boot tuning, kept here rather than in `boot` because it is
+    # specific to this kind of machine. If more desktops or laptops appear, lift
+    # it into a shared aspect (e.g. `boot-desktop`); servers keep the defaults.
+    boot = {
+      kernelPackages = pkgs.linuxPackages_zen;
+      kernel.sysctl."vm.max_map_count" = 2147483642; # gaming
+      supportedFilesystems = ["ntfs"];
+      initrd.verbose = false;
+      # Keep kernel/initrd text off the tuigreet TTY. Still in `journalctl -b`.
+      # Level 0 still prints emergency messages, so a panic stays visible.
+      consoleLogLevel = 0;
+    };
   };
 }
