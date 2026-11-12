@@ -10,6 +10,7 @@
       sops
       keybinds
       terminal
+      bash
       browser
       hyprland
       mangowm
