@@ -127,3 +127,26 @@
     - New apps are themed automatically; some targets warn when their app isn't
       installed (rofi did, now disabled). Disable noisy ones as they show up.
     - No wallpaper is set (stylix.image null); Caelestia manages wallpaper.
+19. hephaestus (headless home server) is a scaffold. Before installing:
+    - Disks: replace the placeholder in hosts/hephaestus/_disk-config.nix with
+      the real /dev/disk/by-id values and decide on encryption/data disks.
+    - Fill users/smith `openssh.authorizedKeys.keys`; sshd is key-only, so
+      without a key there is no remote login. Set a password for sudo at
+      install (`passwd smith`) or move to a sops hashedPasswordFile.
+    - The `boot` aspect was written for the laptop: it uses the zen kernel (an
+      LTS kernel suits a server), sets vm.max_map_count for gaming and
+      consoleLogLevel = 0 (hides kernel messages on a headless console).
+      Split or override per host if that matters.
+    - stateVersion (26.11) must match the release it is first installed with.
+    - Hardware left open: Intel NPU, any GPU/transcoding for Immich.
+    - sops for this host: add its age key (ssh-to-age of the host key) to
+      .sops.yaml once installed; then move secrets off the laptop-only key.
+20. Internet access for hephaestus (design later). Opening ports on the router
+    exposes the machine; prefer a tunnel/mesh (Tailscale, WireGuard, or a
+    Cloudflare Tunnel) for private services such as Immich, and expose only
+    what must be public. For sshd on the open internet: key-only is already
+    set; consider fail2ban, a non-default port, and dynamic DNS. Immich and
+    game servers each want their own firewall rules and a reverse proxy
+    (Caddy/nginx) with TLS. Reserve a fixed lease for the server on the router.
+21. Lean home-manager bundle for servers (extends item 4): smith has none; add
+    shell/git/editor only when needed, never the desktop bundle.
