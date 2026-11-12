@@ -174,4 +174,14 @@
       pitfall), and secureboot extends `boot`, so check it still composes.
     - Whether `ntfs` in supportedFilesystems is a flag too, or stays a host
       line.
+    Known problem with putting the kernel in the aspect that wants it:
+    `boot.kernelPackages` is a single-value option (type `raw`), so two aspects
+    that each set it at the same priority fail evaluation with "defined
+    multiple times", and modules cannot merge a kernel choice. E.g. if
+    gaming-desktop sets zen and some other aspect (a server profile, a VM,
+    secureboot) sets another, the host breaks. Options: a single owner for the
+    kernel (the `boot` aspect, driven by a flag), or `lib.mkDefault` in the
+    aspects plus an explicit host override. The `nvidia` aspect also reads
+    `config.boot.kernelPackages.nvidiaPackages`, so the kernel choice changes
+    which driver build the laptop gets. Keep the kernel decision in one place.
     Keep the host-level override until there is a third kind of host.
