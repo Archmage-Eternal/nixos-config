@@ -153,3 +153,25 @@
     (Caddy/nginx) with TLS. Reserve a fixed lease for the server on the router.
 21. Lean home-manager bundle for servers (extends item 4): smith has none; add
     shell/git/editor only when needed, never the desktop bundle.
+22. Redesign the `boot` aspect to cover server, laptop and plain-desktop hosts
+    (design later; today the tuning is a daedalus-only override, see item 19).
+    Three settings differ by machine kind:
+    - Kernel: zen (daedalus) vs the default LTS (servers).
+    - vm.max_map_count = 2147483642: a gaming need, not a boot need.
+    - Console quietness: consoleLogLevel = 0 and initrd.verbose = false keep
+      kernel text off the tuigreet TTY; only wanted on hosts with a greeter.
+    Idea: drive them from options instead of per-host overrides, e.g.
+    `boot.profile.gaming` (zen kernel + max_map_count) and
+    `boot.profile.desktop` (quiet console), or equivalent flags, so a server
+    sets neither, a laptop sets both, and a regular desktop can set just the
+    ones it needs. Questions to settle:
+    - Options inside `boot`, or put each setting in the aspect that causes it
+      (max_map_count in gaming-desktop, quiet console in greetd, kernel in
+      gaming-desktop), which removes the need for flags entirely? That fits
+      "one aspect = one concern" better and keeps `boot` generic.
+    - If flags stay: options on a NixOS module need a declared option (an
+      aspect that declares options can only be imported once, see the import
+      pitfall), and secureboot extends `boot`, so check it still composes.
+    - Whether `ntfs` in supportedFilesystems is a flag too, or stays a host
+      line.
+    Keep the host-level override until there is a third kind of host.
