@@ -130,13 +130,16 @@
 19. hephaestus (headless home server) is a scaffold. Before installing:
     - Disks: replace the placeholder in hosts/hephaestus/_disk-config.nix with
       the real /dev/disk/by-id values and decide on encryption/data disks.
-    - Fill users/smith `openssh.authorizedKeys.keys`; sshd is key-only, so
-      without a key there is no remote login. Set a password for sudo at
-      install (`passwd smith`) or move to a sops hashedPasswordFile.
-    - The `boot` aspect was written for the laptop: it uses the zen kernel (an
-      LTS kernel suits a server), sets vm.max_map_count for gaming and
-      consoleLogLevel = 0 (hides kernel messages on a headless console).
-      Split or override per host if that matters.
+    - hephaestus is currently a dev VM reached from the console, so
+      users/smith `openssh.authorizedKeys.keys` is empty on purpose. sshd is
+      key-only: add the key(s) of whichever machine will administer it before
+      depending on remote login. Set a password for sudo at install
+      (`passwd smith`) or move to a sops hashedPasswordFile.
+    - Boot tuning (zen kernel, vm.max_map_count, ntfs, quiet console) now lives
+      in the daedalus host as an override; `boot` is generic, so hephaestus gets
+      the default LTS kernel and a normal console. With more desktops/laptops,
+      lift the override into a shared aspect (e.g. `boot-desktop`); with more
+      servers, the generic `boot` already fits.
     - stateVersion (26.11) must match the release it is first installed with.
     - Hardware left open: Intel NPU, any GPU/transcoding for Immich.
     - sops for this host: add its age key (ssh-to-age of the host key) to
