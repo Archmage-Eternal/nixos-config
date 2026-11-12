@@ -10,6 +10,7 @@
       sops
       keybinds
       terminal
+      starship
       nushell
       bash
       browser
